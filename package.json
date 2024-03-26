@@ -1,0 +1,19 @@
+{
+  "name": "solana-training",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@coral-xyz/anchor": "^0.29.0",
+    "@solana-developers/helpers": "^2.1.0",
+    "@solana/spl-token": "^0.4.1",
+    "@solana/web3.js": "^1.91.1",
+    "esrun": "^3.2.26"
+  }
+}
