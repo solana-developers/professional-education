@@ -1,4 +1,4 @@
-import * as token from "@solana/spl-token";
+import { createMint } from "@solana/spl-token";
 import "dotenv/config";
 import {
   getKeypairFromEnvironment,
@@ -20,7 +20,7 @@ const sender = getKeypairFromEnvironment("SECRET_KEY");
 // SystemProgram.createAccount
 // token.createInitializeMintInstruction
 // See https://www.soldev.app/course/token-program
-const tokenMint = await token.createMint(
+const tokenMint = await createMint(
   connection,
   sender,
   sender.publicKey,
