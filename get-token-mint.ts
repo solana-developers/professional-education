@@ -11,7 +11,7 @@ const MINT_ADDRESS = getKeypairFromEnvironment("MINT_ACCOUNT");
 const keypair = getKeypairFromEnvironment("SECRET_KEY");
 
 console.log(
-  `✅ Finished! We've loaded our keypair securely, using an env file! Our public key is: ${keypair.publicKey.toBase58()}`
+  `✅ We've loaded our keypair securely, using an env file! Our public key is: ${keypair.publicKey.toBase58()}`
 );
 
 const connection = new Connection(clusterApiUrl("devnet"));
@@ -25,4 +25,4 @@ BigInt.prototype.toJSON = function (): number {
   return this.toString();
 };
 
-console.log(`Mint Info: ${JSON.stringify(mintInfo, null, 2)}`);
+console.log(`✅ Mint Info: ${JSON.stringify(mintInfo, null, 2)}`);
