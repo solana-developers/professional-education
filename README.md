@@ -2,7 +2,7 @@
 
 This repo is how to run the Solana Professional Training event.
 
-- The [Instructor presentation]('./Solana Professional Education.key'). We use Keynote as there are animations in some slides.
+- The [Instructor presentation](./Solana%20Professional%20Education.key). We use Keynote as there are animations in some slides.
 - The files in [`labs`](./labs) are working solutions to each lesson's labs.
 - This README file is a playbook of how to run a training event.
 
