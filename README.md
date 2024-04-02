@@ -282,6 +282,5 @@ Return extra merch/swag back to the storage area.
 
 ### After the Event
 
-Check survey results on the TypeForm:
-
+- Check [survey results on the TypeForm](https://admin.typeform.com/form/IPH0UGz7/results#responses)
 - Correct any bugs in the course material and or instructor notes
