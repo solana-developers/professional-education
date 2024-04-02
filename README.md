@@ -1,16 +1,44 @@
 # Solana Professional Training
 
-This repo is how to run the Solana Professional Training event.
+This repo covers how to run the Solana Professional Training event. It's designed for instructors, or those thinking about instructing the course.
+
+**If you just want to learn Solana**, follow @solana_developers on Twitter and we'll let you know when the next course is running in a city near you!
+
+**If you're planning on running a training event** welcome, you're in the right place! This reo has everything you need to plan and teach the course. You can also [contact Mike MacCana](mailto:mike.maccana@solana.org) for help.
 
 - The [Instructor presentation]('./Solana Professional Education.key'). We use Keynote as there are animations in some slides.
 - The files in [`labs`](./labs) are working solutions to each lesson's labs.
 - This README file is a playbook of how to run a training event.
 
-If you're planning on running a training event, welcome, you're in the right place! You can also [contact Mike MacCana](mailto:mike.maccana@solana.org) for help.
+## Aims of the training
+
+### Applicable to the widest group of potential Solana developers.
+
+The training requirements are simple: any developer with TypeScript experience. Specifically, no cryptography, blockchain or Rust experience is required. TypeScript is chosen because it the language of the JS/TS SDKs, and additionally because understanding of strictly typed languages ass
+
+### Low time to hello world
+
+People have a limited amount of attentiom and learniong should be focused on the requirements for next task. Anything that isn't relevant to their next task should be removed. If the next task is sending tokens, and JSON RPC knowledge isn't required to perform this task (which it isn't) remove the JSON RPC content.
+
+### Do real things on a real network
+
+We don't need to discuss the benefits of Solana. If a student is attending the course they likely already know that Solana is fast and cheap and has a huge amount of developer and financial activity. We can show the benefits of Solana, live on devnet.
+
+### Students must be able to stand on their own two feet after training is over.
+
+This means we make new projects from scratch, rather than clone existing repos.
+
+### Smaller steps
+
+Smaller steps allow the class to proceed as a group, allows the group to discuss each step in detail, and increases the chances of everyone gets through every exercise.
+
+### Focus on Solana
+
+Many existing Solana courses are slowed down by issues that have nothing to do with Solana. This is not a course in JavaScript frameworks, IIFEs (`;(async function(){})();`), or any other topic.
 
 ## Training Offering:
 
-3 days full time in classroom training.
+3 days full time in-classroom training. We will likely expand this in future.
 
 **Audience**: aimed at anyone proficient in Typescript, that wants to learn blockchain.
 
@@ -20,7 +48,7 @@ The aim is to focus on the wider audience of people that want/need to build thin
 
 **Instructor time** is 9AM to 5PM
 
-**Class sizes**: generally between 10 and 15 people, larger gets difficult to manage.
+**Class sizes**: generally between 10 and 15 people - you want to spend time with every student, larger class sizes get difficult to manage for a single instructor.
 
 **Lead time**: 1 month minimum, ideally six weeks
 
