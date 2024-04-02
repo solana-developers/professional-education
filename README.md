@@ -6,7 +6,7 @@ This repo covers how to run the Solana Professional Training event. It's designe
 
 **If you're planning on running a training event** welcome, you're in the right place! This reo has everything you need to plan and teach the course. You can also [contact Mike MacCana](mailto:mike.maccana@solana.org) for help.
 
-- The [Instructor presentation]('./Solana Professional Education.key'). We use Keynote as there are animations in some slides.
+- The [Instructor presentation](./Solana%20Professional%20Education.key). We use Keynote as there are animations in some slides.
 - The files in [`labs`](./labs) are working solutions to each lesson's labs.
 - This README file is a playbook of how to run a training event.
 
