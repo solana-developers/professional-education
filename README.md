@@ -284,3 +284,47 @@ Return extra merch/swag back to the storage area.
 
 - Check [survey results on the TypeForm](https://admin.typeform.com/form/IPH0UGz7/results#responses)
 - Correct any bugs in the course material and or instructor notes
+
+- Send a follow up email, for example (modify as appropriate):
+
+Send from personal account:
+
+---
+
+To: your email address
+
+CC: **nobody** (important, don’t put anyone here as it will reveal ('dox') attendees to each other)
+
+BCC: attendee list
+
+Subject: Action Required: confirm attendance for Solana professional training next week
+
+Body (modify accordingly):
+
+---
+
+Thanks for joining us at the first Solana Professional Developer Training! 🎉 I learned a lot and I hope you did, too. Here's a few resources to assist on your Solana journey:
+
+🤓 Continue building with:
+
+- [Solana Stack Exchange](https://www.web3builders.dev/) - Q and A. Search before posting!
+
+- [Solana DevRel Program Examples](https://github.com/solana-developers/program-examples) - perpetually updated examples of Anchor Solana programs maintained by the Solana Foundation.
+
+- [Web3 Builders Alliance](https://www.web3builders.dev/) - multiple week deep Solana development course. WBA graduates have built a lot of Hackathon winners and Solana ecosystem products.
+
+- The [Rareskills EVM to SVM tutorial](https://www.rareskills.io/solana-tutorial) - recommended to folks coming from an EVM background
+
+🗓️ Follow the [Solana Foundation Developer Events calendar](https://solana.com/events) for more opportunities to learn and connect with other developers.
+
+🤝 Know any colleagues that need Solana training? Know any meetup groups in NYC that need Solana speakers? Let us know by replying to this email and we'll get in contact.
+
+📱 Follow [@solana_devs on X](https://x.com/solana_devs) to stay updated with the latest information about the Solana ecosystem.
+
+📫 If you have any feedback, you are always welcome to share it directly with me!
+
+Cheers,
+
+Mike
+
+---
