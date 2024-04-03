@@ -115,6 +115,7 @@ Projectors are generally preferable to monitors as the text size is larger.
 - X/Twitter
   - This should be an ongoing promotion, sent from your own account. Use emojis and get retweets from major ecosystem accounts
 - Marketing will help
+  - Offline https://twitter.com/getofflinexyz
   - NYU Computer Science
   - Solana NYC Alliance
   - Solana U (Dana DaGenius)
