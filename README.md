@@ -2,7 +2,7 @@
 
 This repo covers how to run the Solana Professional Training event. It's designed for instructors, or those thinking about instructing the course.
 
-**If you just want to learn Solana**, follow @solana_developers on Twitter and we'll let you know when the next course is running in a city near you!
+**If you just want to learn Solana**, follow [@solana_devs on X](https://x.com/solana_devs) and we'll let you know when the next course is running in a city near you!
 
 **If you're planning on running a training event** welcome, you're in the right place! This reo has everything you need to plan and teach the course. You can also [contact Mike MacCana](mailto:mike.maccana@solana.org) for help.
 
@@ -30,7 +30,7 @@ This means we make new projects from scratch, rather than clone existing repos.
 
 ### Smaller steps
 
-Smaller steps allow the class to proceed as a group, allows the group to discuss each step in detail, and increases the chances of everyone gets through every exercise.
+Student dropoff - which has been high even in some of the best regarded ecosystem training - often happens when the class moves faster than individual students and the students become so far behind the rest of the group it's impossible for them to keep up. Smaller steps allow the class to proceed as a group, allows the group to discuss each step in detail, and increases the chances of everyone gets through every exercise.
 
 ### Focus on Solana
 
