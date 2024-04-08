@@ -1,6 +1,6 @@
-# Solana Professional Training
+# Solana Professional Education
 
-This repo covers how to run the Solana Professional Training event. It's designed for instructors, or those thinking about instructing the course.
+This repo covers how to run the Solana Professional Education training event. It's designed for instructors, or those thinking about instructing the course.
 
 **If you just want to learn Solana**, follow @solana_developers on Twitter and we'll let you know when the next course is running in a city near you!
 
