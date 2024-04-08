@@ -130,10 +130,6 @@ Projectors are generally preferable to monitors as the text size is larger.
 
 Tables, chairs, and monitors/projectors:
 
-Solana Foundation NY office has most things
-_Ryan: I've got the chairs and tables covered for your event. I've got 6 30x72" tables and ~40 chairs that I just ordered since both the incubator, the ecosystem teams will need them in an ongoing capacity._
-
-AFR rental for furniture
 Screens and keyboard/mice are not needed as students bring their own laptops
 
 Confirm room layout, eg:
@@ -152,9 +148,7 @@ Instructor + TV
 
 #### Merch / Swag
 
-Speak to Asia on Events team and creative team (Ross Cohen etc)
-https://store.solana.com/ is merch store - we can order existing items in bulk.
-Custom items not possible in time.
+Your contact at Solana Foundation may be able to organize items from https://store.solana.com/
 
 ### 1 week
 
@@ -222,7 +216,7 @@ We look forward to hearing from you and congratulations on your acceptance!
 
 ### 3 or so days before
 
-If at Solana Foundation NY office: collect the email that replied to the ‘action required’ email and send them to Ryan so attendees can have Openpath and get access to the floors they need
+Collect the email that replied to the ‘action required’ email and send them to your building security so attendees can access your building.
 
 ### Day before event
 
@@ -326,6 +320,6 @@ Thanks for joining us at the first Solana Professional Developer Training! 🎉 
 
 Cheers,
 
-Mike
+FILL_IN_YOUR_NAME
 
 ---
