@@ -26,7 +26,7 @@ const TOKEN_METADATA_PROGRAM_ID = new PublicKey(
 );
 
 // Subtitute in your token mint account
-const tokenMintAccount = new PublicKey("YOU_TOKEN_MINT_ADDRESS_HERE");
+const tokenMintAccount = new PublicKey("YOUR_TOKEN_MINT_ADDRESS_HERE");
 
 const metadataData = {
   name: "Solana Training Token",

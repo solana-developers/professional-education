@@ -1,3 +1,6 @@
+// This is an alternative version of create-token-mint
+// That shows both the instructions being used to create the token mint account
+
 import {
   TOKEN_PROGRAM_ID,
   MINT_SIZE,
@@ -46,6 +49,7 @@ const createAccountInstruction = SystemProgram.createAccount({
 
 transaction.add(createAccountInstruction);
 
+// Initialize the account we just made into a token mint account
 const initializeMintInstruction = createInitializeMintInstruction(
   mintAccount.publicKey,
   2,
