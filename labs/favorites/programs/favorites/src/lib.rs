@@ -14,7 +14,10 @@ pub struct Favorites {
     pub number: u64,
 
     #[max_len(50)]
-    pub color: String
+    pub color: String,
+
+    #[max_len(5, 50)]
+    pub hobbies: Vec<String>
 }
 
 // Our Solana program! 
@@ -23,24 +26,26 @@ pub mod favorites {
     use super::*;
 
     // Our instruction handler! It sets the user's favorite number and color
-    pub fn set_favorites(context: Context<SetFavorites>, number: u64, color: String) -> Result<()> {
+    pub fn set_favorites(context: Context<SetFavorites>, number: u64, color: String, hobbies: Vec<String>) -> Result<()> {
         let user_public_key = context.accounts.user.key();
         msg!("Greetings from {}", context.program_id);
         msg!(
-            "User {}'s favorite number is {} and favorite color is: {}",
+            "User {}'s favorite number is {}, favorite color is: {}, and hobbies are: {:?}",
             user_public_key,
             number,
-            color
+            color,
+            hobbies
         );
 
         context.accounts.favorites.set_inner(Favorites {
             number,
-            color
+            color,
+            hobbies
         });
         Ok(())
     }
 
-    // We can also add a get_favorites instruction to get the user's favorite number and color
+    // We can also add a get_favorites instruction handler to return the user's favorite number and color
 }
 
 // When people call the set_favorites instruction, they will need to provide the accounts that will be modifed. This keeps Solana fast!

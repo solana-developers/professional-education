@@ -32,7 +32,18 @@ describe("Favorites", () => {
 
     // Here's what we want to write to the blockchain
     const favoriteNumber = new anchor.BN(23);
-    const favoriteColor = "red";
+    const favoriteColor =
+      "the color of the sky on a clear day when i am feeling happy and free and the wind is blowing the trees around";
+    const favoriteHobbies = [
+      "reading",
+      "coding",
+      "skiing",
+      "skydiving",
+      "biking",
+      "hiking",
+      "snakes and ladders",
+      "doing cool stuff like racing up the stairs on a skateboard using only my hands and a helmet",
+    ];
 
     // Generate the PDA for the user's favorites
     const favoritesPdaAndBump = web3.PublicKey.findProgramAddressSync(
@@ -47,7 +58,7 @@ describe("Favorites", () => {
     try {
       tx = await program.methods
         // Call the set_favorites instruction handler
-        .setFavorites(favoriteNumber, favoriteColor)
+        .setFavorites(favoriteNumber, favoriteColor, favoriteHobbies)
         .accounts({
           user: user.publicKey,
           favorites: favoritesPda,
@@ -72,5 +83,7 @@ describe("Favorites", () => {
     assert.equal(dataFromPda.color, favoriteColor);
     // A little extra work to make sure the BNs are equal
     assert.equal(dataFromPda.number.toString(), favoriteNumber.toString());
+    // And check the hobbies too
+    assert.deepEqual(dataFromPda.hobbies, favoriteHobbies);
   });
 });
