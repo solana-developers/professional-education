@@ -18,7 +18,7 @@ The training requirements are simple: any developer with TypeScript experience. 
 
 ### Low time to hello world
 
-People have a limited amount of attentiom and learniong should be focused on the requirements for next task. Anything that isn't relevant to their next task should be removed. If the next task is sending tokens, and JSON RPC knowledge isn't required to perform this task (which it isn't) remove the JSON RPC content.
+People have a limited amount of attention and learning should be focused on the requirements for next task. Anything that isn't relevant to their next task should be removed. If the next task is sending tokens, and JSON RPC knowledge isn't required to perform this task (which it isn't) remove the JSON RPC content.
 
 ### Do real things on a real network
 
@@ -30,7 +30,7 @@ This means we make new projects from scratch, rather than clone existing repos.
 
 ### Smaller steps
 
-Student dropoff - which has been high even in some of the best regarded ecosystem training - often happens when the class moves faster than individual students and the students become so far behind the rest of the group it's impossible for them to keep up. Smaller steps allow the class to proceed as a group, allows the group to discuss each step in detail, and increases the chances of everyone gets through every exercise.
+Student drop off - which has been high even in some of the best regarded ecosystem training - often happens when the class moves faster than individual students and the students become so far behind the rest of the group it's impossible for them to keep up. Smaller steps allow the class to proceed as a group, allows the group to discuss each step in detail, and increases the chances of everyone gets through every exercise.
 
 ### Focus on Solana
 
@@ -105,7 +105,7 @@ Projectors are generally preferable to monitors as the text size is larger.
 #### Luma page up
 
 - See previous event https://lu.ma/ah0v9gwb
-- Do not use pre-cut 'Solana' graphics in luma - the ones with coins - as these violate the Solana Foundation brand guidelines (see Brandon Echter).
+- Do not use pre-cut 'Solana' graphics in Luma - the ones with coins - as these violate the Solana Foundation brand guidelines (see Brandon Echter).
 - Instead ask Hovin to produce graphics. This only takes a second, Hovin has a template to use so it won’t take long.
 - Set Luma so only registered guests can see the precise location.
 - Set limit to 3x attendees (eg, 45 people) due to flakiness
@@ -194,7 +194,7 @@ From the street, enter via the red area at the front of the building!
 
 Google Maps link [https://maps.app.goo.gl/aDqwxuMqshatmXra7
 
-![🤓](https://lh7-us.googleusercontent.com/sAJ-VqDiyROhhDIlck1eVikBTsOCQvvQAWE8Acf91rYO0rzJufdwQme9CcAiV3f9qz4rAP3mYagqFWhCpAY2Rrqcnq9My_Xjq7e3x_C6HdvYubrXZ5Y9o_LP2WjITnqV1YWPODuyJHGrBILf-Fi5UQ)](https://maps.app.goo.gl/aDqwxuMqshatmXra7) What: The training will cover the basics of cryptography, blockchain, and Solana from the ground up, with frequent hands-on labs. By the end of the bootcamp, you will be able to create and transfer tokens, mint NFTs, and build simple on-chain applications.
+![🤓](https://lh7-us.googleusercontent.com/sAJ-VqDiyROhhDIlck1eVikBTsOCQvvQAWE8Acf91rYO0rzJufdwQme9CcAiV3f9qz4rAP3mYagqFWhCpAY2Rrqcnq9My_Xjq7e3x_C6HdvYubrXZ5Y9o_LP2WjITnqV1YWPODuyJHGrBILf-Fi5UQ)](https://maps.app.goo.gl/aDqwxuMqshatmXra7) What: The training will cover the basics of cryptography, blockchain, and Solana from the ground up, with frequent hands-on labs. By the end of the boot camp, you will be able to create and transfer tokens, mint NFTs, and build simple on-chain applications.
 
 ![☝️](https://lh7-us.googleusercontent.com/NmO7IW00_RwxCaripQFG7H5NXrICm5zg0_sTfrtjuwVcrbaUjw_J2wC_Le5dPHPFszmsvFMYc9yRDvemesStt1FJdOSYtH313GmZ98p8j4WHhEoKnS-Xbop9Xij1WEX68QqgDU29rllOfvJZTWOOfQ) Requirements:
 
@@ -232,7 +232,7 @@ The day of the event it’s unlikely you will have time for room setup. Students
 
 - Chairs
 - Desks
-- Powerboards
+- Power strips
 - TV/projector
 - Whiteboard, eraser, markers.
 
@@ -273,7 +273,7 @@ Ensure people know of:
 - Solana Stack Exchange
 - 'Program Examples' repo for Anchor
 
-Essentially you want to make sure they're part of the wider Solana developer communiy and don't use the class Telegram for technical support!
+Essentially you want to make sure they're part of the wider Solana developer community and don't use the class Telegram for technical support!
 
 **If people do ask technical questions on Telegram** direct them to Solana Stack Exchange.
 
