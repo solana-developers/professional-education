@@ -69,13 +69,14 @@ describe("Favorites", () => {
         .rpc();
     } catch (thrownObject) {
       // Let's properly log the error
-      // so we can see the program involed
+      // so we can see the program involved
       // and (for well known programs) the full log message
-
       const rawError = thrownObject as Error;
-      throw new Error(
-        getCustomErrorMessage(systemProgramErrors, rawError.message)
+      const customErrorMessage = getCustomErrorMessage(
+        systemProgramErrors,
+        rawError.message
       );
+      throw new Error(customErrorMessage || rawError.message);
     }
 
     const dataFromPda = await program.account.favorites.fetch(favoritesPda);
