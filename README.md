@@ -105,9 +105,7 @@ Projectors are generally preferable to monitors as the text size is larger.
 #### Luma page up
 
 - See previous event https://lu.ma/ah0v9gwb
-- Do not use pre-cut 'Solana' graphics in Luma - the ones with coins - as these violate the Solana Foundation brand guidelines (see Brandon Echter).
-- Instead ask Hovin to produce graphics. This only takes a second, Hovin has a template to use so it won’t take long.
-- Set Luma so only registered guests can see the precise location.
+- Set Luma so only registered guests can see the precise location (this stops unregistered guests from showing up)
 - Set limit to 3x attendees (eg, 45 people) due to flakiness
 
 #### Begin Promotion:
@@ -134,7 +132,7 @@ Screens and keyboard/mice are not needed as students bring their own laptops
 
 Confirm room layout, eg:
 
-2 people per 72 inch table
+2 developers fit on a standard (30x72) table. You can physically fit three, but it won't be comfortable. Use two.
 
 ```plaintext
 Instructor + TV
@@ -156,11 +154,10 @@ Your contact at Solana Foundation may be able to organize items from https://sto
 
 The purpose of this email is twofold:
 
-Confirm attendance - the people that reply to this email are your real attendees.
+- Confirm attendance - the people that reply to this email are your real attendees.
+- Ensure nobody running Windows spends the first day configuring their laptops
 
-Ensure nobody running Windows spends the first day configuring their laptops
-
-Luma allows you to contact attendees, but we won’t use that for this email - you’ll get a better response rate with a personal email that doesn’t look like spam.
+Luma allows you to contact attendees, but we won’t use that for this email - you’ll get a better response rate with a **personal** email that doesn’t look like spam.
 
 Send from personal account:
 
@@ -252,8 +249,8 @@ You need to set display settings in your Mac. **This is not as obvious as it sou
 
 Common causes of students having troubles with the labs:
 
-- Students with an out of date node.js There’s a node version check in the slides for this reason. Anything less than node 18 was at the time of writing unsupported by node.js maintainers. Running an out of date version will give you errors when reading random files.
-- Students inconsistently ,moving between spellings of ‘favorites’ / ‘favourites’ during the Anchor lab.
+- Students with an out of date node.js There’s a node version check in the slides for this reason. Anything less than node 18 was at the time of writing unsupported by node.js maintainers. Running an out of date version will give you errors about strange characters like (`||=`) when reading random files.
+- Students inconsistently moving between spellings of ‘favorites’ / ‘favourites’ during the Anchor lab.
 - Editors other than VScode are fine, but you can use your own vscode /Rust Analyzer setup to work out why code doesn’t work
 - If you’re really stuck about why a student’s code doesn’t work you can also paste over the answer and look at the differences in your git client.
 - If you don’t know the answer to a question, that’s OK, tell the student you’ll chase an answer, and ask your colleagues on Slack.
@@ -315,6 +312,10 @@ Thanks for joining us at the first Solana Professional Developer Training! 🎉 
 🤝 Know any colleagues that need Solana training? Know any meetup groups in NYC that need Solana speakers? Let us know by replying to this email and we'll get in contact.
 
 📱 Follow [@solana_devs on X](https://x.com/solana_devs) to stay updated with the latest information about the Solana ecosystem.
+
+💼 Check out [Solana Jobs](https://jobs.solana.com/jobs) to get hired.
+
+🏟️ Check out [Colosseum](https://www.colosseum.org/hackathon) to learn about upcoming Hackathons/
 
 📫 If you have any feedback, you are always welcome to share it directly with me!
 
