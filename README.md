@@ -38,7 +38,7 @@ Many existing Solana courses are slowed down by issues that have nothing to do w
 
 ## Training Offering:
 
-3 days full time in-classroom training. We will likely expand this in future.
+**18 hours** (3 days full time) in-classroom training. We will likely expand this in future.
 
 **Audience**: aimed at anyone proficient in Typescript, that wants to learn blockchain.
 
