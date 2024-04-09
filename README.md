@@ -195,7 +195,7 @@ Google Maps link: [https://maps.google.com]
 
 - Please have nodejs 18 or 20 installed prior to the event
 
-- Please have Telegram messenger on your laptop - we’re going to be interacting with each other on devnet and be using this to send wallet addresses around!
+- FOR CLASSROOM TRAINING ONLY (ZOOM HAS ZOOM CHAT) Please have Telegram messenger on your laptop - we’re going to be interacting with each other on devnet and be using this to send wallet addresses around!
 
 You don't need to know Rust, and no previous experience of cryptography or blockchain is needed.
 
