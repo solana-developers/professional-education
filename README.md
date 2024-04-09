@@ -113,12 +113,12 @@ Projectors are generally preferable to monitors as the text size is larger.
 - X/Twitter
   - This should be an ongoing promotion, sent from your own account. Use emojis and get retweets from major ecosystem accounts
 - Marketing will help
-  - Offline https://twitter.com/getofflinexyz
+  - [Offline](https://twitter.com/getofflinexyz)
   - NYU Computer Science
   - Solana NYC Alliance
-  - Solana U (Dana DaGenius)
-  - NY Tech Alliance
-  - NY Baddies in Tech
+  - [Solana U](https://www.solanau.org/)
+  - [NY Tech Alliance](https://www.nytech.org/)
+  - NY [Baddies in Tech](https://www.baddiesintech.com/)
   - Other Blockchain groups
   - Local community groups
 - Paid ads possibly, but we didn't last time.
