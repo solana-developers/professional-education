@@ -127,14 +127,15 @@ Projectors are generally preferable to monitors as the text size is larger.
 - X/Twitter
   - This should be an ongoing promotion, sent from your own account. Use emojis and get retweets from major ecosystem accounts
 - Marketing will help
-  - [Offline](https://twitter.com/getofflinexyz)
-  - NYU Computer Science
-  - Solana NYC Alliance
+
+  - [Offline](https://twitter.com/getofflinexyz) (formerly Solana NYC Alliance)
   - [Solana U](https://www.solanau.org/)
   - [NY Tech Alliance](https://www.nytech.org/)
   - NY [Baddies in Tech](https://www.baddiesintech.com/)
+  - NYU Computer Science
   - Other Blockchain groups
   - Local community groups
+
 - Paid ads possibly, but we didn't last time.
   - A good strategy with paid engagement is to try a few organic posts and use paid engagement as a force-multiplier for the posts that organically get popular. Eg, try five pieces of content, pick the one that performs the best after a 24 hours, and put a budget behind it for paid engagement.
 
