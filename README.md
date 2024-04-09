@@ -241,9 +241,9 @@ The day of the event it’s unlikely you will have time for room setup. Students
 
 #### Training
 
-In order to put your Mac into a mode where
+In order to put your Mac into a mode where:
 
-- Keynote shows instructor notes, current slide and the next slide
+- Keynote shows current slide, plus instructor notes, and the next slide
 - The TV shows the current slide
 
 You need to set display settings in your Mac. **This is not as obvious as it sounds.**
@@ -257,7 +257,7 @@ Common causes of students having troubles with the labs:
 
 - Students with an out of date node.js There’s a node version check in the slides for this reason. Anything less than node 18 was at the time of writing unsupported by node.js maintainers. Running an out of date version will give you errors about strange characters like (`||=`) when reading random files.
 - Students inconsistently moving between spellings of ‘favorites’ / ‘favourites’ during the Anchor lab.
-- Editors other than VScode are fine, but you can use your own vscode /Rust Analyzer setup to work out why code doesn’t work
+- Editors other than VScode are fine, but you can use your own vscode / Rust Analyzer setup to work out why code doesn’t work
 - If you’re really stuck about why a student’s code doesn’t work you can also paste over the answer and look at the differences in your git client.
 - If you don’t know the answer to a question, that’s OK, tell the student you’ll chase an answer, and ask your colleagues on Slack.
 
