@@ -179,9 +179,7 @@ Here are the details:
 
 ![⏰](https://lh7-us.googleusercontent.com/GD5IdBiR95gffnK38wJgE0fqamkKRzLAi0nKv4dND5H5Q9OYjirI-3bjV216K6_TokbRR8vhZc2Shz4nxNmY8a3D7jbow0BdN8J7KnWBsC9Yv4dp_rdsiVqRZGrTNDzuG70DBByvfo3Oj_s4OUC1rA) When: Monday March 25 - Wednesday March 27
 
-![📍](https://lh7-us.googleusercontent.com/zZyhLa8fe0rChrR_FB2oLFkJfXPWI8qcPcbjkbn8TPBjiMa86FV2SPi_w6D2VHJhY2TsO517gHaYeTj2Q6ZgqxcHPyrHxibEr5Zcl9dr7QcQn4AenC6AdZAQSbva30LIGD6st7rYUDOllZ5BeApnbQ) Where: Solana Foundation Office, 141 E Houston St NY 10002, 8th Floor.
-
-From the street, enter via the red area at the front of the building!
+![📍](https://google-maps-link) Where: (address including floor and any entrance instructions - and fix the google maps link!)
 
 Google Maps link [https://maps.app.goo.gl/aDqwxuMqshatmXra7
 
