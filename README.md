@@ -177,17 +177,15 @@ We are pleased to inform you we have accepted you to the Solana professional tra
 
 Here are the details:
 
-![⏰](https://lh7-us.googleusercontent.com/GD5IdBiR95gffnK38wJgE0fqamkKRzLAi0nKv4dND5H5Q9OYjirI-3bjV216K6_TokbRR8vhZc2Shz4nxNmY8a3D7jbow0BdN8J7KnWBsC9Yv4dp_rdsiVqRZGrTNDzuG70DBByvfo3Oj_s4OUC1rA) When: Monday March 25 - Wednesday March 27
+⏰ When: Monday March 25 - Wednesday March 27
 
-![📍](https://lh7-us.googleusercontent.com/zZyhLa8fe0rChrR_FB2oLFkJfXPWI8qcPcbjkbn8TPBjiMa86FV2SPi_w6D2VHJhY2TsO517gHaYeTj2Q6ZgqxcHPyrHxibEr5Zcl9dr7QcQn4AenC6AdZAQSbva30LIGD6st7rYUDOllZ5BeApnbQ) Where: Solana Foundation Office, 141 E Houston St NY 10002, 8th Floor.
+📍 Where: (address including floor and any entrance instructions - and fix the google maps link!)
 
-From the street, enter via the red area at the front of the building!
+Google Maps link: [https://maps.google.com]
 
-Google Maps link [https://maps.app.goo.gl/aDqwxuMqshatmXra7
+🤓 What: The training will cover the basics of cryptography, blockchain, and Solana from the ground up, with frequent hands-on labs. By the end of the boot camp, you will be able to create and transfer tokens, mint NFTs, and build on-chain applications.
 
-![🤓](https://lh7-us.googleusercontent.com/sAJ-VqDiyROhhDIlck1eVikBTsOCQvvQAWE8Acf91rYO0rzJufdwQme9CcAiV3f9qz4rAP3mYagqFWhCpAY2Rrqcnq9My_Xjq7e3x_C6HdvYubrXZ5Y9o_LP2WjITnqV1YWPODuyJHGrBILf-Fi5UQ)](https://maps.app.goo.gl/aDqwxuMqshatmXra7) What: The training will cover the basics of cryptography, blockchain, and Solana from the ground up, with frequent hands-on labs. By the end of the boot camp, you will be able to create and transfer tokens, mint NFTs, and build simple on-chain applications.
-
-![☝️](https://lh7-us.googleusercontent.com/NmO7IW00_RwxCaripQFG7H5NXrICm5zg0_sTfrtjuwVcrbaUjw_J2wC_Le5dPHPFszmsvFMYc9yRDvemesStt1FJdOSYtH313GmZ98p8j4WHhEoKnS-Xbop9Xij1WEX68QqgDU29rllOfvJZTWOOfQ) Requirements:
+☝️ Requirements:
 
 - You’ll need to be proficient in TypeScript.
 
@@ -201,9 +199,9 @@ Google Maps link [https://maps.app.goo.gl/aDqwxuMqshatmXra7
 
 You don't need to know Rust, and no previous experience of cryptography or blockchain is needed.
 
-![🥗](https://lh7-us.googleusercontent.com/4ESV7w4bDmZWYJevybGiJe0G8kbRy7UC7txtRntWj8-mPYCWNnwOzprArv6L2tmn2JZ8jZiwmEtXzJDXq7F4_cd2g4AzniyAOS_m7s_tdk3vNI9MVzc3Bjh9et1pRTi75cabQS6LSlBYykWotKN7Gw)Food: Lunch provided daily. Coffee, drink, and snacks available daily.
+🥗 Food: Lunch provided daily. Coffee, drink, and snacks available daily.
 
-![🚨](https://lh7-us.googleusercontent.com/9g3FrscmhL5-DZyYleof8aKjBXPTD0WV-EUPejYmCSz40jykwvfHaVm_WkDcfLkC_OTmEhmsUFsEeLm1I_NnEGLbusvRCym3HoIIQqaiyjUVW2fqFISJ53vNMDF7qC8f2i01DASgjlkXr1fWBs924Q)Action: Please respond to this email if you plan on attending.![🚨](https://lh7-us.googleusercontent.com/5hu0keArzmnOT_6260vRosAoRCOZCwxF3GDRDSpXk0KNxc-EQKNOPZ3cGcdNBKrtSIAhjNjbgOP4O8dRhpfyKCe3LuvgAPwh6M-nf8ebGq04QvuvjuBkDmzx2BtKjUCBZSE-ry01QH6Ugh2WFRGoag)
+🚨 Action: Please respond to this email if you plan on attending.🚨
 
 We look forward to hearing from you and congratulations on your acceptance!
 
