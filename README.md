@@ -14,7 +14,7 @@ This repo is the Solana Professional Education training. It's designed for instr
 
 ### Applicable to the widest group of potential Solana developers.
 
-The training requirements are simple: any developer with TypeScript experience. Specifically, no cryptography, blockchain or Rust experience is required. TypeScript is chosen because it the language of the JS/TS SDKs, and additionally because understanding of strictly typed languages ass
+The training requirements are simple: any developer with TypeScript experience. Specifically, no cryptography, blockchain or Rust experience is required. TypeScript is chosen because it the language of the JS/TS SDKs, and additionally because understanding of strictly typed languages is considered necessary to learn Rust.
 
 ### Low time to hello world
 
