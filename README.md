@@ -200,11 +200,11 @@ Here are the details:
 
 Google Maps link: [https://maps.google.com]
 
-🤓 What: The training will cover the basics of cryptography, blockchain, and Solana from the ground up, with frequent hands-on labs. By the end of the boot camp, you will be able to create and transfer tokens, mint NFTs, and build on-chain applications.
+🤓 What: The training will cover the basics of cryptography, blockchain, and Solana from the ground up, with frequent hands-on labs. By the end of the training, you will be able to create and transfer tokens, mint NFTs, and build on-chain applications.
 
 ☝️ Requirements:
 
-- You’ll need to be proficient in TypeScript.
+- You’ll need to be proficient in TypeScript. For example, you should understand what `Promise<Array<Item>>` means.
 
 - A laptop running macOS, Linux, or Windows.
 
