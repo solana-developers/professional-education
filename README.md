@@ -202,7 +202,7 @@ Google Maps link: [https://maps.google.com]
 
 ☝️ Requirements:
 
-- You’ll need to be proficient in TypeScript.
+- You’ll need to be proficient in TypeScript. For example, you should understand what `Promise<Array<Item>>` means.
 
 - A laptop running macOS, Linux, or Windows.
 
