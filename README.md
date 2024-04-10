@@ -16,6 +16,8 @@ This repo is the Solana Professional Education training. It's designed for instr
 
 The training requirements are simple: any developer with TypeScript experience. Specifically, no cryptography, blockchain or Rust experience is required. TypeScript is chosen because it the language of the JS/TS SDKs, and additionally because understanding of strictly typed languages is considered necessary to learn Rust.
 
+**The course is not a beginner course**. Just because the course has low prerequisities does not mean the course is only for beginners. Students will write Anchor / Rust code scratch scratch and deploy it that code to Solana devnet as part of the course.
+
 ### Low time to hello world
 
 People have a limited amount of attention and learning should be focused on the requirements for next task. Anything that isn't relevant to their next task should be removed. If the next task is sending tokens, and JSON RPC knowledge isn't required to perform this task (which it isn't) remove the JSON RPC content.
