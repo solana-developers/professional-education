@@ -4,7 +4,7 @@ This repo is the Solana Professional Education training. It's designed for instr
 
 **If you just want to learn Solana**, follow [@solana_devs on X](https://x.com/solana_devs) and we'll let you know when the next course is running in a city near you!
 
-**If you're planning on running a training event** welcome, you're in the right place! This reo has everything you need to plan and teach the course. You can also [contact Mike MacCana](mailto:mike.maccana@solana.org) for help.
+**If you're planning on running a training event** welcome, you're in the right place! This repo has everything you need to plan and teach the course. You can also [contact Mike MacCana](mailto:mike.maccana@solana.org) for help.
 
 - The [Instructor presentation](./Solana%20Professional%20Education.key). We use Keynote as there are animations in some slides.
 - The files in [`labs`](./labs) are working solutions to each lesson's labs.
