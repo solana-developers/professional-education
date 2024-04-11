@@ -66,35 +66,35 @@ The aim is to focus on the wider audience of people that want/need to build thin
 
 The below is based on 6 hour days.
 
-## Day 1:
+## Day 1
 
-Lesson 1: Intro to Cryptography
+**Lesson 1**: Intro to Cryptography
 
-Lab 1: Loading and saving keypairs
+**Lab 1**: Loading and saving keypairs
 
-Lesson 2: Read data from the network
+**Lesson 2**: Read data from the network
 
-Lab 2: Using Solana Devnet
+**Lab 2**: Using Solana Devnet
 
-Lesson 3: Run Transactions
+**Lesson 3**: Run Transactions
 
-Lab 3: Transactions and Sending SOL
+**Lab 3**: Transactions and Sending SOL
 
-## Day 2:
+## Day 2
 
-Lesson 4: The Token Program
+**Lesson 4**: The Token Program
 
-Lab 4: Making a token mint, and using it to mint tokens
+**Lab 4**: Making a token mint, and using it to mint tokens
 
-Lesson 5: Using Metaplex
+**Lesson 5**: Using Metaplex
 
-Lab 5: Create Token Metadata
+**Lab 5**: Create Token Metadata
 
-## Day 3:
+## Day 3
 
-Lesson 6: Introduction to Anchor
+**Lesson 6**: Introduction to Anchor
 
-Lab 6: Onchain programming
+**Lab 6**: Onchain programming
 
 # Event planning playbook
 
