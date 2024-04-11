@@ -28,7 +28,7 @@ We don't need to discuss the benefits of Solana. If a student is attending the c
 
 ### Students must be able to stand on their own two feet after training is over.
 
-This means we make new projects from scratch, rather than clone existing repos.
+This means students make new projects from scratch, rather than clone existing repos. It also means using the student's own computers rather than sandbox applications like Solana Playground.
 
 ### Smaller steps
 
