@@ -17,7 +17,7 @@ const tokenMintAccount = new PublicKey(
   "HNqDcFz6UNvfTZYFvZCDiV4FsZLk9umXZGaqNV6HA6TW"
 );
 
-// Subtitute in a recipient from addresses.ts
+// Substitute in your classmate's wallet address here
 const recipientAssociatedTokenAccount = new PublicKey(
   "CTjoLdEeK8rk4YWYW9ZqACyjHexbYKH3hEoagHxLVEFs"
 );

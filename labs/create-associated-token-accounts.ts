@@ -18,6 +18,7 @@ const sender = getKeypairFromEnvironment("SECRET_KEY");
 
 const mintAccount = getKeypairFromEnvironment("MINT_ACCOUNT");
 
+// Subtitute in your classmate's wallet address here
 const recipient = new PublicKey("Hxsgo2tPiu6967VUaEquk232riDKkaqK89wBvdSCgjH7");
 
 // This is also a helper function that builds and runs the transaction for us

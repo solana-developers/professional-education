@@ -35,7 +35,7 @@ const sendSolInstruction = SystemProgram.transfer({
 
 transaction.add(sendSolInstruction);
 
-const memoProgram = new PublicKey(
+const MEMO_PROGRAM = new PublicKey(
   "MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr"
 );
 
@@ -44,7 +44,7 @@ const memoText = "Hello from Solana!";
 const addMemoInstruction = new TransactionInstruction({
   keys: [{ pubkey: sender.publicKey, isSigner: true, isWritable: true }],
   data: Buffer.from(memoText, "utf-8"),
-  programId: memoProgram,
+  programId: MEMO_PROGRAM,
 });
 
 console.log(`📝 memo is ${memoText}...`);
