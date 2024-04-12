@@ -60,14 +60,6 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      # Can be used for debugging if needed
-      # https://github.com/marketplace/actions/debugging-with-ssh
-      - name: Setup upterm session
-        uses: lhotari/action-upterm@v1
-        with:
-          limit-access-to-actor: true
-          limit-access-to-users: mikemaccana
-
       - name: Check 'Favorites' program compiles and passes tests
         run: |
           cd labs/programs/favorites
