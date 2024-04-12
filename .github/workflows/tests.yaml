@@ -57,8 +57,12 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
+      # TODO: clean up PATH hacks after I work out why GITHUB_PATH does not work
       - name: Check a blank Anchor project runs without warnings or errors
         run: |
+          echo $PATH
+          export PATH="~/.avm/bin:$PATH"
+          export PATH="~/.local/share/solana/install/active_release/bin:$PATH"
           anchor init project
           cd project
           anchor build
