@@ -31,8 +31,9 @@ jobs:
           export PATH="~/.local/share/solana/install/active_release/bin:$PATH"
 
       - name: Install Rust
+        # https://stackoverflow.com/questions/57251508/run-rustups-curl-fetched-installer-script-non-interactively
         run: |
-          curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+          curl https://sh.rustup.rs -sSf | sh -s -- -y
 
       # https://docs.github.com/en/actions/using-workflows/caching-dependencies-to-speed-up-workflows
       # "On a cache miss, the action automatically creates a new cache if the job completes successfully."
