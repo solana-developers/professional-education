@@ -24,17 +24,36 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+
       - name: Install Solana
-        run: sh -c "$(curl -sSfL https://release.solana.com/stable/install)"
+        run: |
+          sh -c "$(curl -sSfL https://release.solana.com/stable/install)"
+          export PATH="~/.local/share/solana/install/active_release/bin:$PATH"
+
       - name: Install Rust
-        run: \
-          curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh;
+        run: |
+          curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
       - name: Install Anchor
-        run:
-          cargo install --git https://github.com/coral-xyz/anchor avm --locked --force;
-          avm install latest;
+        run: |
+          cargo install --git https://github.com/coral-xyz/anchor avm --locked --force
+          avm install latest
           avm use latest
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      # Can be used for debugging if needed
+      # https://github.com/marketplace/actions/debugging-with-ssh
+      - name: Setup upterm session
+        uses: lhotari/action-upterm@v1
+        with:
+          limit-access-to-actor: true
+          limit-access-to-users: mikemaccana
+
       - name: Check 'Favorites' program compiles and passes tests
-        run: \
-          cd programs/favorites;
-          anchor test;
+        run: |
+          cd labs/programs/favorites
+          anchor test
