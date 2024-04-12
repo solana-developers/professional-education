@@ -1,0 +1,41 @@
+# From https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs#using-the-nodejs-starter-workflow
+name: Node.js CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    env:
+      # Program locations are not a secret so don't
+      # worry about including them in this file
+      METAPLEX_TOKEN_METADATA_PROGRAM_ADDRESS: "metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s"
+      # We skip certain network-using tests on GitHub
+      ON_GITHUB: "true"
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Solana
+        run: sh -c "$(curl -sSfL https://release.solana.com/stable/install)"
+          export PATH="~/.local/share/solana/install/active_release/bin:$PATH"
+      - name: Install Rust
+        run: \
+          curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+      - name: Install Anchor
+        run:
+          cargo install --git https://github.com/coral-xyz/anchor avm --locked --force
+          avm install latest
+          avm use latest
+      - name: Check 'Favorites' program compiles and passes tests
+        run: \
+          cd programs/favorites
+          anchor test
