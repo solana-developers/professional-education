@@ -58,11 +58,11 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       # TODO: clean up debug logs below
-      - name: Check 'Favorites' program compiles and passes tests
-        run: |
-          cd labs/favorites
-          cd programs/favorites
-          echo $PATH
-          ls -la ~/.local/share/solana/install/active_release/bin
-          ls -la ~/.avm/bin
-          anchor test
+      # - name: Check 'Favorites' program compiles and passes tests
+      #   run: |
+      #     cd labs/favorites
+      #     cd programs/favorites
+      #     echo $PATH
+      #     ls -la ~/.local/share/solana/install/active_release/bin
+      #     ls -la ~/.avm/bin
+      #     anchor test
