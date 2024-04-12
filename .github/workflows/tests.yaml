@@ -34,6 +34,20 @@ jobs:
         run: |
           curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
+      # https://docs.github.com/en/actions/using-workflows/caching-dependencies-to-speed-up-workflows
+      # "On a cache miss, the action automatically creates a new cache if the job completes successfully."
+      # From Rust example at https://github.com/actions/cache/tree/main
+      - name: Restore Rust dependencies from Cache if possible
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.cargo/bin/
+            ~/.cargo/registry/index/
+            ~/.cargo/registry/cache/
+            ~/.cargo/git/db/
+            target/
+          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+
       - name: Install Anchor
         run: |
           cargo install --git https://github.com/coral-xyz/anchor avm --locked --force
