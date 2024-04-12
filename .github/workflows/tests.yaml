@@ -61,7 +61,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      # - name: Check 'Favorites' program compiles and passes tests
-      #   run: |
-      #     cd labs/programs/favorites
-      #     anchor test
+      - name: Check 'Favorites' program compiles and passes tests
+        run: |
+          cd labs/favorites
+          cd programs/favorites
+          anchor test
