@@ -54,6 +54,7 @@ jobs:
           cargo install --git https://github.com/coral-xyz/anchor avm --locked --force
           avm install latest
           avm use latest
+          export PATH="~/.avm/bin:$PATH"
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
