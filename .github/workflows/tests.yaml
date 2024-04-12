@@ -57,9 +57,9 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Check a blank project runs without warnings or errors
+      - name: Check a blank Anchor project runs without warnings or errors
         run: |
-          anchor init blank-project
-          cd blank-project
+          anchor init project
+          cd project
           anchor build
           anchor test
