@@ -14,7 +14,7 @@ The training covers cryptography fundamentals, blockchain, and Solana from the g
 
 [Aims of the training](#aims-of-the-training)
 
-[Training Offering:](#training-offering:)
+[Training Offering:](#training-offering)
 
 [Agenda](#agenda)
 

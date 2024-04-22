@@ -32,9 +32,12 @@ const headingToLink = (markdownHeading: string) => {
   const heading = markdownHeading.slice(HEADING_LEVEL + 1);
 
   // replace all the spaces with a dash
-  // and remove any commas
-  // @ts-ignore - replaceAll is not recognized
-  const link = heading.toLowerCase().replaceAll(/ /g, "-").replaceAll(/,/g, "");
+  // and remove any commas or colons
+  const link = heading
+    .toLowerCase()
+    // @ts-ignore - replaceAll is not recognized
+    .replaceAll(/ /g, "-")
+    .replaceAll(/[,:]/g, "");
 
   return `[${heading}](#${link})`;
 };
