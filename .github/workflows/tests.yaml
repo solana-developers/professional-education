@@ -42,7 +42,7 @@ jobs:
       # "On a cache miss, the action automatically creates a new cache if the job completes successfully."
       # From Rust example at https://github.com/actions/cache/tree/main
       - name: Restore Rust dependencies from Cache if possible
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             ~/.cargo
