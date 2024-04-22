@@ -16,7 +16,12 @@ jobs:
         node-version: [20.x]
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
 
       - name: Install Solana CLI
         run: |
@@ -59,11 +64,6 @@ jobs:
       - name: Check path again
         run: |
           echo $PATH
-
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
 
       # TODO: clean up PATH hacks after I work out why GITHUB_PATH does not work
       - name: Check a blank Anchor project runs without warnings or errors
