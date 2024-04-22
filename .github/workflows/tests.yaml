@@ -68,6 +68,7 @@ jobs:
           rustc -V
           anchor -V
           cargo --list
+          cargo search cargo-build-sbf
 
       - name: Create a blank Anchor project
         run: |
