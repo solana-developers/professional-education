@@ -12,6 +12,14 @@ The training covers cryptography fundamentals, blockchain, and Solana from the g
 - The files in [`labs`](./labs) are working solutions to each lesson's labs.
 - This README file is a playbook of how to run a training event.
 
+[Aims of the training](#aims-of-the-training)
+
+[Training Offering:](#training-offering:)
+
+[Agenda](#agenda)
+
+[Event planning playbook](#event-planning-playbook)
+
 ## Aims of the training
 
 ### Applicable to the widest group of potential Solana developers.
@@ -64,11 +72,11 @@ The aim is to focus on the wider audience of people that want/need to build thin
 
 ​ 1 x Marketing (promotion to external teams)
 
-# Agenda
+## Agenda
 
 The below is based on 6 hour days.
 
-## Day 1
+### Day 1
 
 **Lesson 1**: Intro to Cryptography
 
@@ -82,7 +90,7 @@ The below is based on 6 hour days.
 
 **Lab 3**: Transactions and Sending SOL
 
-## Day 2
+### Day 2
 
 **Lesson 4**: The Token Program
 
@@ -92,13 +100,13 @@ The below is based on 6 hour days.
 
 **Lab 5**: Create Token Metadata
 
-## Day 3
+### Day 3
 
 **Lesson 6**: Introduction to Anchor
 
 **Lab 6**: Onchain programming
 
-# Event planning playbook
+## Event planning playbook
 
 ### Beginning of lead time (see above)
 
@@ -278,13 +286,13 @@ The day of the event it’s unlikely you will have time for room setup. Students
 - TV/projector
 - Whiteboard, eraser, markers.
 
-#### Morning of event
+### Morning of event
 
 - **You will have little or no time in the hour before the event.** Someone will inevitably arrive early. Don’t leave anything to the last minute if you can.
 - Write: wifi name on the whiteboard - people will arrive late, let them know Wifi password. Don’t use a slide for this, or you’ll forever be jumping back and forth to the slide with the WiFi details.
 - As people arrive, greet them and let them know about Breakfast
 
-#### Training
+### Training days
 
 In order to put your Mac into a mode where:
 
@@ -306,7 +314,7 @@ Common causes of students having troubles with the labs:
 - If you’re really stuck about why a student’s code doesn’t work you can also paste over the answer and look at the differences in your git client.
 - If you don’t know the answer to a question, that’s OK, tell the student you’ll chase an answer, and ask your colleagues on Slack.
 
-#### Final day
+### Final day
 
 Chase up any items the students have added to the’ to be addressed’ list
 
