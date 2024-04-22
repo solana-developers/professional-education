@@ -20,7 +20,7 @@ jobs:
 
       - name: Add WHY_DOES_PATH_NOT_WORK directory to PATH
         run: |
-          echo "WHY_DOES_PATH_NOT_WORK" >> $GITHUB_PATH
+          echo "~/.local/share/solana/install/active_release/bin" >> $GITHUB_PATH
 
       - name: Check path
         run: |
