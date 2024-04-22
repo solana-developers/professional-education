@@ -18,10 +18,58 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Add WHY_DOES_PATH_NOT_WORK directory to PATH
+      - name: Install Solana CLI
+        run: |
+          sh -c "$(curl -sSfL https://release.solana.com/stable/install)"
+
+      - name: Add Solana CLI directory to PATH
         run: |
           echo "~/.local/share/solana/install/active_release/bin" >> $GITHUB_PATH
 
       - name: Check path
         run: |
           echo $PATH
+
+      - name: Install Rust
+          # https://stackoverflow.com/questions/57251508/run-rustups-curl-fetched-installer-script-non-interactively
+          run: |
+            curl https://sh.rustup.rs -sSf | sh -s -- -y
+
+      # https://docs.github.com/en/actions/using-workflows/caching-dependencies-to-speed-up-workflows
+      # "On a cache miss, the action automatically creates a new cache if the job completes successfully."
+      # From Rust example at https://github.com/actions/cache/tree/main
+      - name: Restore Rust dependencies from Cache if possible
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.cargo
+            target/
+          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
+
+      - name: Install Anchor
+        run: |
+          cargo install --git https://github.com/coral-xyz/anchor avm --locked --force
+          avm install latest
+          avm use latest
+
+      - name: Add Anchor bin directory to PATH
+        run: |
+          echo "~/.avm/bin" >> $GITHUB_PATH
+
+      - name: Check path again
+        run: |
+          echo $PATH
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      # TODO: clean up PATH hacks after I work out why GITHUB_PATH does not work
+      - name: Check a blank Anchor project runs without warnings or errors
+        run: |
+          echo $PATH
+          anchor init project
+          cd project
+          anchor build
+          anchor test
