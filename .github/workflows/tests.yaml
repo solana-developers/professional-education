@@ -31,10 +31,6 @@ jobs:
         run: |
           echo "~/.local/share/solana/install/active_release/bin" >> $GITHUB_PATH
 
-      - name: Check path
-        run: |
-          echo $PATH
-
       - name: Install Rust
         # https://stackoverflow.com/questions/57251508/run-rustups-curl-fetched-installer-script-non-interactively
         run: |
@@ -61,15 +57,33 @@ jobs:
         run: |
           echo "~/.avm/bin" >> $GITHUB_PATH
 
-      - name: Check path again
+      # git will keep outputting:
+      #   hint: Using 'master' as the name for the initial branch. This default branch name
+      #   hint: is subject to change.
+      # Unless we set this.
+      - name: Set a default branch name for git
         run: |
-          echo $PATH
+          git config --global init.defaultBranch main
 
-      # TODO: clean up PATH hacks after I work out why GITHUB_PATH does not work
-      - name: Check a blank Anchor project runs without warnings or errors
+      - name: Check versions
         run: |
           echo $PATH
+          solana -V
+          rustc -V
+          anchor _V
+          cargo --list
+
+      - name: Create a blank Anchor project
+        run: |
           anchor init project
+
+      - name: Fix missing license warning
+        run: |
+          cd project
+          jq -i '.LICENSE = "UNLICENSED"' package.json
+
+      - name: Run anchor build
+        run: |
           cd project
           anchor build
           anchor test
