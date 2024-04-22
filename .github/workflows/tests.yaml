@@ -87,5 +87,9 @@ jobs:
       - name: Run anchor build
         run: |
           cd project
-          anchor build
-          anchor test
+          anchor build >> log.txt
+
+      - name: Run anchor test
+        run: |
+          cd project
+          anchor test >> log.txt
