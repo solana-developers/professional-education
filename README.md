@@ -122,7 +122,11 @@ Projectors are generally preferable to monitors as the text size is larger.
 
 #### Luma page up
 
-##### Description:
+Create the Luma page by following these steps:
+
+##### Description
+
+From a previous event, update accordingly based on your organization and location!
 
 > ​​The Solana Foundation is inviting developers to a 4-day Solana professional training session.
 
@@ -141,7 +145,7 @@ Projectors are generally preferable to monitors as the text size is larger.
 
 > We're expecting a large demand for this course, so we've added a few questions during registration. Registering does not guarantee acceptance into the training. If you're accepted we'll see you there!
 
-See previous events: May 28 2023 https://lu.ma/850szocc, Mar 25 2023 https://lu.ma/ah0v9gwb
+See previous events: [May 28 2023](https://lu.ma/850szocc), [Mar 25 2023](https://lu.ma/ah0v9gwb)
 
 #### Options
 
