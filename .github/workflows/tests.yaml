@@ -70,7 +70,7 @@ jobs:
           echo $PATH
           solana -V
           rustc -V
-          anchor _V
+          anchor -V
           cargo --list
 
       - name: Create a blank Anchor project
