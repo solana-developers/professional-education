@@ -93,3 +93,9 @@ jobs:
         run: |
           cd project
           anchor test >> log.txt
+
+      - name: Check log for errors
+        run: |
+          cd project
+          cat log.txt
+          cat deleteme.txt| grep -qEv 'error|warn'
