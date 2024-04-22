@@ -79,6 +79,11 @@ jobs:
           jq '.LICENSE = "UNLICENSED"' package.json > fixed-package.json
           mv fixed-package.json package.json
 
+      - name: Fix unused variable warning
+        run: |
+          cd project
+          sed -i 's/ctx/_context/' programs/project/src/lib.rs
+
       - name: Run anchor build
         run: |
           cd project
