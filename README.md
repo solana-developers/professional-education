@@ -122,9 +122,39 @@ Projectors are generally preferable to monitors as the text size is larger.
 
 #### Luma page up
 
-- See previous event https://lu.ma/ah0v9gwb
-- Set Luma so only registered guests can see the precise location (this stops unregistered guests from showing up)
-- Set limit to 3x attendees (eg, 45 people) due to flakiness
+##### Description:
+
+> ​​The Solana Foundation is inviting developers to a 4-day Solana professional training session.
+
+> The training covers cryptography fundamentals, blockchain, and Solana from the ground up, with frequent hands-on labs. By the end of the bootcamp, attendees will be able to create and transfer tokens, mint NFTs, and build on-chain applications on Solana, the fastest, cheapest, and most scalable blockchain.
+>
+> The training is aimed at any existing web developer. You'll need to know TypeScript, but you don't need prior cryptography or blockchain experience.
+>
+> This training is free of charge.
+>
+> Lunch is provided daily.
+>
+> Requirements:
+>
+> - Proficient in TypeScript
+> - This is a hands on course, so you'll need a laptop. A Mac or Linux laptop, Windows is fine too but you must have WSL2 and Microsoft Terminal installed.
+
+> We're expecting a large demand for this course, so we've added a few questions during registration. Registering does not guarantee acceptance into the training. If you're accepted we'll see you there!
+
+See previous events: May 28 2023 https://lu.ma/850szocc, Mar 25 2023 https://lu.ma/ah0v9gwb
+
+#### Options
+
+Tickets: free
+Require Approval: yes
+Capacity: 3x attendees (eg, if you want 15 people, limit the event to 45 people) due to flakiness
+
+#### Before you publicise the event
+
+- In 'Overview', click 'Edit Event', scrll all the way down, and set 'Restrict Location to Guests' (this stops unregistered guests from showing up)
+- Click 'Registration' add a checkbox question:
+  - 'I can commit to all 4 days of training, 10AM to 4PM'
+  - 'I have a laptop running macOS, Linux, or Windows (Windows must have WSL2 and Microsoft Terminal)'
 
 #### Begin Promotion:
 
