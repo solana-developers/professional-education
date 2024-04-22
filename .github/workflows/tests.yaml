@@ -80,7 +80,8 @@ jobs:
       - name: Fix missing license warning
         run: |
           cd project
-          jq -i '.LICENSE = "UNLICENSED"' package.json
+          jq '.LICENSE = "UNLICENSED"' package.json > fixed-package.json
+          mv fixed-package.json package.json
 
       - name: Run anchor build
         run: |
