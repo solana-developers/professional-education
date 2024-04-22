@@ -32,6 +32,12 @@ jobs:
         run: |
           curl https://sh.rustup.rs -sSf | sh -s -- -y
 
+      - name: Install Anchor
+        run: |
+          cargo install --git https://github.com/coral-xyz/anchor avm --locked --force
+          avm install latest
+          avm use latest
+
       # https://docs.github.com/en/actions/using-workflows/caching-dependencies-to-speed-up-workflows
       # "On a cache miss, the action automatically creates a new cache if the job completes successfully."
       # From Rust example at https://github.com/actions/cache/tree/main
@@ -42,12 +48,6 @@ jobs:
             ~/.cargo
             target/
           key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
-
-      - name: Install Anchor
-        run: |
-          cargo install --git https://github.com/coral-xyz/anchor avm --locked --force
-          avm install latest
-          avm use latest
 
       - name: Add Anchor bin directory to PATH
         run: |
