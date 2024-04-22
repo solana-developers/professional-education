@@ -31,9 +31,9 @@ jobs:
           echo $PATH
 
       - name: Install Rust
-          # https://stackoverflow.com/questions/57251508/run-rustups-curl-fetched-installer-script-non-interactively
-          run: |
-            curl https://sh.rustup.rs -sSf | sh -s -- -y
+        # https://stackoverflow.com/questions/57251508/run-rustups-curl-fetched-installer-script-non-interactively
+        run: |
+          curl https://sh.rustup.rs -sSf | sh -s -- -y
 
       # https://docs.github.com/en/actions/using-workflows/caching-dependencies-to-speed-up-workflows
       # "On a cache miss, the action automatically creates a new cache if the job completes successfully."
