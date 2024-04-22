@@ -19,9 +19,9 @@ jobs:
         with:
           node-version: 20.x
 
-      - name: Install Solana CLI
+      - name: Install Solana CLI (beta)
         run: |
-          sh -c "$(curl -sSfL https://release.solana.com/stable/install)"
+          sh -c "$(curl -sSfL https://release.solana.com/beta/install)"
 
       - name: Add Solana CLI directory to PATH
         run: |
