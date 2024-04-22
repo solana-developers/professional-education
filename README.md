@@ -8,7 +8,7 @@ The training covers the cryptography fundamentals, blockchain, and Solana from t
 
 **If you're planning on running a training event** welcome, you're in the right place! This repo has everything you need to plan and teach the course. You can also [contact Mike MacCana](mailto:mike.maccana@solana.org) for help.
 
-- The [Instructor presentation](./Solana%20Professional%20Education.key). We use Keynote as there are animations in some slides.
+- The [Instructor presentation](./Solana%20Professional%20Education.key). We use Keynote as there are animations in some slides, and other presentation tools don't have magic move.
 - The files in [`labs`](./labs) are working solutions to each lesson's labs.
 - This README file is a playbook of how to run a training event.
 
