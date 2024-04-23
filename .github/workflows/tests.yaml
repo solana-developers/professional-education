@@ -70,6 +70,7 @@ jobs:
           cargo search cargo-build-sbf
           cargo install --list
           ls -la ~/.local/share/solana/install/active_release/bin
+          lsb_release -a
 
       - name: Create a blank Anchor project
         run: |
