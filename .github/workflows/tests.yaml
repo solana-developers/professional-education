@@ -63,6 +63,9 @@ jobs:
         run: |
           git config --global init.defaultBranch main
 
+      # TODO: add
+      # cargo build-sbf --version
+      # but that is missing for some reason
       - name: Check versions
         run: |
           echo $PATH
@@ -71,7 +74,7 @@ jobs:
           anchor -V
           cargo --list
           cargo search cargo-build-sbf
-          cargo build-sbf --version
+          which cargo-build-sbf
 
       - name: Create a blank Anchor project
         run: |
