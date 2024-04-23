@@ -62,7 +62,7 @@ jobs:
       # but that is missing for some reason
       - name: Check versions
         run: |
-          echo $PATH
+          echo $PATH | tr ':' '\n' | sort
           solana -V
           rustc -V
           anchor -V
