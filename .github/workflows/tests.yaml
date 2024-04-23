@@ -47,7 +47,7 @@ jobs:
           cargo install --git https://github.com/coral-xyz/anchor avm --locked
           avm install latest
           avm use latest
-          echo "~/.avm/bin" >> $GITHUB_PATH
+          echo "/home/runner/.avm/bin" >> $GITHUB_PATH
 
       # git will keep outputting:
       #   hint: Using 'master' as the name for the initial branch. This default branch name
@@ -57,20 +57,18 @@ jobs:
         run: |
           git config --global init.defaultBranch main
 
-      # TODO: add
-      # cargo build-sbf --version
-      # but that is missing for some reason
-      - name: Check versions
+      - name: Print versions and debugging info
         run: |
-          echo $PATH | tr ':' '\n' | sort
-          solana -V
-          rustc -V
-          anchor -V
-          cargo --list --verbose
-          cargo search cargo-build-sbf
-          cargo install --list
-          ls -la /home/runner/.local/share/solana/install/active_release/bin
+          echo Linux version:
           lsb_release -a
+          echo Solana version:
+          solana -V
+          echo Anchor version:
+          anchor -V
+          echo build-sbf version:
+          cargo build-sbf --version
+          echo Path:
+          echo $PATH | tr ':' '\n' | sort
 
       - name: Create a blank Anchor project
         run: |
@@ -87,14 +85,18 @@ jobs:
           cd project
           sed -i 's/ctx/_context/' programs/project/src/lib.rs
 
+      # TODO: fixes:
+      #   error: package `solana-program v1.18.11` cannot be built because it requires rustc 1.75.0 or newer, while the currently active rustc version is 1.72.0-dev
+      # should not be necessary
       - name: Run anchor build
         run: |
           cd project
-          echo $PATH | tr ':' '\n' | sort
-          ls -la /home/runner/.local/share/solana/install/active_release/bin
-          cargo --list --verbose
-          cargo-build-bpf
-          anchor build
+          cargo add solana-program@"=1.17"
+
+      - name: Run anchor build
+        run: |
+          cd project
+          anchor build >> log.txt
 
       - name: Run anchor test
         run: |
