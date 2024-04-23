@@ -93,7 +93,8 @@ jobs:
           echo $PATH | tr ':' '\n' | sort
           ls -la /home/runner/.local/share/solana/install/active_release/bin
           cargo --list --verbose
-          anchor build >> log.txt
+          cargo-build-bpf
+          anchor build
 
       - name: Run anchor test
         run: |
