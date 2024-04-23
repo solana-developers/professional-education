@@ -71,6 +71,7 @@ jobs:
           anchor -V
           cargo --list
           cargo search cargo-build-sbf
+          cargo build-sbf --version
 
       - name: Create a blank Anchor project
         run: |
