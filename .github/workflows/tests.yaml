@@ -66,7 +66,7 @@ jobs:
           solana -V
           rustc -V
           anchor -V
-          cargo --list
+          cargo --list --verbose
           cargo search cargo-build-sbf
           cargo install --list
           ls -la ~/.local/share/solana/install/active_release/bin
@@ -89,6 +89,9 @@ jobs:
       - name: Run anchor build
         run: |
           cd project
+          echo $PATH | tr ':' '\n' | sort
+          ls -la ~/.local/share/solana/install/active_release/bin
+          cargo --list --verbose
           anchor build >> log.txt
 
       - name: Run anchor test
