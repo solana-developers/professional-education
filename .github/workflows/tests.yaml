@@ -38,7 +38,7 @@ jobs:
       - name: Install Solana CLI (beta, required to fix 'ahash' issue)
         run: |
           sh -c "$(curl -sSfL https://release.solana.com/beta/install)"
-          echo "~/.local/share/solana/install/active_release/bin" >> $GITHUB_PATH
+          echo "/home/runner/.local/share/solana/install/active_release/bin" >> $GITHUB_PATH
 
       # Remove '--force Force overwriting existing crates or binaries'
       # As we want to use the cache if possible
@@ -69,7 +69,7 @@ jobs:
           cargo --list --verbose
           cargo search cargo-build-sbf
           cargo install --list
-          ls -la ~/.local/share/solana/install/active_release/bin
+          ls -la /home/runner/.local/share/solana/install/active_release/bin
           lsb_release -a
 
       - name: Create a blank Anchor project
@@ -91,7 +91,7 @@ jobs:
         run: |
           cd project
           echo $PATH | tr ':' '\n' | sort
-          ls -la ~/.local/share/solana/install/active_release/bin
+          ls -la /home/runner/.local/share/solana/install/active_release/bin
           cargo --list --verbose
           anchor build >> log.txt
 
