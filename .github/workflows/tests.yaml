@@ -19,7 +19,7 @@ jobs:
         with:
           node-version: 20.x
 
-      - name: Install Solana CLI (beta)
+      - name: Install Solana CLI (beta, required to fix 'ahash' issue)
         run: |
           sh -c "$(curl -sSfL https://release.solana.com/beta/install)"
 
