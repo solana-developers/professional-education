@@ -19,19 +19,6 @@ jobs:
         with:
           node-version: 20.x
 
-      - name: Install Solana CLI (beta, required to fix 'ahash' issue)
-        run: |
-          sh -c "$(curl -sSfL https://release.solana.com/beta/install)"
-
-      - name: Add Solana CLI directory to PATH
-        run: |
-          echo "~/.local/share/solana/install/active_release/bin" >> $GITHUB_PATH
-
-      - name: Install Rust
-        # https://stackoverflow.com/questions/57251508/run-rustups-curl-fetched-installer-script-non-interactively
-        run: |
-          curl https://sh.rustup.rs -sSf | sh -s -- -y
-
       # https://docs.github.com/en/actions/using-workflows/caching-dependencies-to-speed-up-workflows
       # "On a cache miss, the action automatically creates a new cache if the job completes successfully."
       # From Rust example at https://github.com/actions/cache/tree/main
@@ -43,6 +30,16 @@ jobs:
             target/
           key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
 
+      - name: Install Rust
+        # https://stackoverflow.com/questions/57251508/run-rustups-curl-fetched-installer-script-non-interactively
+        run: |
+          curl https://sh.rustup.rs -sSf | sh -s -- -y
+
+      - name: Install Solana CLI (beta, required to fix 'ahash' issue)
+        run: |
+          sh -c "$(curl -sSfL https://release.solana.com/beta/install)"
+          echo "~/.local/share/solana/install/active_release/bin" >> $GITHUB_PATH
+
       # Remove '--force Force overwriting existing crates or binaries'
       # As we want to use the cache if possible
       - name: Install Anchor
@@ -50,9 +47,6 @@ jobs:
           cargo install --git https://github.com/coral-xyz/anchor avm --locked
           avm install latest
           avm use latest
-
-      - name: Add Anchor bin directory to PATH
-        run: |
           echo "~/.avm/bin" >> $GITHUB_PATH
 
       # git will keep outputting:
