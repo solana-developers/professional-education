@@ -99,7 +99,7 @@ jobs:
       # TODO: fixes:
       #   error: package `solana-program v1.18.11` cannot be built because it requires rustc 1.75.0 or newer, while the currently active rustc version is 1.72.0-dev
       # should not be necessary
-      - name: Run anchor build
+      - name: Fix 'cannot be built' warning
         run: |
           cd project
           cargo add solana-program@"=1.17"
