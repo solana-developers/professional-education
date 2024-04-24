@@ -78,15 +78,15 @@ jobs:
       - name: Run anchor build
         run: |
           cd project
-          anchor build &> log.txt
+          anchor build 2>&1 | tee -a build.log
 
       - name: Run anchor test
         run: |
           cd project
-          anchor test &> log.txt
+          anchor test 2>&1 | tee -a build.log
 
       - name: Check log for errors
         run: |
           cd project
-          cat log.txt
-          cat log.txt | grep -qEv 'error|warn'
+          cat build.log
+          cat build.log | grep -qEv 'error|warn'
