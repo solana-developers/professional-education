@@ -78,12 +78,12 @@ jobs:
       - name: Run anchor build
         run: |
           cd project
-          anchor build >> log.txt
+          anchor build &> log.txt
 
       - name: Run anchor test
         run: |
           cd project
-          anchor test >> log.txt
+          anchor test &> log.txt
 
       - name: Check log for errors
         run: |
