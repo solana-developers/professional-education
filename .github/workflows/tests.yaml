@@ -13,7 +13,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - uses: metadaoproject/setup-anchor@v1.2
+      - uses: metadaoproject/setup-anchor@v2
         with:
           anchor-version: "0.30.0"
           # Install Solana CLI (beta, required to fix 'ahash' issue)
