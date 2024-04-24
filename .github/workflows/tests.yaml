@@ -84,6 +84,7 @@ jobs:
         run: |
           cd project
           anchor test &> log.txt
+          echo "warn: pretending something went wrong" &> log.txt
 
       - name: Check log for errors
         run: |
