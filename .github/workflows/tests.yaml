@@ -47,17 +47,16 @@ jobs:
 
       # TODO: fixes the following warning:
       #   warning: package `project v0.1.0 (/home/runner/work/project/project)` does not have a license
-      # should not be necessary
+      # Ideally 'npm config get init-license' should be used to set the license for new projects
       - name: Fix missing license warning
         run: |
           cd project
           jq '.LICENSE = "UNLICENSED"' package.json > fixed-package.json
           mv fixed-package.json package.json
 
-      # TODO: fixes:
+      # Fixes:
       #   Error: Unable to read keypair file
       # during 'anchor test'
-      # should not be necessary
       - name: Make a default keypair
         run: |
           solana-keygen new --no-bip39-passphrase
