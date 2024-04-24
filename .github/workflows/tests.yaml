@@ -13,19 +13,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - uses: metadaoproject/setup-solana@v1.0
+      - uses: metadaoproject/setup-anchor@v1.2
         with:
+          anchor-version: "0.30.0"
           # Install Solana CLI (beta, required to fix 'ahash' issue)
           solana-cli-version: "1.18.4"
-
-      # Remove '--force Force overwriting existing crates or binaries'
-      # As we want to use the cache if possible
-      - name: Install Anchor
-        run: |
-          cargo install --git https://github.com/coral-xyz/anchor avm --locked
-          avm install latest
-          avm use latest
-          echo "/home/runner/.avm/bin" >> $GITHUB_PATH
+          node-version: "20.12.2"
 
       # git will keep outputting:
       #   hint: Using 'master' as the name for the initial branch. This default branch name
