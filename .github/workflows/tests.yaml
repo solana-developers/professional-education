@@ -74,18 +74,9 @@ jobs:
           cd project
           cargo add solana-program@"=1.17"
 
-      - name: Run anchor build
-        run: |
-          cd project
-          anchor build 2>&1 | tee -a build.log
-
-      - name: Run anchor test
+      - name: Build and test the project
         run: |
           cd project
           anchor test 2>&1 | tee -a build.log
-
-      - name: Check log for errors
-        run: |
-          cd project
           cat build.log
           cat build.log | grep -qEv 'error|warn'
