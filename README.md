@@ -83,11 +83,13 @@ Each day session is about 2 hours - this is a rough estimate based on previous t
 #### Day 1
 
 Lesson 1: Introduction to Cryptography
+
 Lab 1: Loading and saving keypairs
 
 #### Day 2
 
 Lesson 2: Read data from the network
+
 Lab 2: Using Solana Devnet
 
 #### Day 3
@@ -98,11 +100,13 @@ Lab 3: Transactions and Sending SOL
 #### Day 4
 
 Lesson 4: Make and transfer tokens
+
 Lab 4: Making a token mint, and using it to mint tokens
 
 #### Day 5
 
 Lesson 5: Using Metaplex
+
 Lab 5: Create Token Metadata
 
 #### Day 6
