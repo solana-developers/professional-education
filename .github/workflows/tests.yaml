@@ -71,3 +71,10 @@ jobs:
           anchor test 2>&1 | tee -a build.log
           cat build.log
           cat build.log | grep -qEv 'error|warn'
+
+      - name: Test the Favorites project builds and tests pass
+        run: |
+          cd labs/favorites
+          anchor test 2>&1 | tee -a build.log
+          cat build.log
+          cat build.log | grep -qEv 'error|warn'
