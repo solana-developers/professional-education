@@ -48,9 +48,9 @@ Student drop off - which has been high even in some of the best regarded ecosyst
 
 Many existing Solana courses are slowed down by issues that have nothing to do with Solana. This is not a course in JavaScript frameworks, IIFEs (`;(async function(){})();`), or any other topic.
 
-## Training Offering:
+## Training Offering
 
-**18 hours** (3 days full time) in-classroom training. We will likely expand this in future.
+**3 days full time in-classroom**, or **10 x 2 hour remote lessons**. We will likely expand this to four 4 days / 13 lessons in future.
 
 **Audience**: aimed at anyone proficient in Typescript, that wants to learn blockchain.
 
@@ -74,9 +74,58 @@ The aim is to focus on the wider audience of people that want/need to build thin
 
 ## Agenda
 
-The below is based on 6 hour days.
+There are two variants, classroom-based and remote
 
-### Day 1
+### Remote training
+
+Each day session is about 2 hours - this is a rough estimate based on previous training sessions and changes may apply.
+
+#### Day 1
+
+Lesson 1: Introduction to Cryptography
+Lab 1: Loading and saving keypairs
+
+#### Day 2
+
+Lesson 2: Read data from the network
+Lab 2: Using Solana Devnet
+
+#### Day 3
+
+Lesson 3: Run transactions
+Lab 3: Transactions and Sending SOL
+
+#### Day 4
+
+Lesson 4: Make and transfer tokens
+Lab 4: Making a token mint, and using it to mint tokens
+
+#### Day 5
+
+Lesson 5: Using Metaplex
+Lab 5: Create Token Metadata
+
+#### Day 6
+
+Lesson 6: Introduction to Anchor
+
+#### Day 7
+
+Lab 6: Onchain programming (first part, anchor setup of a blank project)
+
+#### Day 8
+
+Lab 6: Onchain programming (creating the favourites program)
+
+#### Day 9
+
+Onchain programming (writing tests and deploying the favourites program)
+
+### Classroom-based training
+
+The below is based on 6 hour student days.
+
+#### Day 1
 
 **Lesson 1**: Intro to Cryptography
 
@@ -90,7 +139,7 @@ The below is based on 6 hour days.
 
 **Lab 3**: Transactions and Sending SOL
 
-### Day 2
+#### Day 2
 
 **Lesson 4**: The Token Program
 
@@ -100,7 +149,7 @@ The below is based on 6 hour days.
 
 **Lab 5**: Create Token Metadata
 
-### Day 3
+#### Day 3
 
 **Lesson 6**: Introduction to Anchor
 
