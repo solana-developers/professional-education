@@ -61,10 +61,13 @@ jobs:
         # should not be necessary
         run: |
           anchor init project
+          cd project
+
           jq '.LICENSE = "UNLICENSED"' package.json > fixed-package.json
           mv fixed-package.json package.json
           sed -i 's/ctx/_context/' programs/project/src/lib.rs
           cargo add solana-program@"=1.18.5"
+
           anchor test 2>&1 | tee -a build.log
           cat build.log
           cat build.log | grep -qEv 'error|warn'
