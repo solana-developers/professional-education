@@ -42,19 +42,6 @@ jobs:
           echo Path:
           echo $PATH | tr ':' '\n' | sort
 
-      - name: Create a blank Anchor project
-        run: |
-          anchor init project
-
-      # TODO: fixes the following warning:
-      #   warning: package `project v0.1.0 (/home/runner/work/project/project)` does not have a license
-      # Ideally 'npm config get init-license' should be used to set the license for new projects
-      - name: Fix missing license warning
-        run: |
-          cd project
-          jq '.LICENSE = "UNLICENSED"' package.json > fixed-package.json
-          mv fixed-package.json package.json
-
       # Fixes:
       #   Error: Unable to read keypair file
       # during 'anchor test'
@@ -62,22 +49,22 @@ jobs:
         run: |
           solana-keygen new --no-bip39-passphrase
 
-      - name: Fix unused variable warning
+      - name: Create a blank Anchor project, apply fixes, build and test it
+        # TODO: fixes the following warning:
+        #   warning: package `project v0.1.0 (/home/runner/work/project/project)` does not have a license
+        # Ideally 'npm config get init-license' should be used to set the license for new projects
+        #
+        # TODO: Fix unused variable warning
+        #
+        # TODO: fixes:
+        #   error: package `solana-program v1.18.11` cannot be built because it requires rustc 1.75.0 or newer, while the currently active rustc version is 1.72.0-dev
+        # should not be necessary
         run: |
-          cd project
+          anchor init project
+          jq '.LICENSE = "UNLICENSED"' package.json > fixed-package.json
+          mv fixed-package.json package.json
           sed -i 's/ctx/_context/' programs/project/src/lib.rs
-
-      # TODO: fixes:
-      #   error: package `solana-program v1.18.11` cannot be built because it requires rustc 1.75.0 or newer, while the currently active rustc version is 1.72.0-dev
-      # should not be necessary
-      - name: Fix 'cannot be built' warning
-        run: |
-          cd project
           cargo add solana-program@"=1.18.5"
-
-      - name: Build and test the project
-        run: |
-          cd project
           anchor test 2>&1 | tee -a build.log
           cat build.log
           cat build.log | grep -qEv 'error|warn'
