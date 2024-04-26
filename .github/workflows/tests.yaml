@@ -73,7 +73,7 @@ jobs:
       - name: Fix 'cannot be built' warning
         run: |
           cd project
-          cargo add solana-program@"=1.17"
+          cargo add solana-program@"=1.18.5"
 
       - name: Build and test the project
         run: |
