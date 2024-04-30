@@ -216,10 +216,11 @@ Capacity: 3x attendees (eg, if you want 15 people, limit the event to 45 people)
 
 #### Before you publicise the event
 
-- In 'Overview', click 'Edit Event', scrll all the way down, and set 'Restrict Location to Guests' (this stops unregistered guests from showing up)
+- In 'Overview', click 'Edit Event', scroll all the way down, and set 'Restrict Location to Guests' (this stops unregistered guests from showing up)
 - Click 'Registration' add a checkbox question:
   - 'I can commit to all 4 days of training, 10AM to 4PM'
   - 'I have a laptop running macOS, Linux, or Windows (Windows must have WSL2 and Microsoft Terminal)'
+- Click 'More', 'Event page', and set a nice slug in the Public URL `solana-training-nyc-may-28-2024`. Note: you **must** do this before publicising your event, as Luma will **not** redirect from the old URL to the new URL if you have it, which will any links to the original URL.
 
 #### Begin Promotion:
 
