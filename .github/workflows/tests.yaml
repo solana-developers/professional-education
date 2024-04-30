@@ -18,7 +18,7 @@ jobs:
         with:
           anchor-version: "latest"
           # Install Solana CLI (beta, required to fix 'ahash' issue)
-          solana-cli-version: "1.18.4"
+          solana-cli-version: "1.18.5"
           node-version: "20.12.2"
 
       # git will keep outputting:
