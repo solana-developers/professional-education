@@ -211,10 +211,14 @@ See previous events: [May 28 2023](https://lu.ma/850szocc), [Mar 25 2023](https:
 #### Options
 
 Tickets: free
+
 Require Approval: yes
+
 Capacity: 3x attendees (eg, if you want 15 people, limit the event to 45 people) due to flakiness
 
-#### Before you publicise the event
+#### ⚠️ Before you publicise the event
+
+__Note__: it will be too late to change these after you get sign ups so please do all of these.
 
 - In 'Overview', click 'Edit Event', scroll all the way down, and set 'Restrict Location to Guests' (this stops unregistered guests from showing up)
 - Click 'Registration' add a checkbox question:
