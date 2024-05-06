@@ -7,10 +7,10 @@ import {
 import { Connection, PublicKey, clusterApiUrl } from "@solana/web3.js";
 const connection = new Connection(clusterApiUrl("devnet"));
 
-const sender = getKeypairFromEnvironment("SECRET_KEY");
+const user = getKeypairFromEnvironment("SECRET_KEY");
 
 console.log(
-  `🔑 Loaded our keypair securely, using an env file! Our public key is: ${sender.publicKey.toBase58()}`
+  `🔑 Loaded our keypair securely, using an env file! Our public key is: ${user.publicKey.toBase58()}`
 );
 
 // Subtitute in your token mint account from create-token-mint.ts
@@ -23,7 +23,7 @@ const recipient = new PublicKey("Hxsgo2tPiu6967VUaEquk232riDKkaqK89wBvdSCgjH7");
 
 const tokenAccount = await getOrCreateAssociatedTokenAccount(
   connection,
-  sender,
+  user,
   tokenMintAccount,
   recipient
 );
@@ -36,4 +36,4 @@ const link = getExplorerLink(
   "devnet"
 );
 
-console.log(`✅ Created token Account: ${link}`);
+console.log(`✅ Success! Created token Account: ${link}`);
