@@ -31,8 +31,10 @@ const tokenMintAccount = new PublicKey("YOUR_TOKEN_MINT_ADDRESS_HERE");
 const metadataData = {
   name: "Solana Training Token",
   symbol: "TRAINING",
-  // Arweave / IPFS / Pinata etc link using metaplex standard for off-chain data
-  uri: "https://arweave.net/1234",
+  // An off-chain link to more information about the token using Metaplex standard for off-chain data
+  // We are using a GitHub link here, but in production this content would be hosted on an immutable storage like
+  // Arweave / IPFS / Pinata etc
+  uri: "https://raw.githubusercontent.com/solana-developers/professional-education/main/labs/sample-token-metadata.json",
   sellerFeeBasisPoints: 0,
   creators: null,
   collection: null,
