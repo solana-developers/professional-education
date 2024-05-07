@@ -14,9 +14,7 @@ console.log(
 );
 
 // Subtitute in your token mint account from create-token-mint.ts
-const tokenMintAccount = new PublicKey(
-  "HYeUCAqdsQBkqQNHRoBPov42QySDhwM7zAqiorToosbz"
-);
+const tokenMintAccount = new PublicKey("YOUR_TOKEN_MINT_ADDRESS_HERE");
 
 // Substitute in your classmate's wallet address here
 const recipient = new PublicKey("Hxsgo2tPiu6967VUaEquk232riDKkaqK89wBvdSCgjH7");
