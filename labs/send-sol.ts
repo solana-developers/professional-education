@@ -21,7 +21,8 @@ console.log(
   `🔑 Loaded our keypair securely, using an env file! Our public key is: ${sender.publicKey.toBase58()}`
 );
 
-const recipient = new PublicKey("YOUR");
+// Add the recipient public key here
+const recipient = new PublicKey("YOUR_RECIPIENT_HERE");
 
 console.log(`💸 Attempting to send 0.01 SOL to ${recipient.toBase58()}...`);
 
