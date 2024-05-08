@@ -1,5 +1,5 @@
 # From https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs#using-the-nodejs-starter-workflow
-name: Node.js CI
+name: Node.js and Solana CI
 
 on:
   push:
