@@ -1,6 +1,6 @@
 # Solana Professional Education
 
-This repo is the Solana Professional Education training. It's designed for instructors, or those thinking about running and event and/or instructing the course.
+This repo is the Solana Professional Education training. It's designed for those thinking about running an event and/or instructing the course.
 
 The training covers cryptography fundamentals, blockchain, and Solana from the ground up, with frequent hands-on labs. By the end of the training, students will be able to create and transfer tokens, mint NFTs, and build simple on-chain applications using Anchor on Rust.
 
@@ -8,7 +8,7 @@ The training covers cryptography fundamentals, blockchain, and Solana from the g
 
 **If you're planning on running a training event** welcome, you're in the right place! This repo has everything you need to plan and teach the course. You can also [contact Mike MacCana](mailto:mike.maccana@solana.org) for help.
 
-- The [Instructor presentation](./Solana%20Professional%20Education.key). We use Keynote as there are animations in some slides, and other presentation tools don't have magic move.
+- The [Instructor presentation](./Solana%20Professional%20Education.key). We use Keynote as there are animations in some slides, and other presentation tools don't have Keynote's 'magic move'. There is also a [Powerpoint Export](./Solana%20Professional%20Education%20Powerpoint%20Export.pptx)
 - The files in [`labs`](./labs) are working solutions to each lesson's labs.
 - This README file is a playbook of how to run a training event.
 
@@ -24,9 +24,9 @@ The training covers cryptography fundamentals, blockchain, and Solana from the g
 
 ### Applicable to the widest group of potential Solana developers.
 
-The training requirements are simple: any developer with TypeScript experience. Specifically, no cryptography, blockchain or Rust experience is required. TypeScript is chosen because it the language of the JS/TS SDKs, and additionally because understanding of strictly typed languages is considered necessary to learn Rust.
+The training requirements are simple: any developer with TypeScript experience. Specifically, no cryptography, blockchain, or Rust experience is required. TypeScript is chosen because it's the language of the JS/TS SDKs, and additionally because understanding strictly typed languages is considered necessary to learn Rust.
 
-**The course is not a beginner course**. Just because the course has low prerequisities does not mean the course is only for beginners. Students will write Anchor / Rust code scratch scratch and deploy it that code to Solana devnet as part of the course.
+**The course is not a beginner course**. Just because the course has low prerequisities does not mean the course is only for beginners. Students will write Anchor / Rust code from scratch, and deploy that code to Solana devnet as part of the course.
 
 ### Low time to hello world
 
@@ -42,7 +42,7 @@ This means students make new projects from scratch, rather than clone existing r
 
 ### Smaller steps
 
-Student drop off - which has been high even in some of the best regarded ecosystem training - often happens when the class moves faster than individual students and the students become so far behind the rest of the group it's impossible for them to keep up. Smaller steps allow the class to proceed as a group, allows the group to discuss each step in detail, and increases the chances of everyone gets through every exercise.
+Student drop-off - which has been high even in some of the best-regarded ecosystem training - often happens when the class moves faster than individual students and the students become so far behind the rest of the group they can't keep up. Smaller steps allow the class to proceed as a group, allow the group to discuss each step in detail, and increase the chances of everyone getting through every exercise.
 
 ### Focus on Solana
 
@@ -50,23 +50,23 @@ Many existing Solana courses are slowed down by issues that have nothing to do w
 
 ## Training Offering
 
-**3 days full time in-classroom**, or **10 x 2 hour remote lessons**. We will likely expand this to four 4 days / 13 lessons in future.
+**3 days **full-time** in-classroom**, or **10 x 2-hour remote lessons**. We will likely expand this to four 4 days / 13 lessons in the future.
 
 **Audience**: aimed at anyone proficient in Typescript, that wants to learn blockchain.
 
-The aim is to focus on the wider audience of people that want/need to build things, rather than blockchain enthusiasts or Rust programmers. Hence blockchain or cryptography knowledge is not required.
+The aim is to focus on the wider audience of people who want/need to build things, rather than blockchain enthusiasts or Rust programmers. Hence blockchain or cryptography knowledge is not required.
 
-**Student time** is 10AM to 4PM
+**Student time** is 10 AM to 4 PM.
 
-**Instructor time** is 9AM to 5PM
+**Instructor time** is 9 AM to 5 PM.
 
-**Class sizes**: generally between 10 and 15 people - you want to spend time with every student, larger class sizes get difficult to manage for a single instructor.
+**Class sizes**: generally between 10 and 15 people - you want to spend time with every student, and larger class sizes get difficult to manage for a single instructor.
 
-**Lead time**: 1 month minimum, ideally six weeks
+**Lead time**: 1-month minimum, ideally six weeks
 
 **Roles**:
 
-​ 1 x Instructor and event responsible individual
+​ 1 x Instructor and event-responsible individual
 
 ​ 1 x Onsite coordinator (student wrangling, catering, building access, equipment installation)
 
@@ -165,21 +165,19 @@ The below is based on 6 hour student days.
 
 #### Have secured budget
 
-None of this goes ahead unless there’s budget
+None of this goes ahead unless there’s a budget
 
-​ Costs will be equipment, event space, catering and merch, see below.
+​ Costs will be equipment, event space, catering, and merch, see below.
 
 #### Have secured date, venue
 
-​ Venue needs to be quiet (ie not in the middle of a loud event like a Hacker House)
+The venue needs to be quiet (ie not in the middle of a loud event like a Hacker House)
 
-Confirm seating arrangements
+Confirm seating arrangements:
 
-Desks and chairs facing instructor
-
-1 x 90 inch monitor/TVs (one closer to back) as instructor screens
-
-Projectors are generally preferable to monitors as the text size is larger.
+- Desks and chairs facing the instructor
+  1 x 90-inch monitor/TVs (one closer to back) as projector equivalents.
+- Actual projectors are generally preferable to monitors as the text size is larger.
 
 #### Luma page up
 
@@ -206,7 +204,7 @@ From a previous event, update accordingly based on your organization and locatio
 
 > We're expecting a large demand for this course, so we've added a few questions during registration. Registering does not guarantee acceptance into the training. If you're accepted we'll see you there!
 
-See previous events: [May 28 2023](https://lu.ma/850szocc), [Mar 25 2023](https://lu.ma/ah0v9gwb)
+See previous events: [May 28, 2023](https://lu.ma/850szocc), [Mar 25, 2023](https://lu.ma/ah0v9gwb)
 
 #### Options
 
@@ -216,15 +214,15 @@ Require Approval: yes
 
 Capacity: 3x attendees (eg, if you want 15 people, limit the event to 45 people) due to flakiness
 
-#### ⚠️ Before you publicise the event
+#### ⚠️ Before you publicize the event
 
-__Note__: it will be too late to change these after you get sign ups so please do all of these.
+**Note**: it will be too late to change these after you get sign-ups so please do all of these.
 
 - In 'Overview', click 'Edit Event', scroll all the way down, and set 'Restrict Location to Guests' (this stops unregistered guests from showing up)
 - Click 'Registration' add a checkbox question:
-  - 'I can commit to all 4 days of training, 10AM to 4PM'
+  - 'I can commit to all 4 days of training, 10 AM to 4 PM'
   - 'I have a laptop running macOS, Linux, or Windows (Windows must have WSL2 and Microsoft Terminal)'
-- Click 'More', 'Event page', and set a nice slug in the Public URL `solana-training-nyc-may-28-2024`. Note: you **must** do this before publicising your event, as Luma will **not** redirect from the old URL to the new URL if you have it, which will any links to the original URL.
+- Click 'More', 'Event page', and set a nice slug in the Public URL `solana-training-nyc-may-28-2024`. Note: you **must** do this before publicizing your event, as Luma will **not** redirect from the old URL to the new URL if you have it, which will break any links to the original URL.
 
 #### Begin Promotion:
 
@@ -241,13 +239,15 @@ __Note__: it will be too late to change these after you get sign ups so please d
   - Local community groups
 
 - Paid ads possibly, but we didn't last time.
-  - A good strategy with paid engagement is to try a few organic posts and use paid engagement as a force-multiplier for the posts that organically get popular. Eg, try five pieces of content, pick the one that performs the best after a 24 hours, and put a budget behind it for paid engagement.
+  - A good strategy with paid engagement is to try a few organic posts and use paid engagement as a force multiplier for the posts that organically get popular. Eg, try five pieces of content, pick the one that performs the best after 24 hours, and put a budget behind it for paid engagement.
+  - Target the geographic are for the class
+  - Target accounts that follow general JS/TS developers, rather than accounts that follow blockchain accounts.
 
 #### Equipment
 
 Tables, chairs, and monitors/projectors:
 
-Screens and keyboard/mice are not needed as students bring their own laptops
+Screens and keyboard/mice are not needed as students bring their laptops
 
 Confirm room layout, eg:
 
@@ -273,7 +273,7 @@ Your contact at Solana Foundation may be able to organize items from https://sto
 
 The purpose of this email is twofold:
 
-- Confirm attendance - the people that reply to this email are your real attendees.
+- Confirm attendance - the people who reply to this email are your real attendees.
 - Ensure nobody running Windows spends the first day configuring their laptops
 
 Luma allows you to contact attendees, but we won’t use that for this email - you’ll get a better response rate with a **personal** email that doesn’t look like spam.
@@ -298,7 +298,7 @@ Here are the details:
 
 ⏰ When: Monday March 25 - Wednesday March 27
 
-📍 Where: (address including floor and any entrance instructions - and fix the google maps link!)
+📍 Where: (address including floor and any entrance instructions - and fix the Google Maps link!)
 
 Google Maps link: [https://maps.google.com]
 
@@ -312,13 +312,13 @@ Google Maps link: [https://maps.google.com]
 
   - Windows must have WSL2 and Microsoft Terminal installed and running before the event.
 
-- Please have nodejs 18 or 20 installed prior to the event
+- Please have nodejs 18 or 20 installed before the event
 
 - FOR CLASSROOM TRAINING ONLY (ZOOM HAS ZOOM CHAT) Please have Telegram messenger on your laptop - we’re going to be interacting with each other on devnet and be using this to send wallet addresses around!
 
-You don't need to know Rust, and no previous experience of cryptography or blockchain is needed.
+You don't need to know Rust, and no previous experience in cryptography or blockchain is needed.
 
-🥗 Food: Lunch provided daily. Coffee, drink, and snacks available daily.
+🥗 Food: Lunch is provided daily. Coffee, drinks, and snacks are available daily.
 
 🚨 Action: Please respond to this email if you plan on attending.🚨
 
@@ -330,13 +330,13 @@ We look forward to hearing from you and congratulations on your acceptance!
 
 ### 3 or so days before
 
-Collect the email that replied to the ‘action required’ email and send them to your building security so attendees can access your building.
+Collect the email addresses that replied to the ‘action required’ email and send them to your building security so attendees can access your building.
 
 ### Day before event
 
 The day of the event it’s unlikely you will have time for room setup. Students will arrive before the event, and want to talk to you.
 
-9AM: Room setup.
+9 AM: Room setup.
 
 - Chairs
 - Desks
@@ -347,26 +347,36 @@ The day of the event it’s unlikely you will have time for room setup. Students
 ### Morning of event
 
 - **You will have little or no time in the hour before the event.** Someone will inevitably arrive early. Don’t leave anything to the last minute if you can.
-- Write: wifi name on the whiteboard - people will arrive late, let them know Wifi password. Don’t use a slide for this, or you’ll forever be jumping back and forth to the slide with the WiFi details.
+- Write the wifi name on the whiteboard - people will arrive late, let them know Wifi password. Don’t use a slide for this, or you’ll forever be jumping back and forth to the slide with the WiFi details.
 - As people arrive, greet them and let them know about Breakfast
+
+### Delivering content remotely
+
+big gestures
+zoom,
+not monotone, joke around
+
+vary tempo
+
+change tonality and tempo
 
 ### Training days
 
 In order to put your Mac into a mode where:
 
-- Keynote shows current slide, plus instructor notes, and the next slide
+- Keynote shows the current slide, plus instructor notes, and the next slide
 - The TV shows the current slide
 
-You need to set display settings in your Mac. **This is not as obvious as it sounds.**
+You need to set display settings on your Mac. **This is not as obvious as it sounds.**
 
 - Pick the TV and set ‘Use As’ to ‘Stop Mirroring’. Yes that doesn’t make any grammatical sense.
 - You can now extend the display onto the TV.
 
 **![img](https://lh7-us.googleusercontent.com/-4LcqN--vBE1wOZIDjcEcx0y3z1eOgL0KvVWqPA4i_pbA-3qrhCor_JzhwyKQGWS6VpbJ91s2dyUw_or3NxMUfn6_Hkg7nzi9rRXIy4N3LY7USSfr1wR-Txvk4l7D2fg45gQJ8F8tGpgQzvbhKdQnw)**
 
-Common causes of students having troubles with the labs:
+Common causes of students having trouble with the labs:
 
-- Students with an out of date node.js There’s a node version check in the slides for this reason. Anything less than node 18 was at the time of writing unsupported by node.js maintainers. Running an out of date version will give you errors about strange characters like (`||=`) when reading random files.
+- Students with an out-of-date node.js There’s a node version check in the slides for this reason. Anything less than node 18 was at the time of writing unsupported by node.js maintainers. Running an out of date version will give you errors about strange characters like (`||=`) when reading random files.
 - Students inconsistently moving between spellings of ‘favorites’ / ‘favourites’ during the Anchor lab.
 - Editors other than VScode are fine, but you can use your own vscode / Rust Analyzer setup to work out why code doesn’t work
 - If you’re really stuck about why a student’s code doesn’t work you can also paste over the answer and look at the differences in your git client.
@@ -420,7 +430,7 @@ Thanks for joining us at the first Solana Professional Developer Training! 🎉 
 
 - [Solana DevRel Program Examples](https://github.com/solana-developers/program-examples) - perpetually updated examples of Anchor Solana programs maintained by the Solana Foundation.
 
-- [Web3 Builders Alliance](https://www.web3builders.dev/) - multiple week deep Solana development course. WBA graduates have built a lot of Hackathon winners and Solana ecosystem products.
+- [Web3 Builders [Alliance](https://www.web3builders.dev/) - multiple-week deep Solana development course. WBA graduates have built a lot of Hackathon winners and Solana ecosystem products.
 
 - The [Rareskills EVM to SVM tutorial](https://www.rareskills.io/solana-tutorial) - recommended to folks coming from an EVM background
 
