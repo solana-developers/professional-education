@@ -3,8 +3,7 @@ use anchor_lang::prelude::*;
 // This matches the key in the target/deploy directory
 declare_id!("8Mb5fA43uBMLVyxWZewvvVNGbvmPu5hLLfVxGyDN1jTE");
 
-// Anchor programs always use 
-#[constant]
+// Anchor programs always use 8 bits for the discriminator
 pub const ANCHOR_DISCRIMINATOR_SIZE: usize = 8;
 
 // What we will put inside the Favorites PDA
