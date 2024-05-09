@@ -404,7 +404,7 @@ Return extra merch/swag back to the storage area.
 - Check [survey results on the TypeForm](https://admin.typeform.com/form/IPH0UGz7/results#responses)
 - Correct any bugs in the course material and or instructor notes
 
-- Send a follow up email, for example (modify as appropriate):
+- Send a follow-up email, for example (modify as appropriate):
 
 Send from personal account:
 
