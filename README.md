@@ -127,7 +127,7 @@ Onchain programming (writing tests and deploying the favourites program)
 
 ### Classroom-based training
 
-The below is based on 6 hour student days.
+The below is based on 6-hour student days.
 
 #### Day 1
 
@@ -219,7 +219,7 @@ Capacity: 3x attendees (eg, if you want 15 people, limit the event to 45 people)
 **Note**: it will be too late to change these after you get sign-ups so please do all of these.
 
 - In 'Overview', click 'Edit Event', scroll all the way down, and set 'Restrict Location to Guests' (this stops unregistered guests from showing up)
-- Click 'Registration' add a checkbox question:
+- Click 'Registration' and add a checkbox question:
   - 'I can commit to all 4 days of training, 10 AM to 4 PM'
   - 'I have a laptop running macOS, Linux, or Windows (Windows must have WSL2 and Microsoft Terminal)'
 - Click 'More', 'Event page', and set a nice slug in the Public URL `solana-training-nyc-may-28-2024`. Note: you **must** do this before publicizing your event, as Luma will **not** redirect from the old URL to the new URL if you have it, which will break any links to the original URL.
@@ -240,7 +240,7 @@ Capacity: 3x attendees (eg, if you want 15 people, limit the event to 45 people)
 
 - Paid ads possibly, but we didn't last time.
   - A good strategy with paid engagement is to try a few organic posts and use paid engagement as a force multiplier for the posts that organically get popular. Eg, try five pieces of content, pick the one that performs the best after 24 hours, and put a budget behind it for paid engagement.
-  - Target the geographic are for the class
+  - Target the geographic area for the class
   - Target accounts that follow general JS/TS developers, rather than accounts that follow blockchain accounts.
 
 #### Equipment
@@ -334,7 +334,7 @@ Collect the email addresses that replied to the ‘action required’ email and 
 
 ### Day before event
 
-The day of the event it’s unlikely you will have time for room setup. Students will arrive before the event, and want to talk to you.
+The day of the event it’s unlikely you will have time for room setup. Students will arrive before the event and want to talk to you.
 
 9 AM: Room setup.
 
@@ -347,7 +347,7 @@ The day of the event it’s unlikely you will have time for room setup. Students
 ### Morning of event
 
 - **You will have little or no time in the hour before the event.** Someone will inevitably arrive early. Don’t leave anything to the last minute if you can.
-- Write the wifi name on the whiteboard - people will arrive late, let them know Wifi password. Don’t use a slide for this, or you’ll forever be jumping back and forth to the slide with the WiFi details.
+- Write the wifi name on the whiteboard - people will arrive late, let them know the Wifi password. Don’t use a slide for this, or you’ll forever be jumping back and forth to the slide with the WiFi details.
 - As people arrive, greet them and let them know about Breakfast
 
 ### Delivering content remotely
@@ -376,10 +376,10 @@ You need to set display settings on your Mac. **This is not as obvious as it sou
 
 Common causes of students having trouble with the labs:
 
-- Students with an out-of-date node.js There’s a node version check in the slides for this reason. Anything less than node 18 was at the time of writing unsupported by node.js maintainers. Running an out of date version will give you errors about strange characters like (`||=`) when reading random files.
+- Students with an out-of-date node.js There’s a node version check in the slides for this reason. Anything less than node 18 was at the time of writing unsupported by node.js maintainers. Running an out-of-date version will give you errors about strange characters like (`||=`) when reading random files.
 - Students inconsistently moving between spellings of ‘favorites’ / ‘favourites’ during the Anchor lab.
-- Editors other than VScode are fine, but you can use your own vscode / Rust Analyzer setup to work out why code doesn’t work
-- If you’re really stuck about why a student’s code doesn’t work you can also paste over the answer and look at the differences in your git client.
+- Editors other than VScode are fine, but you can use your own VSCODE / Rust Analyzer setup to work out why the code doesn’t work
+- If you’re stuck about why a student’s code doesn’t work you can also paste over the answer and look at the differences in your git client.
 - If you don’t know the answer to a question, that’s OK, tell the student you’ll chase an answer, and ask your colleagues on Slack.
 
 ### Final day
@@ -397,7 +397,7 @@ Essentially you want to make sure they're part of the wider Solana developer com
 
 Check for any lost property
 
-Return extra merch/swag back to the storage area.
+Return extra merch/swag to the storage area.
 
 ### After the Event
 
@@ -422,7 +422,7 @@ Body (modify accordingly):
 
 ---
 
-Thanks for joining us at the first Solana Professional Developer Training! 🎉 I learned a lot and I hope you did, too. Here's a few resources to assist on your Solana journey:
+Thanks for joining us at the first Solana Professional Developer Training! 🎉 I learned a lot and I hope you did, too. Here are a few resources to assist on your Solana journey:
 
 🤓 Continue building with:
 
