@@ -75,7 +75,12 @@ jobs:
       - name: Test the Favorites project builds and tests pass
         run: |
           cd labs/favorites
+          npm i
+          echo "----------------------------------------"
+          echo "Running 'anchor test'..."
           anchor test 2>&1 | tee -a build.log
+          echo "----------------------------------------"
+          echo "build.log..."
           cat build.log
           echo "----------------------------------------"
           echo "Checking for errors or warnings in build.log..."
