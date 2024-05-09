@@ -31,19 +31,14 @@ jobs:
 
       - name: Print versions and debugging info
         run: |
-          echo "------------------"
           echo Linux version:
           lsb_release -a
-          echo "------------------"
           echo Solana version:
           solana -V
-          echo "------------------"
           echo Anchor version:
           anchor -V
-          echo "------------------"
           echo build-sbf version:
           cargo build-sbf --version
-          echo "------------------"
           echo Path:
           echo $PATH | tr ':' '\n' | sort
 
@@ -80,12 +75,6 @@ jobs:
       - name: Test the Favorites project builds and tests pass
         run: |
           cd labs/favorites
-          echo "------------------"
-          echo "Running tests silently..."
-          anchor test &> build.log
-          echo "------------------"
-          echo "Printing build.log..."
+          anchor test 2>&1 | tee -a build.log
           cat build.log
-          echo "------------------"
-          echo "Checking for errors and warnings..."
           grep -qiEv 'error|warn' build.log
