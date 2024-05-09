@@ -65,7 +65,7 @@ jobs:
 
           echo "----------------------------------------"
           echo "Fixing package.json..."
-          jq '.LICENSE = "UNLICENSED"' package.json > fixed-package.json
+          jq '.license = "UNLICENSED"' package.json > fixed-package.json
           mv fixed-package.json package.json
           cat package.json
 
