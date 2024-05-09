@@ -77,4 +77,7 @@ jobs:
           cd labs/favorites
           anchor test 2>&1 | tee -a build.log
           cat build.log
+          echo "----------------------------------------"
+          echo "Checking for errors or warnings in build.log..."
           grep -qiEv 'error|warn' build.log
+          echo $?
