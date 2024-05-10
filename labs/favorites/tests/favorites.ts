@@ -32,18 +32,8 @@ describe("Favorites", () => {
 
     // Here's what we want to write to the blockchain
     const favoriteNumber = new anchor.BN(23);
-    const favoriteColor =
-      "the color of the sky on a clear day when i am feeling happy and free and the wind is blowing the trees around";
-    const favoriteHobbies = [
-      "reading",
-      "coding",
-      "skiing",
-      "skydiving",
-      "biking",
-      "hiking",
-      "snakes and ladders",
-      "doing cool stuff like racing up the stairs on a skateboard using only my hands and a helmet",
-    ];
+    const favoriteColor = "purple";
+    const favoriteHobbies = ["skiing", "skydiving", "biking"];
 
     // Generate the PDA for the user's favorites
     const favoritesPdaAndBump = web3.PublicKey.findProgramAddressSync(
