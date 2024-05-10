@@ -106,6 +106,7 @@ jobs:
           echo SECRET_KEY="$(cat deleteme.json)"> .env
           cat .env
           echo "----------------------------------------"
+          echo "Installing packages..."
           npm i
           echo "----------------------------------------"
           echo "Running 'anchor test'..."
