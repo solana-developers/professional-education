@@ -11,7 +11,7 @@ favorites = "8Mb5fA43uBMLVyxWZewvvVNGbvmPu5hLLfVxGyDN1jTE"
 url = "https://api.apr.dev"
 
 [provider]
-cluster = "localnet"
+cluster = "Localnet"
 wallet = "~/.config/solana/id.json"
 
 [scripts]
