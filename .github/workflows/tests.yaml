@@ -49,6 +49,15 @@ jobs:
         run: |
           solana-keygen new --no-bip39-passphrase
 
+      # Fix:
+      # warning: tool `rust-analyzer` is already installed, remove it from `/home/runner/.cargo/bin`, then run `rustup update` to have rustup manage this tool.
+      # warning: tool `rustfmt` is already installed, remove it from `/home/runner/.cargo/bin`, then run `rustup update` to have rustup manage this tool.
+      # warning: tool `cargo-fmt` is already installed, remove it from `/home/runner/.cargo/bin`, then run `rustup update` to have rustup manage this tool.
+      - name: Fix already installed tools
+        run: |
+          rm /home/runner/.cargo/bin/rust-analyzer /home/runner/.cargo/bin/rustfmt /home/runner/.cargo/bin/cargo-fmt
+          rustup update
+
       - name: Create a blank Anchor project, apply fixes, build and test it
         # TODO: fixes the following warning:
         #   warning: package `project v0.1.0 (/home/runner/work/project/project)` does not have a license
