@@ -100,6 +100,12 @@ jobs:
       - name: Test the Favorites project builds and tests pass
         run: |
           cd labs/favorites
+          echo "----------------------------------------"
+          echo "Creating a keypair..."
+          solana-keygen new --no-bip39-passphrase -s -o deleteme.json
+          echo SECRET_KEY="$(cat deleteme.json)"> .env
+          cat .env
+          echo "----------------------------------------"
           npm i
           echo "----------------------------------------"
           echo "Running 'anchor test'..."
