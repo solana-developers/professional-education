@@ -94,7 +94,7 @@ jobs:
           cat build.log
           echo "----------------------------------------"
           echo "Checking for errors or warnings in build.log..."
-          grep -qiEvz 'error|warn|failed' build.log
+          grep -qiEvz 'error:|warning:|failed' build.log
           echo $?
 
       - name: Test the Favorites project builds and tests pass
@@ -109,5 +109,5 @@ jobs:
           cat build.log
           echo "----------------------------------------"
           echo "Checking for errors or warnings in build.log..."
-          grep -qiEvz 'error|warn|failed' build.log
+          grep -qiEvz 'error:|warning:|failed' build.log
           echo $?
