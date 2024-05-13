@@ -4,17 +4,17 @@ This repo is the Solana Professional Education training. It's designed for those
 
 The training covers cryptography fundamentals, blockchain, and Solana from the ground up, with frequent hands-on labs. By the end of the training, students will be able to create and transfer tokens, mint NFTs, and build simple on-chain applications using Anchor on Rust.
 
-**If you just want to learn Solana**, follow [@solana_devs on X](https://x.com/solana_devs) and we'll let you know when the next course is running in a city near you!
+**If you just want to learn Solana**, follow [@solana_devs on X](https://x.com/solana_devs) and we'll let you know when the next course is running in a city near you, or on zoom!
 
 **If you're planning on running a training event** welcome, you're in the right place! This repo has everything you need to plan and teach the course. You can also [contact Mike MacCana](mailto:mike.maccana@solana.org) for help.
 
 - The [Instructor presentation](./Solana%20Professional%20Education.key). We use Keynote as there are animations in some slides, and other presentation tools don't have Keynote's 'magic move'. There is also a [Powerpoint Export](./Solana%20Professional%20Education%20Powerpoint%20Export.pptx)
 - The files in [`labs`](./labs) are working solutions to each lesson's labs.
-- This README file is a playbook of how to run a training event.
+- This README file is how to run a training event.
 
 [Aims of the training](#aims-of-the-training)
 
-[Training Offering:](#training-offering)
+[Training Offering](#training-offering)
 
 [Agenda](#agenda)
 
@@ -278,7 +278,7 @@ The purpose of this email is twofold:
 
 Luma allows you to contact attendees, but we won’t use that for this email - you’ll get a better response rate with a **personal** email that doesn’t look like spam.
 
-Send from personal account:
+Send this from your individual work email account (name@company.com) - replace all the `REPLACEME`s:
 
 ---
 
