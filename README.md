@@ -288,44 +288,40 @@ CC: **nobody** (important, don’t put anyone here as it will reveal ('dox') att
 
 BCC: attendee list
 
-Subject: Action Required: confirm attendance for Solana professional training next week
+Subject: Action Required: confirm attendance for Solana professional training [REPLACEME ADD DATES]
 
 Body (modify accordingly):
 
-We are pleased to inform you we have accepted you to the Solana professional training event in our offices next week!
+We are pleased to inform you we have accepted you to the Solana professional training event in our offices [REPLACEME ADD DATES]!
 
 Here are the details:
 
-⏰ When: Monday March 25 - Wednesday March 27
+⏰ When: [REPLACEME ADD DATES]
 
-📍 Where: (address including floor and any entrance instructions - and fix the Google Maps link!)
-
-Google Maps link: [https://maps.google.com]
+📍 Where: [REPLACEME ADD LOCATION AND A GOOGLE MAPS LINKS]
 
 🤓 What: The training will cover the basics of cryptography, blockchain, and Solana from the ground up, with frequent hands-on labs. By the end of the training, you will be able to create and transfer tokens, mint NFTs, and build on-chain applications.
 
 ☝️ Requirements:
 
-- You’ll need to be proficient in TypeScript. For example, you should understand what `Promise<Array<Item>>` means.
-
-- A laptop running macOS, Linux, or Windows.
-
-  - Windows must have WSL2 and Microsoft Terminal installed and running before the event.
-
-- Please have nodejs 18 or 20 installed before the event
-
-- FOR CLASSROOM TRAINING ONLY (ZOOM HAS ZOOM CHAT) Please have Telegram messenger on your laptop - we’re going to be interacting with each other on devnet and be using this to send wallet addresses around!
-
+You’ll need to be proficient in TypeScript. For example, you should understand what Promise<Array<Item>> means.
 You don't need to know Rust, and no previous experience in cryptography or blockchain is needed.
 
-🥗 Food: Lunch is provided daily. Coffee, drinks, and snacks are available daily.
+A laptop running macOS, Linux, or Windows.
 
-🚨 Action: Please respond to this email if you plan on attending.🚨
+ - Windows must have WSL2 and Microsoft Terminal installed and running before the event.
+ - Please have nodejs 18 or 20 installed before the event
+ - Also install Telegram messenger on your laptop - we’re going to be interacting with each other on devnet and be using this to send wallet addresses around!
+
+🥗 Food: Lunch is provided daily. Coffee, drinks, and snacks are available.
+
+🚨 ACTION: PLEASE RESPOND TO THIS EMAIL IF YOU PLAN ON ATTENDING🚨
 
 We look forward to hearing from you and congratulations on your acceptance!
 
-(your regular email signature)
+Thanks,
 
+[REPLACEME ADD YOUR NORMAL EMAIL SIGNATURE]
 ---
 
 ### 3 or so days before
