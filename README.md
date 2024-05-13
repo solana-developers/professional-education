@@ -10,15 +10,10 @@ The training covers cryptography fundamentals, blockchain, and Solana from the g
 
 - The [Instructor presentation](./Solana%20Professional%20Education.key). We use Keynote as there are animations in some slides, and other presentation tools don't have Keynote's 'magic move'. There is also a [Powerpoint Export](./Solana%20Professional%20Education%20Powerpoint%20Export.pptx)
 - The files in [`labs`](./labs) are working solutions to each lesson's labs.
-- This README file is how to run a training event.
-
-[Aims of the training](#aims-of-the-training)
-
-[Training Offering](#training-offering)
-
-[Agenda](#agenda)
-
-[Event planning playbook](#event-planning-playbook)
+- [Aims of the training](#aims-of-the-training)
+- [Training Offering](#training-offering)
+- [Agenda](#agenda)
+- [How to plan a training event](#event-planning-playbook)
 
 ## Aims of the training
 
