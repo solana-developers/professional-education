@@ -347,17 +347,13 @@ The day of the event it’s unlikely you will have time for room setup. Students
 - Write the wifi name on the whiteboard - people will arrive late, let them know the Wifi password. Don’t use a slide for this, or you’ll forever be jumping back and forth to the slide with the WiFi details.
 - As people arrive, greet them and let them know about Breakfast
 
-### Delivering content remotely
-
-big gestures
-zoom,
-not monotone, joke around
-
-vary tempo
-
-change tonality and tempo
-
 ### Training days
+
+#### Remote
+
+**Keep in mind other content is just a browser tab away.** Be animated, use big gestures, vary your tone, volume and pitch, and joke around. 
+
+#### Classroom based training
 
 In order to put your Mac into a mode where:
 
