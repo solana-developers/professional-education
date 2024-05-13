@@ -304,13 +304,13 @@ Here are the details:
 
 ☝️ Requirements:
 
-You’ll need to be proficient in TypeScript. For example, you should understand what Promise<Array<Item>> means.
+You’ll need to know TypeScript. For example, you should understand what Promise<Array<String>> means.
 You don't need to know Rust, and no previous experience in cryptography or blockchain is needed.
 
 A laptop running macOS, Linux, or Windows.
 
  - Windows must have WSL2 and Microsoft Terminal installed and running before the event.
- - Please have nodejs 18 or 20 installed before the event
+ - Please have nodejs 18 or 20 (Windows users should use the Linux version in WSL) installed before the event
  - Also install Telegram messenger on your laptop - we’re going to be interacting with each other on devnet and be using this to send wallet addresses around!
 
 🥗 Food: Lunch is provided daily. Coffee, drinks, and snacks are available.
