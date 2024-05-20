@@ -299,7 +299,7 @@ Here are the details:
 
 ☝️ Requirements:
 
-You’ll need to know TypeScript. For example, you should understand what Promise<Array<String>> means.
+You’ll need to know TypeScript. For example, you should understand what `Promise<Array<String>>` means.
 You don't need to know Rust, and no previous experience in cryptography or blockchain is needed.
 
 A laptop running macOS, Linux, or Windows.
