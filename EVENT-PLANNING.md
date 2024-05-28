@@ -92,7 +92,7 @@ Capacity: 3x attendees (eg, if you want 15 people, limit the event to 45 people)
 
 #### Equipment
 
-Tables, chairs, and monitors/projectors:
+Tables, chairs, monitors/projectors, clicker:
 
 Screens and keyboard/mice are not needed as students bring their laptops
 
@@ -179,15 +179,19 @@ Collect the email addresses that replied to the ‘action required’ email and 
 
 ### Day before event
 
-The day of the event it’s unlikely you will have time for room setup. Students will arrive before the event and want to talk to you.
+#### Room setup
 
-9 AM: Room setup.
+The day of the event it’s unlikely you will have time for room setup. Students will arrive before the event and want to talk to you.
 
 - Chairs
 - Desks
 - Power strips
 - TV/projector
 - Whiteboard, eraser, markers.
+
+#### Telegram Group
+
+Make a Telegram Group for the classroom.
 
 ### Morning of event
 
@@ -203,7 +207,7 @@ Use big gestures, vary your tone, and tempo, and joke around, more so than you w
 
 ### Training days
 
-In order to put your Mac into a mode where:
+In order to put macOS into a mode where:
 
 - Keynote shows the current slide, plus instructor notes, and the next slide
 - The TV shows the current slide
