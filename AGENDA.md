@@ -45,11 +45,11 @@ Lab 6: Onchain programming (first part, anchor setup of a blank project)
 
 #### Day 8
 
-Lab 6: Onchain programming (creating the favourites program)
+Lab 6: Onchain programming (creating the Favorites program)
 
 #### Day 9
 
-Onchain programming (writing tests and deploying the favourites program)
+Onchain programming (writing tests and deploying the Favorites program)
 
 ### Classroom-based training
 
@@ -84,3 +84,9 @@ The below is based on 6-hour student days.
 **Lesson 6**: Introduction to Anchor
 
 **Lab 6**: Onchain programming
+
+#### Day 4
+
+**Lesson 7**: Using Anchor with Tokens
+
+**Lab 6**: Onchain programming with Tokens
