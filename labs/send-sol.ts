@@ -9,10 +9,11 @@ import {
   PublicKey,
   SystemProgram,
   Transaction,
-  TransactionInstruction,
   clusterApiUrl,
   sendAndConfirmTransaction,
 } from "@solana/web3.js";
+import { createMemoInstruction } from "@solana/spl-memo";
+
 const connection = new Connection(clusterApiUrl("devnet"));
 
 const sender = getKeypairFromEnvironment("SECRET_KEY");
