@@ -4,7 +4,7 @@ This repo is the Solana Professional Education training. It's designed for those
 
 The training covers cryptography fundamentals, blockchain, and Solana from the ground up, with frequent hands-on labs. By the end of the training, students will be able to create and transfer tokens, mint NFTs, and build simple on-chain applications using Anchor on Rust.
 
-**If you just want to learn Solana**, follow [@solana_devs on X](https://x.com/solana_devs) and we'll let you know when the next course is running in a city near you!
+**If you just want to learn Solana**, follow [@solana_devs on X](https://x.com/solana_devs) and we'll let you know when the next course is running in a city near you, or on zoom!
 
 **If you're planning on running a training event** welcome, you're in the right place! This repo has everything you need to plan and teach the course. You can also [contact Mike MacCana](mailto:mike.maccana@solana.org) for help.
 
