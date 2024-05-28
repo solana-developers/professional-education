@@ -29,12 +29,13 @@ pub mod favorites {
         let user_public_key = context.accounts.user.key();
         msg!("Greetings from {}", context.program_id);
         msg!(
-            "User {}'s favorite number is {}, favorite color is: {}, and hobbies are: {:?}",
-            user_public_key,
-            number,
-            color,
-            hobbies
+            "User {user_public_key}'s favorite number is {number}, favorite color is: {color}",
         );
+
+        msg!(
+            "User's hobbies are: {:?}",
+            hobbies
+        ); 
 
         context.accounts.favorites.set_inner(Favorites {
             number,
