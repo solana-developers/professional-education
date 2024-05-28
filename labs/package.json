@@ -13,6 +13,7 @@
     "@coral-xyz/anchor": "^0.29.0",
     "@metaplex-foundation/mpl-token-metadata": "^2.13.0",
     "@solana-developers/helpers": "^2.1.0",
+    "@solana/spl-memo": "^0.2.5",
     "@solana/spl-token": "^0.4.1",
     "@solana/web3.js": "^1.91.1",
     "esrun": "^3.2.26"
