@@ -11,7 +11,10 @@ import {
   Transaction,
   sendAndConfirmTransaction,
 } from "@solana/web3.js";
-import { createCreateMetadataAccountV3Instruction } from "@metaplex-foundation/mpl-token-metadata";
+import {
+  DataV2,
+  createCreateMetadataAccountV3Instruction,
+} from "@metaplex-foundation/mpl-token-metadata";
 
 const user = getKeypairFromEnvironment("SECRET_KEY");
 
@@ -28,7 +31,7 @@ const TOKEN_METADATA_PROGRAM_ID = new PublicKey(
 // Subtitute in your token mint account
 const tokenMintAccount = new PublicKey("YOUR_TOKEN_MINT_ADDRESS_HERE");
 
-const metadataData = {
+const metadataData: DataV2 = {
   name: "Solana Training Token",
   symbol: "TRAINING",
   // An off-chain link to more information about the token using Metaplex standard for off-chain data
