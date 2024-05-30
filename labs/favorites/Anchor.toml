@@ -1,11 +1,11 @@
 [toolchain]
 
 [features]
-seeds = false
+resolution = true
 skip-lint = false
 
 [programs.localnet]
-favorites = "8Mb5fA43uBMLVyxWZewvvVNGbvmPu5hLLfVxGyDN1jTE"
+favorites = "ww9C83noARSQVBnqmCUmaVdbJjmiwcV9j2LkXYMoUCV"
 
 [registry]
 url = "https://api.apr.dev"

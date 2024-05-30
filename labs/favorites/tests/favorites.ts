@@ -5,20 +5,22 @@ import { assert } from "chai";
 import { airdropIfRequired } from "@solana-developers/helpers";
 const web3 = anchor.web3;
 
-describe("Favorites", async () => {
+describe("Favorites", () => {
   // Use the cluster and the keypair from Anchor.toml
   const provider = anchor.AnchorProvider.env();
   anchor.setProvider(provider);
   const user = (provider.wallet as anchor.Wallet).payer;
-
+  const someRandomGuy = anchor.web3.Keypair.generate();
   const program = anchor.workspace.Favorites as Program<Favorites>;
 
-  await airdropIfRequired(
-    anchor.getProvider().connection,
-    user.publicKey,
-    0.5 * web3.LAMPORTS_PER_SOL,
-    1 * web3.LAMPORTS_PER_SOL
-  );
+  before(async () => {
+    await airdropIfRequired(
+      anchor.getProvider().connection,
+      user.publicKey,
+      0.5 * web3.LAMPORTS_PER_SOL,
+      1 * web3.LAMPORTS_PER_SOL
+    );
+  });
 
   it("Writes our favorites to the blockchain", async () => {
     // Here's what we want to write to the blockchain
@@ -47,5 +49,18 @@ describe("Favorites", async () => {
     assert.equal(dataFromPda.number.toString(), favoriteNumber.toString());
     // And check the hobbies too
     assert.deepEqual(dataFromPda.hobbies, favoriteHobbies);
+
+    try {
+      await program.methods
+        // set_favourites in Rust becomes setFavorites in TypeScript
+        .setFavorites(favoriteNumber, favoriteColor, favoriteHobbies)
+        // Sign the transaction
+        .signers([someRandomGuy])
+        // Send the transaction to the cluster or RPC
+        .rpc();
+    } catch (error) {
+      const errorMessage = (error as Error).message;
+      assert.isTrue(errorMessage.includes("unknown signer"));
+    }
   });
 });
