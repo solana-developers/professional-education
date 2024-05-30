@@ -14,15 +14,14 @@ const web3 = anchor.web3;
 import "dotenv/config";
 
 describe("Favorites", () => {
-  // Configure the client to use the local cluster.
-  anchor.setProvider(anchor.AnchorProvider.env());
+  // Configure the client to use the cluster and the keypair from Anchor.toml
+  const provider = anchor.AnchorProvider.env();
+  anchor.setProvider(provider);
+  const user = provider.wallet as anchor.Wallet;
 
   const program = anchor.workspace.Favorites as Program<Favorites>;
 
   it("Writes our favorites to the blockchain", async () => {
-    // Load our wallet
-    const user = getKeypairFromEnvironment("SECRET_KEY");
-
     await airdropIfRequired(
       anchor.getProvider().connection,
       user.publicKey,
@@ -60,7 +59,7 @@ describe("Favorites", () => {
         systemProgram: web3.SystemProgram.programId,
       })
       // Sign the transaction
-      .signers([user])
+      .signers([user.payer])
       // Send the transaction to the cluster or RPC
       .rpc();
 
