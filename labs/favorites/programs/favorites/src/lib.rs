@@ -6,19 +6,6 @@ declare_id!("8Mb5fA43uBMLVyxWZewvvVNGbvmPu5hLLfVxGyDN1jTE");
 // Anchor programs always use 8 bits for the discriminator
 pub const ANCHOR_DISCRIMINATOR_SIZE: usize = 8;
 
-// What we will put inside the Favorites PDA
-#[account]
-#[derive(InitSpace)]
-pub struct Favorites {
-    pub number: u64,
-
-    #[max_len(50)]
-    pub color: String,
-
-    #[max_len(5, 50)]
-    pub hobbies: Vec<String>
-}
-
 // Our Solana program! 
 #[program]
 pub mod favorites {
@@ -48,6 +35,18 @@ pub mod favorites {
     // We can also add a get_favorites instruction handler to return the user's favorite number and color
 }
 
+// What we will put inside the Favorites PDA
+#[account]
+#[derive(InitSpace)]
+pub struct Favorites {
+    pub number: u64,
+
+    #[max_len(50)]
+    pub color: String,
+
+    #[max_len(5, 50)]
+    pub hobbies: Vec<String>
+}
 // When people call the set_favorites instruction, they will need to provide the accounts that will be modifed. This keeps Solana fast!
 #[derive(Accounts)]
 pub struct SetFavorites<'info> {
