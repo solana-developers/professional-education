@@ -5,7 +5,7 @@ import { assert } from "chai";
 import { airdropIfRequired } from "@solana-developers/helpers";
 const web3 = anchor.web3;
 
-describe("Favorites", () => {
+describe("Favorites", async () => {
   // Use the cluster and the keypair from Anchor.toml
   const provider = anchor.AnchorProvider.env();
   anchor.setProvider(provider);
@@ -13,32 +13,33 @@ describe("Favorites", () => {
 
   const program = anchor.workspace.Favorites as Program<Favorites>;
 
-  it("Writes our favorites to the blockchain", async () => {
-    await airdropIfRequired(
-      anchor.getProvider().connection,
-      user.publicKey,
-      0.5 * web3.LAMPORTS_PER_SOL,
-      1 * web3.LAMPORTS_PER_SOL
-    );
+  await airdropIfRequired(
+    anchor.getProvider().connection,
+    user.publicKey,
+    0.5 * web3.LAMPORTS_PER_SOL,
+    1 * web3.LAMPORTS_PER_SOL
+  );
 
+  it("Writes our favorites to the blockchain", async () => {
     // Here's what we want to write to the blockchain
     const favoriteNumber = new anchor.BN(23);
     const favoriteColor = "purple";
     const favoriteHobbies = ["skiing", "skydiving", "biking"];
 
     await program.methods
+      // set_favourites in Rust becomes setFavorites in TypeScript
       .setFavorites(favoriteNumber, favoriteColor, favoriteHobbies)
+      // Sign the transaction
       .signers([user])
       // Send the transaction to the cluster or RPC
       .rpc();
 
-    // Generate the PDA for the user's favorites
+    // Find the PDA for the user's favorites
     const favoritesPdaAndBump = web3.PublicKey.findProgramAddressSync(
       [Buffer.from("favorites"), user.publicKey.toBuffer()],
       program.programId
     );
     const favoritesPda = favoritesPdaAndBump[0];
-
     const dataFromPda = await program.account.favorites.fetch(favoritesPda);
     // And make sure it matches!
     assert.equal(dataFromPda.color, favoriteColor);
