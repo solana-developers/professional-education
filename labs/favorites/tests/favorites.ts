@@ -26,26 +26,18 @@ describe("Favorites", () => {
     const favoriteColor = "purple";
     const favoriteHobbies = ["skiing", "skydiving", "biking"];
 
+    await program.methods
+      .setFavorites(favoriteNumber, favoriteColor, favoriteHobbies)
+      .signers([user])
+      // Send the transaction to the cluster or RPC
+      .rpc();
+
     // Generate the PDA for the user's favorites
     const favoritesPdaAndBump = web3.PublicKey.findProgramAddressSync(
       [Buffer.from("favorites"), user.publicKey.toBuffer()],
       program.programId
     );
     const favoritesPda = favoritesPdaAndBump[0];
-
-    await program.methods
-      .setFavorites(favoriteNumber, favoriteColor, favoriteHobbies)
-      .accounts({
-        user: user.publicKey,
-        // TODO: Investigate why this is necessary
-        // @ts-ignore
-        favorites: favoritesPda,
-        systemProgram: web3.SystemProgram.programId,
-      })
-      // Sign the transaction (user.payer is )
-      .signers([user])
-      // Send the transaction to the cluster or RPC
-      .rpc();
 
     const dataFromPda = await program.account.favorites.fetch(favoritesPda);
     // And make sure it matches!
