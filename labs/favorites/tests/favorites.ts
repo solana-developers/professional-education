@@ -55,7 +55,7 @@ describe("Favorites", () => {
         // Pass in the PDA
         // TODO: Investigate why this is necessary
         // @ts-ignore
-        favoritesPda,
+        favorites: favoritesPda,
         // Pass in the system program's public key
         systemProgram: web3.SystemProgram.programId,
       })
