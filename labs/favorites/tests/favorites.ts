@@ -2,22 +2,14 @@ import * as anchor from "@coral-xyz/anchor";
 import { Program } from "@coral-xyz/anchor";
 import { Favorites } from "../target/types/favorites";
 import { assert } from "chai";
-import {
-  airdropIfRequired,
-  getCustomErrorMessage,
-  getKeypairFromEnvironment,
-  getLogs,
-} from "@solana-developers/helpers";
-import { systemProgramErrors } from "./system-errors";
-const log = console.log;
+import { airdropIfRequired } from "@solana-developers/helpers";
 const web3 = anchor.web3;
-import "dotenv/config";
 
 describe("Favorites", () => {
-  // Configure the client to use the cluster and the keypair from Anchor.toml
+  // Use the cluster and the keypair from Anchor.toml
   const provider = anchor.AnchorProvider.env();
   anchor.setProvider(provider);
-  const user = provider.wallet;
+  const user = (provider.wallet as anchor.Wallet).payer;
 
   const program = anchor.workspace.Favorites as Program<Favorites>;
 
@@ -39,27 +31,19 @@ describe("Favorites", () => {
       [Buffer.from("favorites"), user.publicKey.toBuffer()],
       program.programId
     );
-
     const favoritesPda = favoritesPdaAndBump[0];
 
-    log(`User is`, user.publicKey.toBase58());
-
-    // Make a transaction to write to the blockchain
     await program.methods
-      // Call the set_favorites instruction handler
       .setFavorites(favoriteNumber, favoriteColor, favoriteHobbies)
       .accounts({
-        // Pass in the user's public key
         user: user.publicKey,
-        // Pass in the PDA
         // TODO: Investigate why this is necessary
         // @ts-ignore
         favorites: favoritesPda,
-        // Pass in the system program's public key
         systemProgram: web3.SystemProgram.programId,
       })
-      // Sign the transaction
-      .signers([user.payer])
+      // Sign the transaction (user.payer is )
+      .signers([user])
       // Send the transaction to the cluster or RPC
       .rpc();
 
