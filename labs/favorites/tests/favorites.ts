@@ -17,7 +17,7 @@ describe("Favorites", () => {
   // Configure the client to use the cluster and the keypair from Anchor.toml
   const provider = anchor.AnchorProvider.env();
   anchor.setProvider(provider);
-  const user = provider.wallet as anchor.Wallet;
+  const user = provider.wallet;
 
   const program = anchor.workspace.Favorites as Program<Favorites>;
 
