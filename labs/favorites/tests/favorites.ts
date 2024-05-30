@@ -43,31 +43,26 @@ describe("Favorites", () => {
 
     const favoritesPda = favoritesPdaAndBump[0];
 
+    log(`User is`, user.publicKey.toBase58());
+
     // Make a transaction to write to the blockchain
-    let tx: string | null = null;
-    try {
-      tx = await program.methods
-        // Call the set_favorites instruction handler
-        .setFavorites(favoriteNumber, favoriteColor, favoriteHobbies)
-        .accounts({
-          user: user.publicKey,
-          favorites: favoritesPda,
-        })
-        // Sign the transaction
-        .signers([user])
-        // Send the transaction to the cluster or RPC
-        .rpc();
-    } catch (thrownObject) {
-      // Let's properly log the error
-      // so we can see the program involved
-      // and (for well known programs) the full log message
-      const rawError = thrownObject as Error;
-      const customErrorMessage = getCustomErrorMessage(
-        systemProgramErrors,
-        rawError.message
-      );
-      throw new Error(customErrorMessage || rawError.message);
-    }
+    await program.methods
+      // Call the set_favorites instruction handler
+      .setFavorites(favoriteNumber, favoriteColor, favoriteHobbies)
+      .accounts({
+        // Pass in the user's public key
+        user: user.publicKey,
+        // Pass in the PDA
+        // TODO: Investigate why this is necessary
+        // @ts-ignore
+        favoritesPda,
+        // Pass in the system program's public key
+        systemProgram: web3.SystemProgram.programId,
+      })
+      // Sign the transaction
+      .signers([user])
+      // Send the transaction to the cluster or RPC
+      .rpc();
 
     const dataFromPda = await program.account.favorites.fetch(favoritesPda);
     // And make sure it matches!
