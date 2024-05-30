@@ -2,7 +2,6 @@ import * as anchor from "@coral-xyz/anchor";
 import { Program } from "@coral-xyz/anchor";
 import { Favorites } from "../target/types/favorites";
 import { assert } from "chai";
-import { airdropIfRequired } from "@solana-developers/helpers";
 const web3 = anchor.web3;
 
 describe("Favorites", () => {
@@ -13,13 +12,13 @@ describe("Favorites", () => {
   const someRandomGuy = anchor.web3.Keypair.generate();
   const program = anchor.workspace.Favorites as Program<Favorites>;
 
+  // We don't need to airdrop if we're using the local cluster
+  // because the local cluster gives us 85 billion dollars worth of SOL
   before(async () => {
-    await airdropIfRequired(
-      anchor.getProvider().connection,
-      user.publicKey,
-      0.5 * web3.LAMPORTS_PER_SOL,
-      1 * web3.LAMPORTS_PER_SOL
-    );
+    const balance = await provider.connection.getBalance(user.publicKey);
+    const balanceInSOL = balance / web3.LAMPORTS_PER_SOL;
+    const formattedBalance = new Intl.NumberFormat().format(balanceInSOL);
+    console.log(`Balance: ${formattedBalance} SOL`);
   });
 
   it("Writes our favorites to the blockchain", async () => {
