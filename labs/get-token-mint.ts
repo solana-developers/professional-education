@@ -1,10 +1,7 @@
 import * as token from "@solana/spl-token";
 import "dotenv/config";
-import {
-  getKeypairFromEnvironment,
-  getExplorerLink,
-} from "@solana-developers/helpers";
-import { Connection, PublicKey, clusterApiUrl } from "@solana/web3.js";
+import { getKeypairFromEnvironment } from "@solana-developers/helpers";
+import { Connection, clusterApiUrl } from "@solana/web3.js";
 
 const MINT_ADDRESS = getKeypairFromEnvironment("MINT_ACCOUNT");
 
