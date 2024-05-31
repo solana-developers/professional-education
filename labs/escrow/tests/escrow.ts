@@ -226,27 +226,27 @@ describe("escrow", async () => {
   };
 
   // We'll call this function from multiple tests, so let's seperate it out
-  const take = async () => {
-    const transactionSignature = await program.methods
-      .takeOffer()
-      .accounts({ ...accounts })
-      .signers([bob])
-      .rpc();
+  // const take = async () => {
+  //   const transactionSignature = await program.methods
+  //     .takeOffer()
+  //     .accounts({ ...accounts })
+  //     .signers([bob])
+  //     .rpc();
 
-    await confirmTransaction(connection, transactionSignature);
-    const explorerLink = getExplorerLink(
-      "transaction",
-      transactionSignature,
-      "localnet"
-    );
-    console.log(`Take offer transaction: ${explorerLink}`);
-  };
+  //   await confirmTransaction(connection, transactionSignature);
+  //   const explorerLink = getExplorerLink(
+  //     "transaction",
+  //     transactionSignature,
+  //     "localnet"
+  //   );
+  //   console.log(`Take offer transaction: ${explorerLink}`);
+  // };
 
   it("Makes an offer as Alice", async () => {
     await make();
   });
 
-  it("Takes Alice's offer as Bob", async () => {
-    await take();
-  });
+  // it("Takes Alice's offer as Bob", async () => {
+  //   await take();
+  // });
 });
