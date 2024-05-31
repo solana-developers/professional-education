@@ -12,6 +12,11 @@ describe("Favorites", () => {
   const someRandomGuy = anchor.web3.Keypair.generate();
   const program = anchor.workspace.Favorites as Program<Favorites>;
 
+  // Here's what we want to write to the blockchain
+  const favoriteNumber = new anchor.BN(23);
+  const favoriteColor = "purple";
+  const favoriteHobbies = ["skiing", "skydiving", "biking"];
+
   // We don't need to airdrop if we're using the local cluster
   // because the local cluster gives us 85 billion dollars worth of SOL
   before(async () => {
@@ -22,11 +27,6 @@ describe("Favorites", () => {
   });
 
   it("Writes our favorites to the blockchain", async () => {
-    // Here's what we want to write to the blockchain
-    const favoriteNumber = new anchor.BN(23);
-    const favoriteColor = "purple";
-    const favoriteHobbies = ["skiing", "skydiving", "biking"];
-
     await program.methods
       // set_favourites in Rust becomes setFavorites in TypeScript
       .setFavorites(favoriteNumber, favoriteColor, favoriteHobbies)
@@ -48,7 +48,9 @@ describe("Favorites", () => {
     assert.equal(dataFromPda.number.toString(), favoriteNumber.toString());
     // And check the hobbies too
     assert.deepEqual(dataFromPda.hobbies, favoriteHobbies);
+  });
 
+  it("Rejects transactions from unauthorized signers", async () => {
     try {
       await program.methods
         // set_favourites in Rust becomes setFavorites in TypeScript
