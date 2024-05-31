@@ -25,8 +25,6 @@ import {
   getExplorerLink,
   makeKeypairs,
 } from "@solana-developers/helpers";
-const log = console.log;
-const stringify = (object: any) => JSON.stringify(object, null, 2);
 
 const TOKEN_PROGRAM: typeof TOKEN_2022_PROGRAM_ID | typeof TOKEN_PROGRAM_ID =
   TOKEN_2022_PROGRAM_ID;
@@ -35,7 +33,7 @@ const getRandomNumber = () => {
   return new BN(randomBytes(8));
 };
 
-describe("anchor-escrow", async () => {
+describe("escrow", async () => {
   anchor.setProvider(anchor.AnchorProvider.env());
 
   const provider = anchor.getProvider();
