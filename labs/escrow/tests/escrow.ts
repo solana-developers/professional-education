@@ -252,8 +252,11 @@ describe("anchor-escrow", async () => {
     console.log(`Take offer transaction: ${explorerLink}`);
   };
 
-  it("Makes an offer and then swaps tokens when offer is taken", async () => {
+  it("Makes an offer as Alice", async () => {
     await make();
+  });
+
+  it("Takes Alice's offer as Bob", async () => {
     await take();
   });
 });
