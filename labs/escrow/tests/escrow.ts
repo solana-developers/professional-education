@@ -165,7 +165,8 @@ describe("anchor-escrow", async () => {
     }
   );
 
-  it("Makes an offer as Alice", async () => {
+  // We'll call this function from multiple tests, so let's seperate it out
+  const make = async () => {
     // Pick a random ID for the offer we'll make
     const offerId = getRandomNumber();
     const offeredAmount = new BN(1_000_000);
@@ -224,9 +225,10 @@ describe("anchor-escrow", async () => {
       "localnet"
     );
     console.log(`Make offer transaction: ${explorerLink}`);
-  });
+  };
 
-  it("Takes Alice's offer as Bob", async () => {
+  // We'll call this function from multiple tests, so let's seperate it out
+  const take = async () => {
     const transactionSignature = await program.methods
       .takeOffer()
       .accounts({ ...accounts })
@@ -240,5 +242,13 @@ describe("anchor-escrow", async () => {
       "localnet"
     );
     console.log(`Take offer transaction: ${explorerLink}`);
+  };
+
+  it("Makes an offer as Alice", async () => {
+    await make();
+  });
+
+  it("Takes Alice's offer as Bob", async () => {
+    await take();
   });
 });
