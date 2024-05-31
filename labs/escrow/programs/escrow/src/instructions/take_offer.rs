@@ -8,12 +8,7 @@ use anchor_spl::{
     },
 };
 
-use crate::{Offer, ANCHOR_DISCRIMINATOR};
-
-pub fn handler(context: Context<TakeOffer>) -> Result<()> {
-    send_wanted_tokens_to_maker(&context)?;
-    withdraw_and_close_vault(context)
-}
+use crate::Offer;
 
 pub fn send_wanted_tokens_to_maker(ctx: &Context<TakeOffer>) -> Result<()> {
     let transfer_accounts = TransferChecked {
