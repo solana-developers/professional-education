@@ -49,17 +49,11 @@ describe("anchor-escrow", async () => {
     tokenProgram: TOKEN_PROGRAM,
   };
 
-  let maker: anchor.web3.Keypair;
-  let taker: anchor.web3.Keypair;
+  const [alice, bob, tokenMintA, tokenMintB] = makeKeypairs(4);
 
   before(
     "Creates Alice and Bob accounts, 2 token mints, and associated token accounts for both tokens for both users",
     async () => {
-      const [alice, bob, tokenMintA, tokenMintB] = makeKeypairs(4);
-
-      maker = alice;
-      taker = bob;
-
       const [
         aliceTokenAccountA,
         aliceTokenAccountB,
@@ -175,7 +169,7 @@ describe("anchor-escrow", async () => {
     }
   );
 
-  const make = async () => {
+  it("Makes an offer as Alice", async () => {
     // Pick a random ID for the offer we'll make
     const offerId = getRandomNumber();
     const offeredAmount = new BN(1_000_000);
@@ -204,7 +198,7 @@ describe("anchor-escrow", async () => {
     const transactionSignature = await program.methods
       .makeOffer(offerId, offeredAmount, wantedAmount)
       .accounts({ ...accounts })
-      .signers([maker])
+      .signers([alice])
       .rpc();
 
     await confirmTransaction(connection, transactionSignature);
@@ -217,7 +211,7 @@ describe("anchor-escrow", async () => {
     // Check our Offer account contains the correct data
     const offerAccount = await program.account.offer.fetch(offer);
 
-    assert.equal(offerAccount.maker.toBase58(), maker.publicKey.toBase58());
+    assert.equal(offerAccount.maker.toBase58(), alice.publicKey.toBase58());
     assert.equal(
       offerAccount.offeredTokenMint.toBase58(),
       accounts.offeredTokenMint.toBase58()
@@ -234,13 +228,13 @@ describe("anchor-escrow", async () => {
       "localnet"
     );
     console.log(`Make offer transaction: ${explorerLink}`);
-  };
+  });
 
-  const take = async () => {
+  it("Takes Alice's offer as Bob", async () => {
     const transactionSignature = await program.methods
       .takeOffer()
       .accounts({ ...accounts })
-      .signers([taker])
+      .signers([bob])
       .rpc();
 
     await confirmTransaction(connection, transactionSignature);
@@ -250,13 +244,5 @@ describe("anchor-escrow", async () => {
       "localnet"
     );
     console.log(`Take offer transaction: ${explorerLink}`);
-  };
-
-  it("Makes an offer as Alice", async () => {
-    await make();
-  });
-
-  it("Takes Alice's offer as Bob", async () => {
-    await take();
   });
 });
