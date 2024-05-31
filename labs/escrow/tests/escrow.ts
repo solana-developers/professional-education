@@ -153,10 +153,6 @@ describe("anchor-escrow", async () => {
         bob,
       ]);
 
-      console.log(
-        getExplorerLink("transaction", transactionSignature, "localnet")
-      );
-
       // Save the accounts for later use
       accounts.maker = alice.publicKey;
       accounts.taker = bob.publicKey;
