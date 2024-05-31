@@ -2,6 +2,8 @@ import * as anchor from "@coral-xyz/anchor";
 import { Program } from "@coral-xyz/anchor";
 import { Favorites } from "../target/types/favorites";
 import { assert } from "chai";
+import { getCustomErrorMessage } from "@solana-developers/helpers";
+import { systemProgramErrors } from "./system-errors";
 const web3 = anchor.web3;
 
 describe("Favorites", () => {
@@ -48,6 +50,23 @@ describe("Favorites", () => {
     assert.equal(dataFromPda.number.toString(), favoriteNumber.toString());
     // And check the hobbies too
     assert.deepEqual(dataFromPda.hobbies, favoriteHobbies);
+  });
+
+  it("Updates the favorites", async () => {
+    const newFavoriteHobbies = ["skiing", "skydiving", "biking", "swimming"];
+    try {
+      await program.methods
+        .setFavorites(favoriteNumber, favoriteColor, newFavoriteHobbies)
+        .signers([user])
+        .rpc();
+    } catch (error) {
+      console.error((error as Error).message);
+      const customErrorMessage = getCustomErrorMessage(
+        systemProgramErrors,
+        error
+      );
+      throw new Error(customErrorMessage);
+    }
   });
 
   it("Rejects transactions from unauthorized signers", async () => {

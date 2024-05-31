@@ -54,7 +54,7 @@ pub struct SetFavorites<'info> {
     pub user: Signer<'info>,
 
     #[account(
-        init, 
+        init_if_needed, 
         payer = user, 
         space = ANCHOR_DISCRIMINATOR_SIZE + Favorites::INIT_SPACE, 
         seeds=[b"favorites", user.key().as_ref()],
