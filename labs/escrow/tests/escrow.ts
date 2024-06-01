@@ -163,12 +163,13 @@ describe("escrow", async () => {
     }
   );
 
+  const offeredAmount = new BN(1_000_000);
+  const wantedAmount = new BN(1_000_000);
+
   // We'll call this function from multiple tests, so let's seperate it out
   const make = async () => {
     // Pick a random ID for the offer we'll make
     const offerId = getRandomNumber();
-    const offeredAmount = new BN(1_000_000);
-    const wantedAmount = new BN(1_000_000);
 
     // Then determine the account addresses we'll use for the offer and the vault
     const offer = PublicKey.findProgramAddressSync(
@@ -240,6 +241,20 @@ describe("escrow", async () => {
       "localnet"
     );
     console.log(`Take offer transaction: ${explorerLink}`);
+
+    // Check the offered tokens are now in Bob's account
+    // (note: there is no before balance as Bob didn't have any offered tokens before the transaction)
+    const bobTokenAccountBalanceAfterResponse =
+      await connection.getTokenAccountBalance(
+        accounts.takerOfferedTokenAccount
+      );
+    const bobTokenAccountBalanceAfter = new BN(
+      bobTokenAccountBalanceAfterResponse.value.amount
+    );
+    assert.equal(
+      bobTokenAccountBalanceAfter.toString(),
+      offeredAmount.toString()
+    );
   };
 
   it("Makes an offer as Alice", async () => {
