@@ -255,6 +255,18 @@ describe("escrow", async () => {
       bobTokenAccountBalanceAfter.toString(),
       offeredAmount.toString()
     );
+
+    // Check the wanted tokens are now in Alice's account
+    // (note: there is no before balance as Alice didn't have any wanted tokens before the transaction)
+    const aliceTokenAccountBalanceAfterResponse =
+      await connection.getTokenAccountBalance(accounts.makerWantedTokenAccount);
+    const aliceTokenAccountBalanceAfter = new BN(
+      aliceTokenAccountBalanceAfterResponse.value.amount
+    );
+    assert.equal(
+      aliceTokenAccountBalanceAfter.toString(),
+      wantedAmount.toString()
+    );
   };
 
   it("Makes an offer as Alice", async () => {
