@@ -62,8 +62,14 @@ jobs:
           rm /home/runner/.cargo/bin/rust-analyzer /home/runner/.cargo/bin/rustfmt /home/runner/.cargo/bin/cargo-fmt
           rustup update
 
+      # TODO: remove fix for semver issue once
+      # https://github.com/solana-labs/solana/issues/32503 is resolved
       - name: Test the ${{ matrix.project }} project builds and tests pass
         run: |
+          echo "----------------------------------------"
+          echo "Fixing solana-program crate not using semver issue..."
+          sed -i 's/ctx/_context/' programs/project/src/lib.rs
+          cargo add solana-program@"=1.18.5"
           cd labs/${{ matrix.project }}
           echo "----------------------------------------"
           echo "Creating a keypair..."
