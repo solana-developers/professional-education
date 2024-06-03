@@ -66,11 +66,11 @@ jobs:
       # https://github.com/solana-labs/solana/issues/32503 is resolved
       - name: Test the ${{ matrix.project }} project builds and tests pass
         run: |
+          cd labs/${{ matrix.project }}
           echo "----------------------------------------"
           echo "Fixing solana-program crate not using semver issue..."
           sed -i 's/ctx/_context/' programs/project/src/lib.rs
-          cargo add solana-program@"=1.18.5"
-          cd labs/${{ matrix.project }}
+          cargo add solana-program@"=1.18.5"        
           echo "----------------------------------------"
           echo "Creating a keypair..."
           solana-keygen new --no-bip39-passphrase -s -o deleteme.json
