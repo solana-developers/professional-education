@@ -257,11 +257,11 @@ describe("escrow", async () => {
     );
   };
 
-  it("Makes an offer as Alice", async () => {
+  it("Puts the tokens Alice offers into the vault when Alice makes an offer", async () => {
     await make();
   });
 
-  it("Takes Alice's offer as Bob", async () => {
+  it("Puts the tokens from the vault into Bob's account, and gives Alice Bob's tokens, when Bob takes an offer", async () => {
     await take();
   });
 });
