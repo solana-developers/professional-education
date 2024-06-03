@@ -154,17 +154,17 @@ describe("escrow", async () => {
       // Save the accounts for later use
       accounts.maker = alice.publicKey;
       accounts.taker = bob.publicKey;
-      accounts.offeredTokenMint = tokenMintA.publicKey;
-      accounts.makerOfferedTokenAccount = aliceTokenAccountA;
-      accounts.takerOfferedTokenAccount = bobTokenAccountA;
-      accounts.wantedTokenMint = tokenMintB.publicKey;
-      accounts.makerWantedTokenAccount = aliceTokenAccountB;
-      accounts.takerWantedTokenAccount = bobTokenAccountB;
+      accounts.tokenMintA = tokenMintA.publicKey;
+      accounts.makerTokenAccountA = aliceTokenAccountA;
+      accounts.takerTokenAccountA = bobTokenAccountA;
+      accounts.tokenMintB = tokenMintB.publicKey;
+      accounts.makerTokenAccountB = aliceTokenAccountB;
+      accounts.takerTokenAccountB = bobTokenAccountB;
     }
   );
 
-  const offeredAmount = new BN(1_000_000);
-  const wantedAmount = new BN(1_000_000);
+  const tokenAOfferedAmount = new BN(1_000_000);
+  const tokenBWantedAmount = new BN(1_000_000);
 
   // We'll call this function from multiple tests, so let's seperate it out
   const make = async () => {
@@ -182,7 +182,7 @@ describe("escrow", async () => {
     )[0];
 
     const vault = getAssociatedTokenAddressSync(
-      accounts.offeredTokenMint,
+      accounts.tokenMintA,
       offer,
       true,
       TOKEN_PROGRAM
@@ -192,7 +192,7 @@ describe("escrow", async () => {
     accounts.vault = vault;
 
     const transactionSignature = await program.methods
-      .makeOffer(offerId, offeredAmount, wantedAmount)
+      .makeOffer(offerId, tokenAOfferedAmount, tokenBWantedAmount)
       .accounts({ ...accounts })
       .signers([alice])
       .rpc();
@@ -202,20 +202,23 @@ describe("escrow", async () => {
     // Check our vault contains the tokens offered
     const vaultBalanceResponse = await connection.getTokenAccountBalance(vault);
     const vaultBalance = vaultBalanceResponse.value.amount;
-    assert.equal(vaultBalance, offeredAmount.toString());
+    assert.equal(vaultBalance, tokenAOfferedAmount.toString());
 
     // Check our Offer account contains the correct data
     const offerAccount = await program.account.offer.fetch(offer);
 
     assert.equal(offerAccount.maker.toBase58(), alice.publicKey.toBase58());
     assert.equal(
-      offerAccount.offeredTokenMint.toBase58(),
-      accounts.offeredTokenMint.toBase58()
+      offerAccount.tokenMintA.toBase58(),
+      accounts.tokenMintA.toBase58()
     );
-    assert.equal(offerAccount.wantedAmount.toString(), wantedAmount.toString());
     assert.equal(
-      offerAccount.wantedTokenMint.toBase58(),
-      accounts.wantedTokenMint.toBase58()
+      offerAccount.tokenBWantedAmount.toString(),
+      tokenBWantedAmount.toString()
+    );
+    assert.equal(
+      offerAccount.tokenMintB.toBase58(),
+      accounts.tokenMintB.toBase58()
     );
   };
 
@@ -232,27 +235,25 @@ describe("escrow", async () => {
     // Check the offered tokens are now in Bob's account
     // (note: there is no before balance as Bob didn't have any offered tokens before the transaction)
     const bobTokenAccountBalanceAfterResponse =
-      await connection.getTokenAccountBalance(
-        accounts.takerOfferedTokenAccount
-      );
+      await connection.getTokenAccountBalance(accounts.takerTokenAccountA);
     const bobTokenAccountBalanceAfter = new BN(
       bobTokenAccountBalanceAfterResponse.value.amount
     );
     assert.equal(
       bobTokenAccountBalanceAfter.toString(),
-      offeredAmount.toString()
+      tokenAOfferedAmount.toString()
     );
 
     // Check the wanted tokens are now in Alice's account
     // (note: there is no before balance as Alice didn't have any wanted tokens before the transaction)
     const aliceTokenAccountBalanceAfterResponse =
-      await connection.getTokenAccountBalance(accounts.makerWantedTokenAccount);
+      await connection.getTokenAccountBalance(accounts.makerTokenAccountB);
     const aliceTokenAccountBalanceAfter = new BN(
       aliceTokenAccountBalanceAfterResponse.value.amount
     );
     assert.equal(
       aliceTokenAccountBalanceAfter.toString(),
-      wantedAmount.toString()
+      tokenBWantedAmount.toString()
     );
   };
 

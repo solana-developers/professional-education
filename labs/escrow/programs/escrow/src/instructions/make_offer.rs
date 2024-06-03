@@ -15,18 +15,18 @@ pub struct MakeOffer<'info> {
     pub maker: Signer<'info>,
 
     #[account(mint::token_program = token_program)]
-    pub offered_token_mint: InterfaceAccount<'info, Mint>,
+    pub token_mint_a: InterfaceAccount<'info, Mint>,
 
     #[account(mint::token_program = token_program)]
-    pub wanted_token_mint: InterfaceAccount<'info, Mint>,
+    pub token_mint_b: InterfaceAccount<'info, Mint>,
 
     #[account(
         mut,
-        associated_token::mint = offered_token_mint,
+        associated_token::mint = token_mint_a,
         associated_token::authority = maker,
         associated_token::token_program = token_program
     )]
-    pub maker_offered_token_account: InterfaceAccount<'info, TokenAccount>,
+    pub maker_token_account_a: InterfaceAccount<'info, TokenAccount>,
 
     #[account(
         init,
@@ -40,7 +40,7 @@ pub struct MakeOffer<'info> {
     #[account(
         init,
         payer = maker,
-        associated_token::mint = offered_token_mint,
+        associated_token::mint = token_mint_a,
         associated_token::authority = offer,
         associated_token::token_program = token_program
     )]
@@ -54,14 +54,11 @@ pub struct MakeOffer<'info> {
 // Move the tokens from the maker's ATA to the vault
 pub fn send_offered_tokens_to_vault(
     context: &Context<MakeOffer>,
-    offered_amount: u64,
+    token_a_offered_amount: u64,
 ) -> Result<()> {
     let transfer_accounts = TransferChecked {
-        from: context
-            .accounts
-            .maker_offered_token_account
-            .to_account_info(),
-        mint: context.accounts.offered_token_mint.to_account_info(),
+        from: context.accounts.maker_token_account_a.to_account_info(),
+        mint: context.accounts.token_mint_a.to_account_info(),
         to: context.accounts.vault.to_account_info(),
         authority: context.accounts.maker.to_account_info(),
     };
@@ -73,19 +70,19 @@ pub fn send_offered_tokens_to_vault(
 
     transfer_checked(
         cpi_context,
-        offered_amount,
-        context.accounts.offered_token_mint.decimals,
+        token_a_offered_amount,
+        context.accounts.token_mint_a.decimals,
     )
 }
 
 // Save the details of the offer to the offer account
-pub fn save_offer(context: Context<MakeOffer>, id: u64, wanted_amount: u64) -> Result<()> {
+pub fn save_offer(context: Context<MakeOffer>, id: u64, token_b_wanted_amount: u64) -> Result<()> {
     context.accounts.offer.set_inner(Offer {
         id,
         maker: context.accounts.maker.key(),
-        offered_token_mint: context.accounts.offered_token_mint.key(),
-        wanted_token_mint: context.accounts.wanted_token_mint.key(),
-        wanted_amount,
+        token_mint_a: context.accounts.token_mint_a.key(),
+        token_mint_b: context.accounts.token_mint_b.key(),
+        token_b_wanted_amount,
         bump: context.bumps.offer,
     });
     Ok(())
