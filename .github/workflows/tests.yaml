@@ -11,6 +11,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        project: [favorites, escrow]
+
     steps:
       - uses: actions/checkout@v4
       # See https://github.com/metaDAOproject/setup-anchor for docs
@@ -58,48 +62,9 @@ jobs:
           rm /home/runner/.cargo/bin/rust-analyzer /home/runner/.cargo/bin/rustfmt /home/runner/.cargo/bin/cargo-fmt
           rustup update
 
-      - name: Create a blank Anchor project, apply fixes, build and test it
-        # TODO: fixes the following warning:
-        #   warning: package `project v0.1.0 (/home/runner/work/project/project)` does not have a license
-        # Ideally 'npm config get init-license' should be used to set the license for new projects
-        #
-        # TODO: Fix unused variable warning
-        #
-        # TODO: fixes:
-        #   error: package `solana-program v1.18.11` cannot be built because it requires rustc 1.75.0 or newer, while the currently active rustc version is 1.72.0-dev
-        # should not be necessary
+      - name: Test the ${{ matrix.project }} project builds and tests pass
         run: |
-          anchor init project
-          cd project
-
-          echo "----------------------------------------"
-          echo "Fixing package.json..."
-          jq '.license = "UNLICENSED"' package.json > fixed-package.json
-          mv fixed-package.json package.json
-          cat package.json
-
-          echo "----------------------------------------"
-          echo "Fixing solana-program crate not using semver issue..."
-          sed -i 's/ctx/_context/' programs/project/src/lib.rs
-          cargo add solana-program@"=1.18.5"
-
-          echo "----------------------------------------"
-          echo "Installing packages..."
-          npm i
-          echo "----------------------------------------"
-          echo "Running 'anchor test'..."
-          anchor test 2>&1 | tee -a build.log
-          echo "----------------------------------------"
-          echo "build.log..."
-          cat build.log
-          echo "----------------------------------------"
-          echo "Checking for errors or warnings in build.log..."
-          grep -qiEvz 'error:|warning:|failed' build.log
-          echo $?
-
-      - name: Test the Favorites project builds and tests pass
-        run: |
-          cd labs/favorites
+          cd labs/${{ matrix.project }}
           echo "----------------------------------------"
           echo "Creating a keypair..."
           solana-keygen new --no-bip39-passphrase -s -o deleteme.json
