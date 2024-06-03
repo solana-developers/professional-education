@@ -69,7 +69,7 @@ jobs:
           cd labs/${{ matrix.project }}
           echo "----------------------------------------"
           echo "Fixing solana-program crate not using semver issue..."
-          sed -i 's/ctx/_context/' programs/project/src/lib.rs
+          sed -i 's/ctx/_context/' programs/${{ matrix.project }}/src/lib.rs
           cargo add solana-program@"=1.18.5"        
           echo "----------------------------------------"
           echo "Creating a keypair..."
