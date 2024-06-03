@@ -217,13 +217,6 @@ describe("escrow", async () => {
       offerAccount.wantedTokenMint.toBase58(),
       accounts.wantedTokenMint.toBase58()
     );
-
-    const explorerLink = getExplorerLink(
-      "transaction",
-      transactionSignature,
-      "localnet"
-    );
-    console.log(`Make offer transaction: ${explorerLink}`);
   };
 
   // We'll call this function from multiple tests, so let's seperate it out
@@ -235,12 +228,6 @@ describe("escrow", async () => {
       .rpc();
 
     await confirmTransaction(connection, transactionSignature);
-    const explorerLink = getExplorerLink(
-      "transaction",
-      transactionSignature,
-      "localnet"
-    );
-    console.log(`Take offer transaction: ${explorerLink}`);
 
     // Check the offered tokens are now in Bob's account
     // (note: there is no before balance as Bob didn't have any offered tokens before the transaction)
