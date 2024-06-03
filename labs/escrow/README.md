@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This Solana program is called an ***escrow*** - it allows a user to swap a specific amount of one token for a desired amount of another token.
+This Solana program is called an **_escrow_** - it allows a user to swap a specific amount of one token for a desired amount of another token.
 
 For example, Alice is offering 10 USDC, and wants 100 WIF in return.
 
@@ -32,11 +32,13 @@ One of the challenges when teaching is avoiding ambiguity—names have to be car
   - Renamed deposit #1 -> 'offered_amount'
   - Renamed deposit #2 (in make() ) -> 'send_offered_tokens_to_vault'
   - Renamed deposit #3 (in take() ) -> 'send_wanted_tokens_to_maker'
+
 - 'seed' was renamed to 'id' because 'seed' as it conflicted with the 'seeds' used for PDA address generation.
 - 'Escrow' was used for the program's name and the account that records details of the offer. This wasn't great because people would confuse 'Escrow' with the 'Vault'.
 
   - Escrow (the program) -> remains Escrow
   - Escrow (the offer) -> Offer.
+
 - 'receive' was renamed to 'wanted_amount' as 'receive' is a verb and not a suitable name for an integer.
 - mint_a -> offered_token_mint (ie, what the maker has offered)
 - mint_b -> wanted_token_mint (ie, what that maker wants)
