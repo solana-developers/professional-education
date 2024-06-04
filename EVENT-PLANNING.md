@@ -63,7 +63,7 @@ Capacity: 3x attendees (eg, if you want 15 people, limit the event to 45 people)
 
 #### ⚠️ Before you publicize the event
 
-**Note**: it will be too late to change these after you get sign-ups so please do all of these.
+**Note**: it will be too late to change these after you get sign-ups so please do all of these **immediately after makiing the event**.
 
 - In 'Overview', click 'Edit Event', scroll all the way down, and set 'Restrict Location to Guests' (this stops unregistered guests from showing up)
 - Click 'Registration' and add a checkbox question:
@@ -119,7 +119,7 @@ Your contact at Solana Foundation may be able to organize items from https://sto
 The purpose of this email is twofold:
 
 - Confirm attendance - the people who reply to this email are your real attendees.
-- Ensure nobody running Windows spends the first day configuring their laptops
+- Ensure nobody spends the first day configuring their laptops
 
 Luma allows you to contact attendees, but we won’t use that for this email - you’ll get a better response rate with a **personal** email that doesn’t look like spam.
 
@@ -212,24 +212,34 @@ In order to put macOS into a mode where:
 - Keynote shows the current slide, plus instructor notes, and the next slide
 - The TV shows the current slide
 
+#### Display Settings for Projector Use
+
 You need to set display settings on your Mac. **This is not as obvious as it sounds.**
 
 - Pick the TV and set **Use As** to **Stop Mirroring**. Yes that doesn’t make any grammatical sense.
 - You can now extend the display onto the TV.
 
-**![macOS setting up Extended Display](https://lh7-us.googleusercontent.com/-4LcqN--vBE1wOZIDjcEcx0y3z1eOgL0KvVWqPA4i_pbA-3qrhCor_JzhwyKQGWS6VpbJ91s2dyUw_or3NxMUfn6_Hkg7nzi9rRXIy4N3LY7USSfr1wR-Txvk4l7D2fg45gQJ8F8tGpgQzvbhKdQnw)**
+**![macOS setting up Extended Display](./images/projector-setup.png)**
 
-Common causes of students having trouble with the labs:
+#### Mouse Pointer Settings
 
-- Students with an out-of-date node.js There’s a node version check in the slides for this reason. Anything less than node 18 was at the time of writing unsupported by node.js maintainers. Running an out-of-date version will give you errors about strange characters like (`||=`) when reading random files.
+It's also advantageous to use large mouse cursors when presenting (to stop 'losing' your mouse between the projector and your own screen):
+
+**![macOS setting up large mouse cursors](./images/large-mouse-pointer.png)**
+
+#### Common causes of students having trouble with the labs:
+
+The instructor notes have guides for specific lessons, but watch out for:
+
+- Students with an out-of-date node.js. There’s a node version check in the slides for this reason. Anything less than node 18 was at the time of writing unsupported by node.js maintainers. Running an out-of-date version will give you errors about strange characters like (`||=`) when reading files.
 - Students inconsistently moving between spellings of ‘favorites’ / ‘favourites’ during the Anchor lab.
-- Editors other than VScode are fine, but you can use your own VScode / Rust Analyzer setup to work out why the code doesn’t work
-- If you’re stuck about why a student’s code doesn’t work you can also paste over the answer and look at the differences in your git client.
+- Editors other than VScode are fine, but you can use your own VScode / Rust Analyzer setup to work out why the code doesn’t work. Rust Analyzer _will_ make catching bugs easier.
+- If you’re stuck about why a student’s code doesn’t work you can also commit their work, paste the correct answer from the `labs` folder and look at the differences in your git client.
 - If you don’t know the answer to a question, that’s OK, tell the student you’ll chase an answer, and ask your colleagues on Slack.
 
 ### Final day
 
-Chase up any items the students have added to the’ to be addressed’ list
+Chase up any items the students have added to the 'to be addressed’ list
 
 Ensure people know of:
 
