@@ -16,15 +16,18 @@ None of this goes ahead unless there’s a budget
 
 ​ Costs will be equipment, event space, catering, and merch, see below.
 
-#### Have secured date, venue
+#### Have secured date, venue, and equipment
 
 The venue needs to be quiet (ie not in the middle of a loud event like a Hacker House)
 
 Confirm seating arrangements:
 
 - Desks and chairs facing the instructor
-  1 x 90-inch monitor/TVs (one closer to back) as projector equivalents.
-- Actual projectors are generally preferable to monitors as the text size is larger.
+- Projectors or equivalents
+  - Multiple 90-inch monitor/TVs (one closer to back) as projector equivalents.
+  - Actual projectors are generally preferable to monitors as the text size is larger.
+
+Ideal but not essential: the presenter has two laptops - one for Keynote, the other for their own use during class. Eg, while the students code from a display, the instructor can look up documentation in answer to specific student requests.
 
 #### Luma page up
 
