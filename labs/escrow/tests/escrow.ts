@@ -20,17 +20,24 @@ import {
 } from "@solana/spl-token";
 import { assert } from "chai";
 import { randomBytes } from "crypto";
-import {
-  confirmTransaction,
-  getExplorerLink,
-  makeKeypairs,
-} from "@solana-developers/helpers";
+import { confirmTransaction, makeKeypairs } from "@solana-developers/helpers";
 
 const TOKEN_PROGRAM: typeof TOKEN_2022_PROGRAM_ID | typeof TOKEN_PROGRAM_ID =
   TOKEN_2022_PROGRAM_ID;
 
 const getRandomNumber = () => {
   return new BN(randomBytes(8));
+};
+
+const assertBigNumberEqual = (actual: BN | string, expected: BN) => {
+  if (typeof actual === "string") {
+    actual = new BN(actual);
+  }
+  assert.equal(actual.toString(), expected.toString());
+};
+
+const assertPublicKeyEqual = (actual: PublicKey, expected: PublicKey) => {
+  assert.equal(actual.toBase58(), expected.toBase58());
 };
 
 describe("escrow", async () => {
@@ -202,24 +209,15 @@ describe("escrow", async () => {
     // Check our vault contains the tokens offered
     const vaultBalanceResponse = await connection.getTokenAccountBalance(vault);
     const vaultBalance = vaultBalanceResponse.value.amount;
-    assert.equal(vaultBalance, tokenAOfferedAmount.toString());
+    assertBigNumberEqual(vaultBalance, tokenAOfferedAmount);
 
     // Check our Offer account contains the correct data
     const offerAccount = await program.account.offer.fetch(offer);
 
-    assert.equal(offerAccount.maker.toBase58(), alice.publicKey.toBase58());
-    assert.equal(
-      offerAccount.tokenMintA.toBase58(),
-      accounts.tokenMintA.toBase58()
-    );
-    assert.equal(
-      offerAccount.tokenBWantedAmount.toString(),
-      tokenBWantedAmount.toString()
-    );
-    assert.equal(
-      offerAccount.tokenMintB.toBase58(),
-      accounts.tokenMintB.toBase58()
-    );
+    assertPublicKeyEqual(offerAccount.maker, alice.publicKey);
+    assertPublicKeyEqual(offerAccount.tokenMintA, accounts.tokenMintA);
+    assertBigNumberEqual(offerAccount.tokenBWantedAmount, tokenBWantedAmount);
+    assertPublicKeyEqual(offerAccount.tokenMintB, accounts.tokenMintB);
   };
 
   // We'll call this function from multiple tests, so let's seperate it out
@@ -239,10 +237,7 @@ describe("escrow", async () => {
     const bobTokenAccountBalanceAfter = new BN(
       bobTokenAccountBalanceAfterResponse.value.amount
     );
-    assert.equal(
-      bobTokenAccountBalanceAfter.toString(),
-      tokenAOfferedAmount.toString()
-    );
+    assertBigNumberEqual(bobTokenAccountBalanceAfter, tokenAOfferedAmount);
 
     // Check the wanted tokens are now in Alice's account
     // (note: there is no before balance as Alice didn't have any wanted tokens before the transaction)
@@ -251,10 +246,7 @@ describe("escrow", async () => {
     const aliceTokenAccountBalanceAfter = new BN(
       aliceTokenAccountBalanceAfterResponse.value.amount
     );
-    assert.equal(
-      aliceTokenAccountBalanceAfter.toString(),
-      tokenBWantedAmount.toString()
-    );
+    assertBigNumberEqual(aliceTokenAccountBalanceAfter, tokenBWantedAmount);
   };
 
   it("Puts the tokens Alice offers into the vault when Alice makes an offer", async () => {
