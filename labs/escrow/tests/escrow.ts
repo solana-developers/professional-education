@@ -18,26 +18,16 @@ import {
   getAssociatedTokenAddressSync,
   getMinimumBalanceForRentExemptMint,
 } from "@solana/spl-token";
-import { assert } from "chai";
 import { randomBytes } from "crypto";
+import { assert } from "chai";
+
 import { confirmTransaction, makeKeypairs } from "@solana-developers/helpers";
 
 const TOKEN_PROGRAM: typeof TOKEN_2022_PROGRAM_ID | typeof TOKEN_PROGRAM_ID =
   TOKEN_2022_PROGRAM_ID;
 
-const getRandomNumber = () => {
-  return new BN(randomBytes(8));
-};
-
-const assertBigNumberEqual = (actual: BN | string, expected: BN) => {
-  if (typeof actual === "string") {
-    actual = new BN(actual);
-  }
-  assert.equal(actual.toString(), expected.toString());
-};
-
-const assertPublicKeyEqual = (actual: PublicKey, expected: PublicKey) => {
-  assert.equal(actual.toBase58(), expected.toBase58());
+export const getRandomBigNumber = (size: number = 8) => {
+  return new BN(randomBytes(size));
 };
 
 describe("escrow", async () => {
@@ -176,7 +166,7 @@ describe("escrow", async () => {
   // We'll call this function from multiple tests, so let's seperate it out
   const make = async () => {
     // Pick a random ID for the offer we'll make
-    const offerId = getRandomNumber();
+    const offerId = getRandomBigNumber();
 
     // Then determine the account addresses we'll use for the offer and the vault
     const offer = PublicKey.findProgramAddressSync(
@@ -208,16 +198,16 @@ describe("escrow", async () => {
 
     // Check our vault contains the tokens offered
     const vaultBalanceResponse = await connection.getTokenAccountBalance(vault);
-    const vaultBalance = vaultBalanceResponse.value.amount;
-    assertBigNumberEqual(vaultBalance, tokenAOfferedAmount);
+    const vaultBalance = new BN(vaultBalanceResponse.value.amount);
+    assert(vaultBalance.eq(tokenAOfferedAmount));
 
     // Check our Offer account contains the correct data
     const offerAccount = await program.account.offer.fetch(offer);
 
-    assertPublicKeyEqual(offerAccount.maker, alice.publicKey);
-    assertPublicKeyEqual(offerAccount.tokenMintA, accounts.tokenMintA);
-    assertBigNumberEqual(offerAccount.tokenBWantedAmount, tokenBWantedAmount);
-    assertPublicKeyEqual(offerAccount.tokenMintB, accounts.tokenMintB);
+    assert(offerAccount.maker.equals(alice.publicKey));
+    assert(offerAccount.tokenMintA.equals(accounts.tokenMintA));
+    assert(offerAccount.tokenMintB.equals(accounts.tokenMintB));
+    assert(offerAccount.tokenBWantedAmount.eq(tokenBWantedAmount));
   };
 
   // We'll call this function from multiple tests, so let's seperate it out
@@ -237,7 +227,7 @@ describe("escrow", async () => {
     const bobTokenAccountBalanceAfter = new BN(
       bobTokenAccountBalanceAfterResponse.value.amount
     );
-    assertBigNumberEqual(bobTokenAccountBalanceAfter, tokenAOfferedAmount);
+    assert(bobTokenAccountBalanceAfter.eq(tokenAOfferedAmount));
 
     // Check the wanted tokens are now in Alice's account
     // (note: there is no before balance as Alice didn't have any wanted tokens before the transaction)
@@ -246,7 +236,7 @@ describe("escrow", async () => {
     const aliceTokenAccountBalanceAfter = new BN(
       aliceTokenAccountBalanceAfterResponse.value.amount
     );
-    assertBigNumberEqual(aliceTokenAccountBalanceAfter, tokenBWantedAmount);
+    assert(aliceTokenAccountBalanceAfter.eq(tokenBWantedAmount));
   };
 
   it("Puts the tokens Alice offers into the vault when Alice makes an offer", async () => {
