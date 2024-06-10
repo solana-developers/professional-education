@@ -1,6 +1,6 @@
 ## Agenda
 
-There are two variants, classroom-based and remote
+There are two variants, classroom-based full time (4 full days) and remote (12 days)
 
 ### Remote training
 
@@ -41,7 +41,7 @@ Lesson 6: Introduction to Anchor
 
 #### Day 7
 
-Lab 6: Onchain programming (first part, anchor setup of a blank project)
+Lab 6: Onchain programming (first part, Anchor setup of a blank project)
 
 #### Day 8
 
@@ -50,6 +50,20 @@ Lab 6: Onchain programming (creating the Favorites program)
 #### Day 9
 
 Onchain programming (writing tests and deploying the Favorites program)
+
+#### Day 10
+
+Lesson 7 and start of Lab 7: Onchain programming with Tokens (instructor slides and description of the escrow program)
+
+#### Day 11
+
+Lab 7 continued: creating the make_offer() function and tests
+
+#### Day 12
+
+Lab 7 continued: creating the take_offer() function and tests
+
+Thankyou, and resources for continuing to learn and getting involved in the Solana community.
 
 ### Classroom-based training
 

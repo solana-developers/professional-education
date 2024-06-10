@@ -22,7 +22,7 @@ This project is based on [Dean Little's Anchor Escrow,](https://github.com/deanm
 
 ### Changes from original
 
-One of the challenges when teaching is avoiding ambiguity—names have to be carefully chosen to be clear and not possible to confuse with other times.
+One of the challenges when teaching is avoiding ambiguity — names have to be carefully chosen to be clear and not possible to confuse with other times.
 
 - Custom instructions were replaced by `@solana-developers/helpers` for many tasks to reduce the file size.
 - The upstream project has a custom file layout. We use the 'multiple files' Anchor layout.
