@@ -22,7 +22,7 @@ jobs:
         with:
           anchor-version: "latest"
           # Install Solana CLI (beta, required to fix 'ahash' issue)
-          solana-cli-version: "1.18.5"
+          solana-cli-version: "1.18.16"
           node-version: "20.12.2"
 
       # git will keep outputting:
@@ -70,7 +70,7 @@ jobs:
           echo "----------------------------------------"
           echo "Fixing solana-program crate not using semver issue..."
           sed -i 's/ctx/_context/' programs/${{ matrix.project }}/src/lib.rs
-          cargo add solana-program@"=1.18.5"        
+          cargo add solana-program@"=1.18.16"        
           echo "----------------------------------------"
           echo "Creating a keypair..."
           solana-keygen new --no-bip39-passphrase -s -o deleteme.json
