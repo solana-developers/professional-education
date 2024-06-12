@@ -88,7 +88,7 @@ Capacity: 3x attendees (eg, if you want 15 people, limit the event to 45 people)
   - Other Blockchain groups
   - Local community groups
 
-- Paid ads possibly, but we didn't last time.
+- Paid ads possibly (while Solana Foundarion does not use paid ads for its own events, other organisations may).
   - A good strategy with paid engagement is to try a few organic posts and use paid engagement as a force multiplier for the posts that organically get popular. Eg, try five pieces of content, pick the one that performs the best after 24 hours, and put a budget behind it for paid engagement.
   - Target the geographic area for the class
   - Target accounts that follow general JS/TS developers, rather than accounts that follow blockchain accounts.
