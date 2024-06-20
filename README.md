@@ -1,17 +1,20 @@
-# Solana Professional Education
+# 🧑🏼‍🎓 Solana Professional Education
 
-This repo is the Solana Professional Education training. We designed it for those considering running a training event and instructing the course.
+The Solana Professional Education repo has everything you need for running a training event and instructing the course.
 
-The training covers cryptography fundamentals, blockchain, and Solana from the ground up, with frequent hands-on labs. By the end of the training, students will be able to create and transfer tokens, mint NFTs, and build simple on-chain applications using Anchor on Rust.
+The training covers cryptography fundamentals, blockchain, and Solana from the ground up, with frequent hands-on labs. By the end of the training, students will be able to create and transfer tokens, mint NFTs, and build DeFi programs using Anchor on Rust.
 
-**If you want to learn Solana, not run a training event**, follow [@solana_devs on X](https://x.com/solana_devs), and we'll let you know when the next course is running in a city near you or on Zoom!
-
-**If you plan on running a training event** welcome, you're in the right place! This repo has everything you need to plan and teach the course. You can also [contact Mike MacCana](mailto:mike.maccana@solana.org) for help.
+This repo has everything you need to plan and teach the course:
 
 - The [Instructor presentation](./Solana%20Professional%20Education.key). We use Keynote as there are animations in some slides, and other presentation tools don't have Keynote's 'magic move.' There is also a [Powerpoint Export](./Solana%20Professional%20Education%20Powerpoint%20Export.pptx)
 - The files in [`labs`](./labs) are working solutions to each lesson's labs.
 - The [Agenda](./AGENDA.md) for local and remote training sessions
 - The [Event planning playbook](./EVENT-PLANNING.md)
+
+You can also [contact Mike MacCana](mailto:mike.maccana@solana.org) for help.
+
+> [!NOTE]  
+> If you want to learn Solana, not run a training event, follow [@solana_devs on X](https://x.com/solana_devs), and we'll let you know when the next course is running in a city near you or on Zoom!
 
 ## Aims of the training
 
@@ -31,11 +34,15 @@ We don't need to discuss Solana's benefits. If a student is attending the course
 
 ### Students must be able to stand on their own two feet after training is over.
 
-Students must be able to create new projects from scratch rather than clone existing repos. This means using the students' own computers rather than sandbox applications like Solana Playground.
+Students must be able to create their own projects after finishing the course:=. This means:
+
+ - Using the students' own computers rather than sandbox applications like Solana Playground.
+ - Creating projects srarting with a blank file or `anchor init`
+ - Using public, tested open source modules rather than cloning existing repos. 
 
 ### Smaller steps
 
-Student drop-off - high even in some of the best-regarded ecosystem training - often happens when the class moves faster than individual students and the students become so far behind the rest of the group they can't keep up. Smaller steps allow the class to proceed as a group, enable the group to discuss each step in detail, and increase the chances of everyone getting through every exercise.
+Student drop-off - high even in some of the best-regarded ecosystem training - often happens when the class moves faster than individual students, and those students become so far behind the rest of the group they can't keep up. Smaller steps allow the class to proceed as a group, enable the group to discuss each step in detail, and increase the chances of everyone getting through every exercise.
 
 ### Focus on Solana
 
