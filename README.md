@@ -1,4 +1,4 @@
-# Solana Professional Education
+# 🧑🏼‍🎓 Solana Professional Education
 
 The Solana Professional Education repo has everything you need for running a training event and instructing the course.
 
