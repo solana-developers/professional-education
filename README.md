@@ -2,7 +2,7 @@
 
 The Solana Professional Education repo has everything you need for running a training event and instructing the course.
 
-The training covers cryptography fundamentals, blockchain, and Solana from the ground up, with frequent hands-on labs. By the end of the training, students will be able to create and transfer tokens, mint NFTs, and build on-chain applications using Anchor on Rust.
+The training covers cryptography fundamentals, blockchain, and Solana from the ground up, with frequent hands-on labs. By the end of the training, students will be able to create and transfer tokens, mint NFTs, and build DeFi programs using Anchor on Rust.
 
 This repo has everything you need to plan and teach the course:
 
