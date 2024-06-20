@@ -16,6 +16,8 @@
     "@solana/spl-memo": "^0.2.5",
     "@solana/spl-token": "^0.4.1",
     "@solana/web3.js": "^1.91.1",
+    "@types/bs58": "^4.0.4",
+    "bs58": "^5.0.0",
     "esrun": "^3.2.26"
   }
 }
