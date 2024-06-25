@@ -35,6 +35,7 @@ const metadataData: DataV2 = {
   name: "Solana Training Token",
   symbol: "TRAINING",
   // An off-chain link to more information about the token using Metaplex standard for off-chain data
+  // See https://developers.metaplex.com/token-metadata/token-standard#the-non-fungible-standard
   // We are using a GitHub link here, but in production this content would be hosted on an immutable storage like
   // Arweave / IPFS / Pinata etc
   uri: "https://raw.githubusercontent.com/solana-developers/professional-education/main/labs/sample-token-metadata.json",

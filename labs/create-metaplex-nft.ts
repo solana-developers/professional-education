@@ -106,7 +106,8 @@ async function createNft(
   );
 
   await metaplex.nfts().verifyCollection({
-    //this is what verifies our collection as a Certified Collection
+    // Verify our collection as a Certified Collection
+    // See https://developers.metaplex.com/token-metadata/collections
     mintAddress: nft.mint.address,
     collectionMintAddress: collectionMint,
     isSizedCollection: true,
