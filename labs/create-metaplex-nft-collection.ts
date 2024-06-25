@@ -1,12 +1,7 @@
 // Adapted from https://github.com/Unboxed-Software/solana-metaplex/blob/solution/src/index.ts
 // and updated to work with the latest version of the Metaplex SDK
 
-import {
-  Connection,
-  clusterApiUrl,
-  PublicKey,
-  LAMPORTS_PER_SOL,
-} from "@solana/web3.js";
+import { Connection, clusterApiUrl, LAMPORTS_PER_SOL } from "@solana/web3.js";
 import {
   getKeypairFromFile,
   airdropIfRequired,
@@ -45,21 +40,19 @@ const metaplex = Metaplex.make(connection)
     })
   );
 
-// Substitute in your collection NFT address from create-metaplex-nft-collection.ts
-const collectionNftAddress = new PublicKey("YOUR_COLLECTION_NFT_ADDRESS_HERE");
-
-// example data for a new NFT
-const nftData = {
-  name: "Name",
-  symbol: "SYMBOL",
-  description: "Description",
-  sellerFeeBasisPoints: 0,
-  imageFile: "solana.png",
+const collectionNftData = {
+  name: "TestCollectionNFT",
+  symbol: "TEST",
+  description: "Test Description Collection",
+  sellerFeeBasisPoints: 100,
+  imageFile: "success.png",
+  isCollection: true,
+  collectionAuthority: user,
 };
 
-// Load the file into Metaplex
-const buffer = readFileSync(nftData.imageFile);
-const file = toMetaplexFile(buffer, nftData.imageFile);
+// Load file into Metaplex
+const buffer = readFileSync(collectionNftData.imageFile);
+const file = toMetaplexFile(buffer, collectionNftData.imageFile);
 
 // upload image and get image uri
 const imageUri = await metaplex.storage().upload(file);
@@ -67,39 +60,33 @@ console.log("image uri:", imageUri);
 
 // upload metadata and get metadata uri (off chain metadata)
 const uploadMetadataOutput = await metaplex.nfts().uploadMetadata({
-  name: nftData.name,
-  symbol: nftData.symbol,
-  description: nftData.description,
+  name: collectionNftData.name,
+  symbol: collectionNftData.symbol,
+  description: collectionNftData.description,
   image: imageUri,
 });
 
-const metadataUri = uploadMetadataOutput.uri;
+const collectionUri = uploadMetadataOutput.uri;
+console.log("Collection off-chain metadata URI:", collectionUri);
 
-// create an NFT using the URI from the metadata
+// create a collection NFT using the URI from the metadata
 const createNftOutput = await metaplex.nfts().create(
   {
-    uri: metadataUri, // metadata URI
-    name: nftData.name,
-    sellerFeeBasisPoints: nftData.sellerFeeBasisPoints,
-    symbol: nftData.symbol,
-    collection: collectionNftAddress,
+    uri: collectionUri,
+    name: collectionNftData.name,
+    sellerFeeBasisPoints: collectionNftData.sellerFeeBasisPoints,
+    symbol: collectionNftData.symbol,
+    isCollection: true,
   },
   { commitment: "finalized" }
 );
-const nft = createNftOutput.nft;
+
+const collectionNft = createNftOutput.nft;
 
 console.log(
-  `Token Mint: https://explorer.solana.com/address/${nft.address.toString()}?cluster=devnet`
+  `Collection NFT: https://explorer.solana.com/address/${collectionNft.address.toString()}?cluster=devnet`
 );
 
-await metaplex.nfts().verifyCollection({
-  // Verify our collection as a Certified Collection
-  // See https://developers.metaplex.com/token-metadata/collections
-  mintAddress: nft.mint.address,
-  collectionMintAddress: collectionNftAddress,
-  isSizedCollection: true,
-});
-
-console.log(`Created NFT address is`, nft.address.toString());
+console.log(`Collection NFT address is`, collectionNft.address.toString());
 
 console.log("✅ Finished successfully!");
