@@ -1,13 +1,25 @@
-import { initializeKeypair } from "./initializeKeypair";
-import { Connection, clusterApiUrl, PublicKey, Signer } from "@solana/web3.js";
+// Adapted from https://github.com/Unboxed-Software/solana-metaplex/blob/solution/src/index.ts
+// and updated to work with the latest version of the Metaplex SDK
+
+import {
+  Connection,
+  clusterApiUrl,
+  PublicKey,
+  Signer,
+  LAMPORTS_PER_SOL,
+} from "@solana/web3.js";
+import {
+  getKeypairFromFile,
+  airdropIfRequired,
+} from "@solana-developers/helpers";
 import {
   Metaplex,
   keypairIdentity,
-  bundlrStorage,
+  irysStorage,
   toMetaplexFile,
-  NftWithToken,
+  Nft,
 } from "@metaplex-foundation/js";
-import * as fs from "fs";
+import { readFileSync } from "fs";
 
 interface NftData {
   name: string;
@@ -45,12 +57,13 @@ const updateNftData = {
   imageFile: "success.png",
 };
 
+// Upload the image and metadata
 async function uploadMetadata(
   metaplex: Metaplex,
   nftData: NftData
 ): Promise<string> {
   // file to buffer
-  const buffer = fs.readFileSync("src/" + nftData.imageFile);
+  const buffer = readFileSync(nftData.imageFile);
 
   // buffer to metaplex file
   const file = toMetaplexFile(buffer, nftData.imageFile);
@@ -76,7 +89,7 @@ async function createNft(
   uri: string,
   nftData: NftData,
   collectionMint: PublicKey
-): Promise<NftWithToken> {
+): Promise<Nft> {
   const { nft } = await metaplex.nfts().create(
     {
       uri: uri, // metadata URI
@@ -106,7 +119,7 @@ async function createCollectionNft(
   metaplex: Metaplex,
   uri: string,
   data: CollectionNftData
-): Promise<NftWithToken> {
+): Promise<Nft> {
   const { nft } = await metaplex.nfts().create(
     {
       uri: uri,
@@ -152,70 +165,62 @@ async function updateNftUri(
   );
 }
 
-async function main() {
-  // create a new connection to the cluster's API
-  const connection = new Connection(clusterApiUrl("devnet"));
+// create a new connection to the cluster's API
+const connection = new Connection(clusterApiUrl("devnet"));
 
-  // initialize a keypair for the user
-  const user = await initializeKeypair(connection);
+// initialize a keypair for the user
+const user = await getKeypairFromFile();
 
-  console.log("PublicKey:", user.publicKey.toBase58());
+await airdropIfRequired(
+  connection,
+  user.publicKey,
+  1 * LAMPORTS_PER_SOL,
+  0.1 * LAMPORTS_PER_SOL
+);
 
-  // metaplex set up
-  const metaplex = Metaplex.make(connection)
-    .use(keypairIdentity(user))
-    .use(
-      bundlrStorage({
-        address: "https://devnet.bundlr.network",
-        providerUrl: "https://api.devnet.solana.com",
-        timeout: 60000,
-      })
-    );
+console.log("Loaded user key:", user.publicKey.toBase58());
 
-  const collectionNftData = {
-    name: "TestCollectionNFT",
-    symbol: "TEST",
-    description: "Test Description Collection",
-    sellerFeeBasisPoints: 100,
-    imageFile: "success.png",
-    isCollection: true,
-    collectionAuthority: user,
-  };
-
-  // upload data for the collection NFT and get the URI for the metadata
-  const collectionUri = await uploadMetadata(metaplex, collectionNftData);
-
-  // create a collection NFT using the helper function and the URI from the metadata
-  const collectionNft = await createCollectionNft(
-    metaplex,
-    collectionUri,
-    collectionNftData
+// metaplex set up
+const metaplex = Metaplex.make(connection)
+  .use(keypairIdentity(user))
+  .use(
+    irysStorage({
+      address: "https://devnet.irys.xyz",
+      providerUrl: "https://api.devnet.solana.com",
+      timeout: 60000,
+    })
   );
 
-  // upload the NFT data and get the URI for the metadata
-  const uri = await uploadMetadata(metaplex, nftData);
+const collectionNftData = {
+  name: "TestCollectionNFT",
+  symbol: "TEST",
+  description: "Test Description Collection",
+  sellerFeeBasisPoints: 100,
+  imageFile: "success.png",
+  isCollection: true,
+  collectionAuthority: user,
+};
 
-  // create an NFT using the helper function and the URI from the metadata
-  const nft = await createNft(
-    metaplex,
-    uri,
-    nftData,
-    collectionNft.mint.address
-  );
+// upload data for the collection NFT and get the URI for the metadata
+const collectionUri = await uploadMetadata(metaplex, collectionNftData);
 
-  // upload updated NFT data and get the new URI for the metadata
-  const updatedUri = await uploadMetadata(metaplex, updateNftData);
+// create a collection NFT using the helper function and the URI from the metadata
+const collectionNft = await createCollectionNft(
+  metaplex,
+  collectionUri,
+  collectionNftData
+);
 
-  // update the NFT using the helper function and the new URI from the metadata
-  await updateNftUri(metaplex, updatedUri, nft.address);
-}
+// upload the NFT data and get the URI for the metadata
+const uri = await uploadMetadata(metaplex, nftData);
 
-main()
-  .then(() => {
-    console.log("Finished successfully");
-    process.exit(0);
-  })
-  .catch((error) => {
-    console.log(error);
-    process.exit(1);
-  });
+// create an NFT using the helper function and the URI from the metadata
+const nft = await createNft(metaplex, uri, nftData, collectionNft.mint.address);
+
+// upload updated NFT data and get the new URI for the metadata
+const updatedUri = await uploadMetadata(metaplex, updateNftData);
+
+// update the NFT using the helper function and the new URI from the metadata
+await updateNftUri(metaplex, updatedUri, nft.address);
+
+console.log("✅ Finished successfully!");
