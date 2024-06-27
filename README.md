@@ -6,7 +6,7 @@ The training covers cryptography fundamentals, blockchain, and Solana from the g
 
 This repo has everything you need to plan and teach the course:
 
-- The [Instructor presentation](./Solana%20Professional%20Education.key). We use Keynote as there are animations in some slides, and other presentation tools don't have Keynote's 'magic move.' There is also a [Powerpoint Export](./Solana%20Professional%20Education%20Powerpoint%20Export.pptx)
+- The [Instructor presentation](./Solana%20Professional%20Education.key). We use Keynote as there are animations in some slides, and other presentation tools don't have Keynote's 'magic move' or SVG support. There is also a [web version of the instructor presentation](https://www.icloud.com/keynote/001TXNMStPSD91jj5cS33eSbw#Solana_Professional_Education).
 - The files in [`labs`](./labs) are working solutions to each lesson's labs.
 - The [Agenda](./AGENDA.md) for local and remote training sessions
 - The [Event planning playbook](./EVENT-PLANNING.md)
@@ -36,9 +36,9 @@ We don't need to discuss Solana's benefits. If a student is attending the course
 
 Students must be able to create their own projects after finishing the course:=. This means:
 
- - Using the students' own computers rather than sandbox applications like Solana Playground.
- - Creating projects srarting with a blank file or `anchor init`
- - Using public, tested open source modules rather than cloning existing repos. 
+- Using the students' own computers rather than sandbox applications like Solana Playground.
+- Creating projects srarting with a blank file or `anchor init`
+- Using public, tested open source modules rather than cloning existing repos.
 
 ### Smaller steps
 
