@@ -65,3 +65,11 @@ The aim is to focus on the broader audience of people who want/need to build thi
 **Lead time**: 1-month minimum, ideally six weeks
 
 You may want to visit the [Agenda](./AGENDA.md) or [Event planning playbook](./EVENT-PLANNING.md) now.
+
+## Tips for teaching
+
+- Please make sure you've read and understood 'Aims of the Training' above. Specifically, make sure to **keep the focus on practice over theory**. Students learn more from building than they do from having someone present to them. **Don't add unnecessary theory that slows down the time taken to get to the next lab, and adds cognitive overload** - if something isn't necessary to understand the next lab, it shouldn't be there.
+
+- If training remotely, you may prefer **Google Classroom** over zoom. It has breakout rooms, which allow individual students to and staff to break out into rooms together.
+
+- Sometimes some students finish before others. In a physical room, give students that complete fast a challenge of helping other students that need it. In a virtual room, you can use Google Classroom. This keeps fast students entertained while helping slower students catch up.
