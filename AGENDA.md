@@ -21,6 +21,7 @@ Lab 2: Using Solana Devnet
 #### Day 3
 
 Lesson 3: Run transactions
+
 Lab 3: Transactions and Sending SOL
 
 #### Day 4
