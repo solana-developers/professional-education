@@ -34,7 +34,7 @@ We don't need to discuss Solana's benefits. If a student is attending the course
 
 ### Students must be able to stand on their own two feet after training is over.
 
-Students must be able to create their own projects after finishing the course:=. This means:
+Students must be able to create their own projects after finishing the course. This means:
 
 - Using the students' own computers rather than sandbox applications like Solana Playground.
 - Creating projects srarting with a blank file or `anchor init`
