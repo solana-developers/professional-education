@@ -1,6 +1,6 @@
 ## Agenda
 
-There are two variants, classroom-based full time (4 full days) and remote (12 days)
+There are two variants, [remote (12 days)](#remote-training) and [classroom-based full time (4 full days)](#classroom-based-training)
 
 ### Remote training
 
@@ -21,6 +21,7 @@ Lab 2: Using Solana Devnet
 #### Day 3
 
 Lesson 3: Run transactions
+
 Lab 3: Transactions and Sending SOL
 
 #### Day 4
