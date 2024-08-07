@@ -16,6 +16,22 @@ You can also [contact Mike MacCana](mailto:mike.maccana@solana.org) for help.
 > [!NOTE]  
 > If you want to learn Solana, not run a training event, follow [@solana_devs on X](https://x.com/solana_devs), and we'll let you know when the next course is running in a city near you or on Zoom!
 
+## Training Offering
+
+**Four days **full-time** in-classroom**, or **12 x 2-hour remote lessons**.
+
+**Audience**: anyone proficient in TypeScript who wants to learn blockchain. Prior knowledge of cryptography, blockchain, Rust or Anchor is not required - see 'Aims of the training' below.
+
+**Student time** is 10 AM to 4 PM.
+
+**Instructor time** is 9 AM to 5 PM.
+
+**Class sizes**: Generally, between 10 and 15 people, you want to spend time with every student, and larger class sizes are difficult for a single instructor to manage.
+
+**Lead time**: 1-month minimum, ideally six weeks
+
+You may want to visit the [Agenda](./AGENDA.md) or [Event planning playbook](./EVENT-PLANNING.md) now.
+
 ## Aims of the training
 
 ### Applicable to the broadest group of potential Solana developers.
@@ -47,24 +63,6 @@ Student drop-off - high even in some of the best-regarded ecosystem training - o
 ### Focus on Solana
 
 Many existing Solana courses are slowed down unnecessarily due to issues that have nothing to do with Solana. The Solana Professional Training program is not a course in JavaScript frameworks, mobile development, IIFEs (`;(async function(){})();`), or any other topic.
-
-## Training Offering
-
-**Four days **full-time** in-classroom**, or **12 x 2-hour remote lessons**.
-
-**Audience**: aimed at anyone proficient in TypeScript who wants to learn blockchain.
-
-The aim is to focus on the broader audience of people who want/need to build things rather than blockchain enthusiasts or Rust programmers. Hence, prior knowledge of blockchain or cryptography is not required.
-
-**Student time** is 10 AM to 4 PM.
-
-**Instructor time** is 9 AM to 5 PM.
-
-**Class sizes**: Generally, between 10 and 15 people, you want to spend time with every student, and larger class sizes are difficult for a single instructor to manage.
-
-**Lead time**: 1-month minimum, ideally six weeks
-
-You may want to visit the [Agenda](./AGENDA.md) or [Event planning playbook](./EVENT-PLANNING.md) now.
 
 ## Tips for teaching
 
