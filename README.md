@@ -14,7 +14,7 @@ This repo has everything you need to plan and teach the course:
 You can also [contact Mike MacCana](mailto:mike.maccana@solana.org) for help.
 
 > [!NOTE]  
-> If you want to learn Solana, not run a training event, follow [@solana_devs on X](https://x.com/solana_devs), and we'll let you know when the next course is running in a city near you or on Zoom!
+> If you want to attend a training event and learn Solana (rather than run a training event yourself), follow [@solana_devs on X](https://x.com/solana_devs), and we'll let you know when the next course is running in a city near you or on Zoom!
 
 ## Training Offering
 
