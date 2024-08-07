@@ -20,7 +20,7 @@ You can also [contact Mike MacCana](mailto:mike.maccana@solana.org) for help.
 
 **Four days **full-time** in-classroom**, or **12 x 2-hour remote lessons**.
 
-**Audience**: anyone proficient in TypeScript who wants to learn blockchain. Prior knowledge of cryptography, blockchain, Rust or Anchor is not required - see 'Aims of the training' below.
+**Audience**: anyone proficient in TypeScript who wants to learn blockchain. Prior knowledge of cryptography, blockchain, Rust or Anchor is not required - see [aims of the training](https://github.com/solana-developers/professional-education/blob/main/README.md#aims-of-the-training).
 
 **Student time** is 10 AM to 4 PM.
 
