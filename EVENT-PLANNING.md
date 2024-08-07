@@ -68,8 +68,8 @@ Capacity: 3x attendees (eg, if you want 15 people, limit the event to 45 people)
 
 **Note**: it will be too late to change these after you get sign-ups so please do all of these **immediately after makiing the event**.
 
-- In 'Overview', click 'Edit Event', scroll all the way down, and set 'Restrict Location to Guests' (this stops unregistered guests from showing up)
-- Click 'Registration' and add a checkbox question:
+- In 'Overview' tab, click 'Edit Event', scroll all the way down, and set 'Restrict Location to Guests' (this stops unregistered guests from showing up)
+- In 'Registration' tab, add a checkbox question:
   - 'I can commit to all 4 days of training, 10 AM to 4 PM'
   - 'I have a laptop running macOS, Linux, or Windows (Windows must have WSL2 and Microsoft Terminal)'
 - Click 'More', 'Event page', and set a nice slug in the Public URL `solana-training-nyc-may-28-2024`. Note: you **must** do this before publicizing your event, as Luma will **not** redirect from the old URL to the new URL if you have it, which will break any links to the original URL.
@@ -229,6 +229,10 @@ You need to set display settings on your Mac. **This is not as obvious as it sou
 It's also advantageous to use large mouse cursors when presenting (to stop 'losing' your mouse between the projector and your own screen):
 
 **![macOS setting up large mouse cursors](./images/large-mouse-pointer.png)**
+
+#### VSCode settings
+
+Turn off GitHub Copilot - you don't want Copilot suggesting incorrect things while the instructor types and distracting students. 
 
 #### Common causes of students having trouble with the labs:
 
