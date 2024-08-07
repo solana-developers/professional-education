@@ -54,7 +54,7 @@ From a previous event, update accordingly based on your organization and locatio
 
 > We're expecting a large demand for this course, so we've added a few questions during registration. Registering does not guarantee acceptance into the training. If you're accepted we'll see you there!
 
-See previous events: [May 28, 2023](https://lu.ma/850szocc), [Mar 25, 2023](https://lu.ma/ah0v9gwb)
+See previous events: [May 28, 2024](https://lu.ma/850szocc), [Mar 24, 2023](https://lu.ma/ah0v9gwb), [Sep 6 2024](https://lu.ma/wea0og3i)
 
 #### Options
 
