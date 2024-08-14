@@ -33,7 +33,7 @@ console.log(
 );
 
 const mint = Keypair.generate();
-const decimals = 9;
+const DECIMALS = 9;
 
 const metadata: TokenMetadata = {
   mint: mint.publicKey,
@@ -70,7 +70,7 @@ const mintTransaction = new Transaction().add(
   ),
   createInitializeMintInstruction(
     mint.publicKey,
-    decimals,
+    DECIMALS,
     user.publicKey,
     null,
     TOKEN_2022_PROGRAM_ID
