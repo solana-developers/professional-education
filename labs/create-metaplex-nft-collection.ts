@@ -36,7 +36,6 @@ const metaplex = Metaplex.make(connection)
     irysStorage({
       address: "https://devnet.irys.xyz",
       providerUrl: "https://api.devnet.solana.com",
-      timeout: 60000,
     })
   );
 
