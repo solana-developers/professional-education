@@ -56,7 +56,7 @@ const updatedNftData = {
   symbol: "UPDATED",
   description: "Updated Description",
   sellerFeeBasisPoints: 100,
-  imageFile: "success.png",
+  imageFile: "updated.png",
 };
 
 // Load the image file into Metaplex

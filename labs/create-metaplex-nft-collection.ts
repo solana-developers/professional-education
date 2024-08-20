@@ -45,7 +45,7 @@ const collectionNftData = {
   symbol: "TEST",
   description: "Test Description Collection",
   sellerFeeBasisPoints: 100,
-  imageFile: "success.png",
+  imageFile: "nft.png",
   isCollection: true,
   collectionAuthority: user,
 };

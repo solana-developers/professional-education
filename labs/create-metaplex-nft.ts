@@ -54,7 +54,7 @@ const nftData = {
   symbol: "SYMBOL",
   description: "Description",
   sellerFeeBasisPoints: 0,
-  imageFile: "solana.png",
+  imageFile: "nft.png",
 };
 
 // Load the file into Metaplex
