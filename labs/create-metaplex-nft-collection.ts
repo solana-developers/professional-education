@@ -12,7 +12,7 @@ import {
   irysStorage,
   toMetaplexFile,
 } from "@metaplex-foundation/js";
-import { readFileSync } from "fs";
+import { readFile } from "fs/promises";
 
 // create a new connection to the cluster's API
 const connection = new Connection(clusterApiUrl("devnet"));
@@ -51,7 +51,7 @@ const collectionNftData = {
 };
 
 // Load file into Metaplex
-const buffer = readFileSync(collectionNftData.imageFile);
+const buffer = await readFile(collectionNftData.imageFile);
 const file = toMetaplexFile(buffer, collectionNftData.imageFile);
 
 // upload image and get image uri
