@@ -1,5 +1,4 @@
-// See https://developers.metaplex.com/token-metadata
-// and https://developers.metaplex.com/token-metadata/collections#associating-nfts-to-collection-nfts
+// See https://developers.metaplex.com/token-metadata/collections
 import {
   createNft,
   fetchDigitalAsset,
@@ -15,14 +14,8 @@ import {
   generateSigner,
   keypairIdentity,
   percentAmount,
-  publicKey,
 } from "@metaplex-foundation/umi";
-import {
-  Connection,
-  LAMPORTS_PER_SOL,
-  PublicKey,
-  clusterApiUrl,
-} from "@solana/web3.js";
+import { Connection, LAMPORTS_PER_SOL, clusterApiUrl } from "@solana/web3.js";
 
 // create a new connection to the cluster's API
 const connection = new Connection(clusterApiUrl("devnet"));
@@ -41,38 +34,36 @@ console.log("Loaded user:", user.publicKey.toBase58());
 
 // Create Umi Instance, using the same endpoint as our connection,
 // and using our user to sign transactions
-const umi = createUmi(connection.rpcEndpoint).use(mplTokenMetadata());
+const umi = createUmi(connection.rpcEndpoint);
+umi.use(mplTokenMetadata());
 const umiKeypair = umi.eddsa.createKeypairFromSecretKey(user.secretKey);
 umi.use(keypairIdentity(umiKeypair));
 
-const collectionAddress = new PublicKey(
-  "GyddqwoWKffNjgLZZwENHvjaegQqdy3wmiEuumGeiEvn"
-);
-
-// Generate an NFT
-console.log(`Creating NFT...`);
-const mint = generateSigner(umi);
+console.log(`Creating collection...`);
+// This mint is like a factory for creating NFTs
+// Except it only makes one NFT, and it's a collection!
+const collectionMint = generateSigner(umi);
 const transaction = await createNft(umi, {
-  mint,
-  name: "My NFT",
+  mint: collectionMint,
+  name: "My Collection",
+  symbol: "MC",
   // https://developers.metaplex.com/token-metadata/token-standard#the-non-fungible-standard
-  uri: "https://raw.githubusercontent.com/solana-developers/professional-education/main/labs/sample-nft-offchain-data.json",
+  uri: "https://raw.githubusercontent.com/solana-developers/professional-education/main/labs/sample-nft-collection-offchain-data.json",
   sellerFeeBasisPoints: percentAmount(0),
-  collection: {
-    // See https://developers.metaplex.com/umi/public-keys-and-signers
-    key: publicKey(collectionAddress),
-    verified: false,
-  },
+  isCollection: true,
 });
 
 await transaction.sendAndConfirm(umi);
 
-const createdNft = await fetchDigitalAsset(umi, mint.publicKey);
+const createdCollectionNft = await fetchDigitalAsset(
+  umi,
+  collectionMint.publicKey
+);
 
 console.log(
-  `✨🖼️ Created NFT! Address is: ${getExplorerLink(
+  `Created collection 📦! Address is: ${getExplorerLink(
     "address",
-    createdNft.mint.publicKey,
+    createdCollectionNft.mint.publicKey,
     "devnet"
   )}`
 );

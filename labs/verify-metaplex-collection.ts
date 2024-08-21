@@ -1,9 +1,8 @@
 // See https://developers.metaplex.com/token-metadata
 // and https://developers.metaplex.com/token-metadata/collections#associating-nfts-to-collection-nfts
 import {
-  createNft,
-  fetchDigitalAsset,
   mplTokenMetadata,
+  verifyCollectionV1,
 } from "@metaplex-foundation/mpl-token-metadata";
 import {
   airdropIfRequired,
@@ -12,10 +11,9 @@ import {
 } from "@solana-developers/helpers";
 import { createUmi } from "@metaplex-foundation/umi-bundle-defaults";
 import {
-  generateSigner,
   keypairIdentity,
-  percentAmount,
   publicKey,
+  createSignerFromKeypair,
 } from "@metaplex-foundation/umi";
 import {
   Connection,
@@ -49,32 +47,19 @@ const collectionAddress = new PublicKey(
   "GyddqwoWKffNjgLZZwENHvjaegQqdy3wmiEuumGeiEvn"
 );
 
-// Generate an NFT
-console.log(`Creating NFT...`);
-const mint = generateSigner(umi);
-const transaction = await createNft(umi, {
-  mint,
-  name: "My NFT",
-  // https://developers.metaplex.com/token-metadata/token-standard#the-non-fungible-standard
-  uri: "https://raw.githubusercontent.com/solana-developers/professional-education/main/labs/sample-nft-offchain-data.json",
-  sellerFeeBasisPoints: percentAmount(0),
-  collection: {
-    // See https://developers.metaplex.com/umi/public-keys-and-signers
-    key: publicKey(collectionAddress),
-    verified: false,
-  },
-});
-
-await transaction.sendAndConfirm(umi);
-
-const createdNft = await fetchDigitalAsset(umi, mint.publicKey);
-
-console.log(
-  `✨🖼️ Created NFT! Address is: ${getExplorerLink(
-    "address",
-    createdNft.mint.publicKey,
-    "devnet"
-  )}`
+const nftAddress = new PublicKey(
+  "AHKg2uDKR1dwz7R2bAGjZc8wDn8PkCGH4SD5VH7WU45o"
 );
 
-console.log("✅ Finished successfully!");
+// Make a metaplex signer from the 'user' keypair.
+const signer = createSignerFromKeypair(umi, umiKeypair);
+
+// See https://developers.metaplex.com/token-metadata/collections
+await verifyCollectionV1(umi, {
+  // The NFT we want to verify inside the collection.
+  metadata: publicKey(nftAddress),
+  // The Collection NFT that is already set on the Metadata account of the NFT but not yet verified.
+  collectionMint: publicKey(collectionAddress),
+  // The Update Authority of the Collection NFT as a signer
+  authority: signer,
+}).sendAndConfirm(umi);
