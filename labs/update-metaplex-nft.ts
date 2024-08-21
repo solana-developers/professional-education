@@ -1,24 +1,18 @@
-// Adapted from https://github.com/Unboxed-Software/solana-metaplex/blob/solution/src/index.ts
-// and updated to work with the latest version of the Metaplex SDK
-
+import "dotenv/config";
 import {
-  Connection,
-  clusterApiUrl,
-  PublicKey,
-  LAMPORTS_PER_SOL,
-} from "@solana/web3.js";
+  fetchDigitalAsset,
+  fetchMetadataFromSeeds,
+  mplTokenMetadata,
+  updateV1,
+} from "@metaplex-foundation/mpl-token-metadata";
 import {
-  getKeypairFromFile,
   airdropIfRequired,
   getExplorerLink,
+  getKeypairFromFile,
 } from "@solana-developers/helpers";
-import {
-  Metaplex,
-  keypairIdentity,
-  irysStorage,
-  toMetaplexFile,
-} from "@metaplex-foundation/js";
-import { readFileSync } from "fs";
+import { createUmi } from "@metaplex-foundation/umi-bundle-defaults";
+import { keypairIdentity, publicKey } from "@metaplex-foundation/umi";
+import { Connection, LAMPORTS_PER_SOL, clusterApiUrl } from "@solana/web3.js";
 
 // create a new connection to the cluster's API
 const connection = new Connection(clusterApiUrl("devnet"));
@@ -35,61 +29,35 @@ await airdropIfRequired(
 
 console.log("Loaded user:", user.publicKey.toBase58());
 
-// metaplex set up
-const metaplex = Metaplex.make(connection)
-  .use(keypairIdentity(user))
-  .use(
-    irysStorage({
-      address: "https://devnet.irys.xyz",
-      providerUrl: "https://api.devnet.solana.com",
-      timeout: 60000,
-    })
-  );
+// Create Umi Instance, using the same endpoint as our connection,
+// and using our user to sign transactions
+const umi = createUmi(connection.rpcEndpoint).use(mplTokenMetadata());
+const umiKeypair = umi.eddsa.createKeypairFromSecretKey(user.secretKey);
+umi.use(keypairIdentity(umiKeypair));
 
-// Load the NFT using the mint address
-const nftAddress: PublicKey = new PublicKey("YOUR_NFT_ADDRESS_HERE");
-const nft = await metaplex.nfts().findByMint({ mintAddress: nftAddress });
+// Our NFT address we made earlier
+// const mint = publicKey("YOUR_MINT_ADDRESS_HERE");
+const mint = publicKey("4CpLPpxvZJJViUrUpnLj5gX1ZNRvCB7jdcrjLGb9Wixi");
 
-// example data for updating an existing NFT
-const updatedNftData = {
-  name: "Updated",
-  symbol: "UPDATED",
-  description: "Updated Description",
-  sellerFeeBasisPoints: 100,
-  imageFile: "updated.png",
-};
-
-// Load the image file into Metaplex
-const buffer = readFileSync(updatedNftData.imageFile);
-const file = toMetaplexFile(buffer, updatedNftData.imageFile);
-
-// Upload the new image and get image URI
-const imageUri = await metaplex.storage().upload(file);
-console.log("image uri:", imageUri);
-
-// Upload new off-chain metadata
-const uploadMetadataOutput = await metaplex.nfts().uploadMetadata({
-  name: updatedNftData.name,
-  symbol: updatedNftData.symbol,
-  description: updatedNftData.description,
-  image: imageUri,
+// Update the NFT metadata
+const initialMetadata = await fetchMetadataFromSeeds(umi, {
+  mint,
 });
-
-const updatedUri = uploadMetadataOutput.uri;
-
-// update the NFT metadata
-const { response } = await metaplex.nfts().update(
-  {
-    nftOrSft: nft,
-    uri: updatedUri,
+await updateV1(umi, {
+  mint,
+  data: {
+    ...initialMetadata,
+    name: "Updated Asset",
+    symbol: "Updated",
   },
-  { commitment: "finalized" }
-);
+}).sendAndConfirm(umi);
+
+const createdNft = await fetchDigitalAsset(umi, mint);
 
 console.log(
   `NFT updated with new metadata URI: ${getExplorerLink(
-    "transaction",
-    response.signature,
+    "address",
+    createdNft.mint.publicKey,
     "devnet"
   )}`
 );

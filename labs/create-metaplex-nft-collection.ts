@@ -1,18 +1,20 @@
-// Adapted from https://github.com/Unboxed-Software/solana-metaplex/blob/solution/src/index.ts
-// and updated to work with the latest version of the Metaplex SDK
-
-import { Connection, clusterApiUrl, LAMPORTS_PER_SOL } from "@solana/web3.js";
+// See https://developers.metaplex.com/token-metadata/collections
 import {
-  getKeypairFromFile,
+  createNft,
+  mplTokenMetadata,
+} from "@metaplex-foundation/mpl-token-metadata";
+import {
   airdropIfRequired,
+  getExplorerLink,
+  getKeypairFromFile,
 } from "@solana-developers/helpers";
+import { createUmi } from "@metaplex-foundation/umi-bundle-defaults";
 import {
-  Metaplex,
+  generateSigner,
   keypairIdentity,
-  irysStorage,
-  toMetaplexFile,
-} from "@metaplex-foundation/js";
-import { readFile } from "fs/promises";
+  percentAmount,
+} from "@metaplex-foundation/umi";
+import { Connection, LAMPORTS_PER_SOL, clusterApiUrl } from "@solana/web3.js";
 
 // create a new connection to the cluster's API
 const connection = new Connection(clusterApiUrl("devnet"));
@@ -29,63 +31,28 @@ await airdropIfRequired(
 
 console.log("Loaded user:", user.publicKey.toBase58());
 
-// metaplex set up
-const metaplex = Metaplex.make(connection)
-  .use(keypairIdentity(user))
-  .use(
-    irysStorage({
-      address: "https://devnet.irys.xyz",
-      providerUrl: "https://api.devnet.solana.com",
-    })
-  );
+// Create Umi Instance, using the same endpoint as our connection,
+// and using our user to sign transactions
+const umi = createUmi(connection.rpcEndpoint).use(mplTokenMetadata());
+const umiKeypair = umi.eddsa.createKeypairFromSecretKey(user.secretKey);
+umi.use(keypairIdentity(umiKeypair));
 
-const collectionNftData = {
-  name: "TestCollectionNFT",
-  symbol: "TEST",
-  description: "Test Description Collection",
-  sellerFeeBasisPoints: 100,
-  imageFile: "nft.png",
+const collectionMint = generateSigner(umi);
+const transaction = await createNft(umi, {
+  mint: collectionMint,
+  name: "My Collection",
+  // https://developers.metaplex.com/token-metadata/token-standard#the-non-fungible-standard
+  uri: "https://raw.githubusercontent.com/solana-developers/professional-education/main/labs/sample-nft-collection-offchain-data.json",
+  sellerFeeBasisPoints: percentAmount(0),
   isCollection: true,
-  collectionAuthority: user,
-};
-
-// Load file into Metaplex
-const buffer = await readFile(collectionNftData.imageFile);
-const file = toMetaplexFile(buffer, collectionNftData.imageFile);
-
-// upload image and get image uri
-const imageUri = await metaplex.storage().upload(file);
-console.log("image uri:", imageUri);
-
-// upload metadata and get metadata uri (off chain metadata)
-const uploadMetadataOutput = await metaplex.nfts().uploadMetadata({
-  name: collectionNftData.name,
-  symbol: collectionNftData.symbol,
-  description: collectionNftData.description,
-  image: imageUri,
 });
 
-const collectionUri = uploadMetadataOutput.uri;
-console.log("Collection off-chain metadata URI:", collectionUri);
-
-// create a collection NFT using the URI from the metadata
-const createNftOutput = await metaplex.nfts().create(
-  {
-    uri: collectionUri,
-    name: collectionNftData.name,
-    sellerFeeBasisPoints: collectionNftData.sellerFeeBasisPoints,
-    symbol: collectionNftData.symbol,
-    isCollection: true,
-  },
-  { commitment: "finalized" }
-);
-
-const collectionNft = createNftOutput.nft;
+const result = await transaction.sendAndConfirm(umi);
 
 console.log(
-  `Collection NFT: https://explorer.solana.com/address/${collectionNft.address.toString()}?cluster=devnet`
+  `🖼️ 🖼️ 🖼️ Made NFT collection! See ${getExplorerLink(
+    "transaction",
+    result.signature.toString(),
+    "devnet"
+  )}`
 );
-
-console.log(`Collection NFT address is`, collectionNft.address.toString());
-
-console.log("✅ Finished successfully!");

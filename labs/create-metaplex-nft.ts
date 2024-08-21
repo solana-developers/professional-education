@@ -1,23 +1,21 @@
-// Adapted from https://github.com/Unboxed-Software/solana-metaplex/blob/solution/src/index.ts
-// and updated to work with the latest version of the Metaplex SDK
-
+// See https://developers.metaplex.com/token-metadata
 import {
-  Connection,
-  clusterApiUrl,
-  PublicKey,
-  LAMPORTS_PER_SOL,
-} from "@solana/web3.js";
+  createNft,
+  fetchDigitalAsset,
+  mplTokenMetadata,
+} from "@metaplex-foundation/mpl-token-metadata";
 import {
-  getKeypairFromFile,
   airdropIfRequired,
+  getExplorerLink,
+  getKeypairFromFile,
 } from "@solana-developers/helpers";
+import { createUmi } from "@metaplex-foundation/umi-bundle-defaults";
 import {
-  Metaplex,
+  generateSigner,
   keypairIdentity,
-  irysStorage,
-  toMetaplexFile,
-} from "@metaplex-foundation/js";
-import { readFileSync } from "fs";
+  percentAmount,
+} from "@metaplex-foundation/umi";
+import { Connection, LAMPORTS_PER_SOL, clusterApiUrl } from "@solana/web3.js";
 
 // create a new connection to the cluster's API
 const connection = new Connection(clusterApiUrl("devnet"));
@@ -34,72 +32,31 @@ await airdropIfRequired(
 
 console.log("Loaded user:", user.publicKey.toBase58());
 
-// metaplex set up
-const metaplex = Metaplex.make(connection)
-  .use(keypairIdentity(user))
-  .use(
-    irysStorage({
-      address: "https://devnet.irys.xyz",
-      providerUrl: "https://api.devnet.solana.com",
-      timeout: 60000,
-    })
-  );
+// Create Umi Instance, using the same endpoint as our connection,
+// and using our user to sign transactions
+const umi = createUmi(connection.rpcEndpoint).use(mplTokenMetadata());
+const umiKeypair = umi.eddsa.createKeypairFromSecretKey(user.secretKey);
+umi.use(keypairIdentity(umiKeypair));
 
-// Substitute in your collection NFT address from create-metaplex-nft-collection.ts
-const collectionNftAddress = new PublicKey("YOUR_COLLECTION_NFT_ADDRESS_HERE");
+// Generate an NFT
+console.log(`Creating NFT...`);
+const mint = generateSigner(umi);
+await createNft(umi, {
+  mint,
+  name: "My NFT",
+  // https://developers.metaplex.com/token-metadata/token-standard#the-non-fungible-standard
+  uri: "https://raw.githubusercontent.com/solana-developers/professional-education/main/labs/sample-nft-offchain-data.json",
+  sellerFeeBasisPoints: percentAmount(0),
+}).sendAndConfirm(umi);
 
-// example data for a new NFT
-const nftData = {
-  name: "Name",
-  symbol: "SYMBOL",
-  description: "Description",
-  sellerFeeBasisPoints: 0,
-  imageFile: "nft.png",
-};
-
-// Load the file into Metaplex
-const buffer = readFileSync(nftData.imageFile);
-const file = toMetaplexFile(buffer, nftData.imageFile);
-
-// upload image and get image uri
-const imageUri = await metaplex.storage().upload(file);
-console.log("image uri:", imageUri);
-
-// upload metadata and get metadata uri (off chain metadata)
-const uploadMetadataOutput = await metaplex.nfts().uploadMetadata({
-  name: nftData.name,
-  symbol: nftData.symbol,
-  description: nftData.description,
-  image: imageUri,
-});
-
-const metadataUri = uploadMetadataOutput.uri;
-
-// create an NFT using the URI from the metadata
-const createNftOutput = await metaplex.nfts().create(
-  {
-    uri: metadataUri, // metadata URI
-    name: nftData.name,
-    sellerFeeBasisPoints: nftData.sellerFeeBasisPoints,
-    symbol: nftData.symbol,
-    collection: collectionNftAddress,
-  },
-  { commitment: "finalized" }
-);
-const nft = createNftOutput.nft;
+const createdNft = await fetchDigitalAsset(umi, mint.publicKey);
 
 console.log(
-  `Token Mint: https://explorer.solana.com/address/${nft.address.toString()}?cluster=devnet`
+  `Created NFT address is: ${getExplorerLink(
+    "address",
+    createdNft.mint.publicKey,
+    "devnet"
+  )}`
 );
-
-await metaplex.nfts().verifyCollection({
-  // Verify our collection as a Certified Collection
-  // See https://developers.metaplex.com/token-metadata/collections
-  mintAddress: nft.mint.address,
-  collectionMintAddress: collectionNftAddress,
-  isSizedCollection: true,
-});
-
-console.log(`Created NFT address is`, nft.address.toString());
 
 console.log("✅ Finished successfully!");
