@@ -60,6 +60,6 @@ await verifyCollectionV1(umi, {
   metadata: publicKey(nftAddress),
   // The Collection NFT that is already set on the Metadata account of the NFT but not yet verified.
   collectionMint: publicKey(collectionAddress),
-  // The Update Authority of the Collection NFT as a signer
-  authority: signer,
+  // The Update Authority of the Collection NFT as a signer, in this case the umiKeypair
+  authority: umi.identity,
 }).sendAndConfirm(umi);
