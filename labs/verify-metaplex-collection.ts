@@ -3,7 +3,7 @@
 import {
   mplTokenMetadata,
   verifyCollectionV1,
-  findMetadataPda
+  findMetadataPda,
 } from "@metaplex-foundation/mpl-token-metadata";
 import {
   airdropIfRequired,
@@ -29,6 +29,14 @@ const connection = new Connection(clusterApiUrl("devnet"));
 // initialize a keypair for the user
 const user = await getKeypairFromFile();
 
+const collectionAddress = new PublicKey(
+  "GyddqwoWKffNjgLZZwENHvjaegQqdy3wmiEuumGeiEvn"
+);
+
+const nftAddress = new PublicKey(
+  "AHKg2uDKR1dwz7R2bAGjZc8wDn8PkCGH4SD5VH7WU45o"
+);
+
 await airdropIfRequired(
   connection,
   user.publicKey,
@@ -44,22 +52,14 @@ const umi = createUmi(connection.rpcEndpoint).use(mplTokenMetadata());
 const umiKeypair = umi.eddsa.createKeypairFromSecretKey(user.secretKey);
 umi.use(keypairIdentity(umiKeypair));
 
-const collectionAddress = new PublicKey(
-  "GyddqwoWKffNjgLZZwENHvjaegQqdy3wmiEuumGeiEvn"
-);
-
-const nftAddress = new PublicKey(
-  "AHKg2uDKR1dwz7R2bAGjZc8wDn8PkCGH4SD5VH7WU45o"
-);
-
-const metadataPda = findMetadataPda(umi, { mint: publicKey(nftAddress) });
-
 // See https://developers.metaplex.com/token-metadata/collections
 await verifyCollectionV1(umi, {
-  // The NFT we want to verify inside the collection.
-  metadata: metadataPda,
+  // The metadata PDA for the NFT we want to verify inside the collection.
+  metadata: findMetadataPda(umi, { mint: publicKey(nftAddress) }),
   // The Collection NFT that is already set on the Metadata account of the NFT but not yet verified.
   collectionMint: publicKey(collectionAddress),
   // The Update Authority of the Collection NFT as a signer, in this case the umiKeypair
   authority: umi.identity,
 }).sendAndConfirm(umi);
+
+console.log(`Collection verified!`);
