@@ -3,6 +3,7 @@
 import {
   mplTokenMetadata,
   verifyCollectionV1,
+  findMetadataPda
 } from "@metaplex-foundation/mpl-token-metadata";
 import {
   airdropIfRequired,
@@ -51,13 +52,12 @@ const nftAddress = new PublicKey(
   "AHKg2uDKR1dwz7R2bAGjZc8wDn8PkCGH4SD5VH7WU45o"
 );
 
-// Make a metaplex signer from the 'user' keypair.
-const signer = createSignerFromKeypair(umi, umiKeypair);
+const metadataPda = findMetadataPda(umi, { mint: publicKey(nftAddress) });
 
 // See https://developers.metaplex.com/token-metadata/collections
 await verifyCollectionV1(umi, {
   // The NFT we want to verify inside the collection.
-  metadata: publicKey(nftAddress),
+  metadata: metadataPda,
   // The Collection NFT that is already set on the Metadata account of the NFT but not yet verified.
   collectionMint: publicKey(collectionAddress),
   // The Update Authority of the Collection NFT as a signer, in this case the umiKeypair
