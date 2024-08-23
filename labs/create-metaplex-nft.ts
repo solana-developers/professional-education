@@ -45,9 +45,14 @@ const umi = createUmi(connection.rpcEndpoint).use(mplTokenMetadata());
 const umiKeypair = umi.eddsa.createKeypairFromSecretKey(user.secretKey);
 umi.use(keypairIdentity(umiKeypair));
 
-const collectionAddress = new PublicKey(
-  "GyddqwoWKffNjgLZZwENHvjaegQqdy3wmiEuumGeiEvn"
-);
+// We could do
+//   const collectionAddress = new PublicKey();
+// to make a web.js PublicKey, and then use
+//   publicKey(collectionAddress)
+// to convert it to a Umi PublicKey
+// but we can also just make the a Umi publicKey directly
+// using the Umi publicKey() function
+const collectionAddress = publicKey("YOUR_COLLECTION_ADDRESS_HERE");
 
 // Generate an NFT
 console.log(`Creating NFT...`);
@@ -55,12 +60,12 @@ const mint = generateSigner(umi);
 const transaction = await createNft(umi, {
   mint,
   name: "My NFT",
-  // https://developers.metaplex.com/token-metadata/token-standard#the-non-fungible-standard
+  // See https://developers.metaplex.com/token-metadata/token-standard#the-non-fungible-standard
   uri: "https://raw.githubusercontent.com/solana-developers/professional-education/main/labs/sample-nft-offchain-data.json",
   sellerFeeBasisPoints: percentAmount(0),
   collection: {
     // See https://developers.metaplex.com/umi/public-keys-and-signers
-    key: publicKey(collectionAddress),
+    key: collectionAddress,
     verified: false,
   },
 });
