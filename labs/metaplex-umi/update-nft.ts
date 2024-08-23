@@ -35,27 +35,28 @@ const umi = createUmi(connection.rpcEndpoint).use(mplTokenMetadata());
 const umiKeypair = umi.eddsa.createKeypairFromSecretKey(user.secretKey);
 umi.use(keypairIdentity(umiKeypair));
 
-// Our NFT address we made earlier
-// const mint = publicKey("YOUR_MINT_ADDRESS_HERE");
-const mint = publicKey("4CpLPpxvZJJViUrUpnLj5gX1ZNRvCB7jdcrjLGb9Wixi");
+// Our NFT we made earlier
+const nftAddress = publicKey("YOUR_NFT_ADDRESS_HERE");
 
 // Update the NFT metadata
 const initialMetadata = await fetchMetadataFromSeeds(umi, {
-  mint,
+  mint: nftAddress,
 });
-await updateV1(umi, {
-  mint,
+const transaction = await updateV1(umi, {
+  mint: nftAddress,
   data: {
     ...initialMetadata,
     name: "Updated Asset",
     symbol: "Updated",
   },
-}).sendAndConfirm(umi);
+});
 
-const createdNft = await fetchDigitalAsset(umi, mint);
+await transaction.sendAndConfirm(umi);
+
+const createdNft = await fetchDigitalAsset(umi, nftAddress);
 
 console.log(
-  `NFT updated with new metadata URI: ${getExplorerLink(
+  `🆕 NFT updated with new metadata: ${getExplorerLink(
     "address",
     createdNft.mint.publicKey,
     "devnet"

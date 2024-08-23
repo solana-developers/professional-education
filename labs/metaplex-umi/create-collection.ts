@@ -36,8 +36,8 @@ console.log("Loaded user:", user.publicKey.toBase58());
 // and using our user to sign transactions
 const umi = createUmi(connection.rpcEndpoint);
 umi.use(mplTokenMetadata());
-const umiKeypair = umi.eddsa.createKeypairFromSecretKey(user.secretKey);
-umi.use(keypairIdentity(umiKeypair));
+const umiUser = umi.eddsa.createKeypairFromSecretKey(user.secretKey);
+umi.use(keypairIdentity(umiUser));
 
 console.log(`Creating collection...`);
 // This mint is like a factory for creating NFTs
