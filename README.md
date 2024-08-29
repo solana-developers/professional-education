@@ -16,9 +16,13 @@ You can also [contact Mike MacCana](mailto:mike.maccana@solana.org) for help.
 > [!NOTE]  
 > If you want to attend a training event and learn Solana (rather than run a training event yourself), follow [@solana_devs on X](https://x.com/solana_devs), and we'll let you know when the next course is running in a city near you or on Zoom!
 
-## Training Offering
+## Training Offerings
 
-**Four days **full-time** in-classroom**, or **12 x 2-hour remote lessons**.
+| Timeframe                                                                    | Audience                                    | Outcome                                                                | Content      |
+| ---------------------------------------------------------------------------- | ------------------------------------------- | ---------------------------------------------------------------------- | ------------ |
+| 40 minutes - one hour                                                        | Technical audience                          | Understand operation of Solana smart contracts                         | Contact Mike |
+| One day                                                                      | Prior experience of strictly typed language | Build a solana smart contract from scratch                             | Contact Mike |
+| **Four days **full-time** in-classroom**, or **12 x 2-hour remote lessons**. | Prior experience of strictly typed language | Create and transfer tokens, build a solana smart contract from scratch | This repo    |
 
 **Audience**: anyone proficient in TypeScript who wants to learn blockchain. Prior knowledge of cryptography, blockchain, Rust or Anchor is not required - see [aims of the training](https://github.com/solana-developers/professional-education/blob/main/README.md#aims-of-the-training).
 
