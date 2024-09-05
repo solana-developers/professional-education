@@ -16,7 +16,7 @@ None of this goes ahead unless there’s a budget
 
 ​ Costs will be equipment, event space, catering, and merch, see below.
 
-#### Have secured date, venue, and equipment
+#### For physical events: have secured venue and equipment
 
 The venue needs to be quiet (ie not in the middle of a loud event like a Hacker House)
 
@@ -26,6 +26,7 @@ Confirm seating arrangements:
 - Projectors or equivalents
   - Multiple 90-inch monitor/TVs (one closer to back) as projector equivalents.
   - Actual projectors are generally preferable to monitors as the text size is larger.
+- Clicker. 
 
 Ideal but not essential: the presenter has two laptops - one for Keynote, the other for their own use during class. Eg, while the students code from a display, the instructor can look up documentation in answer to specific student requests.
 
@@ -37,9 +38,9 @@ Create the Luma page by following these steps:
 
 From a previous event, update accordingly based on your organization and location!
 
-> ​​The Solana Foundation is inviting developers to a 4-day Solana professional training session.
+> ​​[YOUR ORGANIZATION] is inviting developers to a 4-day Solana professional training session.
 
-> The training covers cryptography fundamentals, blockchain, and Solana from the ground up, with frequent hands-on labs. By the end of the bootcamp, attendees will be able to create and transfer tokens, mint NFTs, and build on-chain applications on Solana, the fastest, cheapest, and most scalable blockchain.
+> [MODIFY DEPENDENING ON TRAINING OFFERING]The training covers cryptography fundamentals, blockchain, and Solana from the ground up, with frequent hands-on labs. By the end of the bootcamp, attendees will be able to create and transfer tokens, mint NFTs, and build on-chain applications on Solana, the fastest, cheapest, and most scalable blockchain.
 >
 > The training is aimed at any existing web developer. You'll need to know TypeScript, but you don't need prior cryptography or blockchain experience.
 >
@@ -66,7 +67,7 @@ Capacity: 3x attendees (eg, if you want 15 people, limit the event to 45 people)
 
 #### ⚠️ Before you publicize the event
 
-**Note**: it will be too late to change these after you get sign-ups so please do all of these **immediately after makiing the event**.
+**Note**: it will be too late to change these after you get sign-ups so please do all of these **immediately after making the event**.
 
 - In 'Overview' tab, click 'Edit Event', scroll all the way down, and set 'Restrict Location to Guests' (this stops unregistered guests from showing up)
 - In 'Registration' tab, add a checkbox question:
