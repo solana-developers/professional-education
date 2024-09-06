@@ -30,7 +30,10 @@ You can also [contact Mike MacCana](mailto:mike.maccana@solana.org) for help.
 
 **Instructor time** is 9 AM to 5 PM.
 
-**Class sizes**: Generally, between 10 and 15 people, you want to spend time with every student, and larger class sizes are difficult for a single instructor to manage.
+**Class sizes**:
+
+- In person, between 10 and 15 people, you want to spend time with every student, and larger class sizes are difficult for a single instructor to manage.
+- Online: no maximum. Personalized attention will be limited for larger events.
 
 **Lead time**: 1-month minimum, ideally six weeks
 
