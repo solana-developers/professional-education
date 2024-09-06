@@ -1,2 +1,4 @@
 .env
 addresses.ts
+.anchor
+target
