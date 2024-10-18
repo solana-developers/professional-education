@@ -24,7 +24,9 @@ const tokenMintAccount = new PublicKey(
 // Substitute in your classmate's wallet address here
 const recipient = new PublicKey("5JhJhCj5yXhnZxtPRUvAnzGBfQNJhY2js4HoLVXzBTmG");
 
-console.log(`⏳ Creating associated token account...`);
+console.log(
+  `⏳ Creating associated token account for token ${tokenMintAccount.toBase58()} for wallet ${recipient.toBase58()}...`
+);
 
 const tokenAccount = await getOrCreateAssociatedTokenAccount(
   connection,
