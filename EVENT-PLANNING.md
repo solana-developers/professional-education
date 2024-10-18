@@ -35,6 +35,8 @@ Create the Luma page by following these steps:
 
 ##### Description
 
+Note: if you have ran events previously, use **More** -> **Clone Event** in Luma
+
 From a previous event, update accordingly based on your organization and location!
 
 > ​​The Solana Foundation is inviting developers to a 4-day Solana professional training session.
@@ -232,7 +234,7 @@ It's also advantageous to use large mouse cursors when presenting (to stop 'losi
 
 #### VSCode settings
 
-Turn off GitHub Copilot - you don't want Copilot suggesting incorrect things while the instructor types and distracting students. 
+Turn off GitHub Copilot - you don't want Copilot suggesting incorrect things while the instructor types and distracting students.
 
 #### Common causes of students having trouble with the labs:
 
