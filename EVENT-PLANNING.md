@@ -52,7 +52,7 @@ From a previous event, update accordingly based on your organization and locatio
 > Requirements:
 >
 > - Proficient in TypeScript
-> - This is a hands on course, so you'll need a laptop. A Mac or Linux laptop, Windows is fine too but you must have WSL2 and Microsoft Terminal installed.
+> - This is a hands on course, so you'll need a laptop. A Mac or Linux laptop is great, Windows is fine too but you must have WSL2 and Microsoft Terminal installed before class starts.
 
 > We're expecting a large demand for this course, so we've added a few questions during registration. Registering does not guarantee acceptance into the training. If you're accepted we'll see you there!
 
