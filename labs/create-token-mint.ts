@@ -28,7 +28,7 @@ await airdropIfRequired(
 // - Name is still required by web3.js when creating the mint
 const name = "Developer Education";
 const symbol = "EDU";
-const decimals = 9;
+const decimals = 2;
 const uri =
   "https://raw.githubusercontent.com/solana-developers/professional-education/main/labs/sample-token-metadata.json";
 
