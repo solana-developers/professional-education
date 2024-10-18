@@ -1,4 +1,8 @@
-import { getOrCreateAssociatedTokenAccount, mintTo } from "@solana/spl-token";
+import {
+  getOrCreateAssociatedTokenAccount,
+  mintTo,
+  TOKEN_2022_PROGRAM_ID,
+} from "@solana/spl-token";
 import "dotenv/config";
 import {
   getExplorerLink,
@@ -10,6 +14,7 @@ import { Connection, PublicKey, clusterApiUrl } from "@solana/web3.js";
 const connection = new Connection(clusterApiUrl("devnet"), "confirmed");
 
 // Our token has two decimal places
+// Must match create-token-mint.ts
 const MINOR_UNITS_PER_MAJOR_UNITS = Math.pow(10, 2);
 
 const user = getKeypairFromEnvironment("SECRET_KEY");
@@ -22,7 +27,11 @@ const recipientAssociatedTokenAccount = await getOrCreateAssociatedTokenAccount(
   connection,
   user,
   tokenMintAccount,
-  user.publicKey
+  user.publicKey,
+  false,
+  "confirmed",
+  {},
+  TOKEN_2022_PROGRAM_ID
 );
 
 const transactionSignature = await mintTo(
@@ -31,7 +40,10 @@ const transactionSignature = await mintTo(
   tokenMintAccount,
   recipientAssociatedTokenAccount.address,
   user,
-  10 * MINOR_UNITS_PER_MAJOR_UNITS
+  10 * MINOR_UNITS_PER_MAJOR_UNITS,
+  [],
+  {},
+  TOKEN_2022_PROGRAM_ID
 );
 
 const link = getExplorerLink("transaction", transactionSignature, "devnet");
