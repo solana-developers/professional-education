@@ -1,15 +1,16 @@
 # 🧑🏼‍🎓 Solana Professional Education
 
-The Solana Professional Education repo has everything you need for running a training event and instructing the course.
+The Solana Professional Education repo has everything you need for running Solana training events and instructing the courses.
 
 The training covers cryptography fundamentals, blockchain, and Solana from the ground up, with frequent hands-on labs. By the end of the training, students will be able to create and transfer tokens, mint NFTs, and build DeFi programs using Anchor on Rust.
 
 This repo has everything you need to plan and teach the course:
 
-- The [Instructor presentation](./Solana%20Professional%20Education.key). We use Keynote as there are animations in some slides, and other presentation tools don't have Keynote's 'magic move' or SVG support. There is also a [web version of the instructor presentation](https://www.icloud.com/keynote/001TXNMStPSD91jj5cS33eSbw#Solana_Professional_Education).
-- The files in [`labs`](./labs) are working solutions to each lesson's labs.
-- The [Agenda](./AGENDA.md) for local and remote training sessions
 - The [Event planning playbook](./EVENT-PLANNING.md)
+- The [syllabus] - what is considered base knowledge to be able to build software on Solana.
+- The [Instructor presentations](./presentations). We use Keynote as there are animations in some slides, and other presentation tools don't have Keynote's 'magic move' or SVG support. For those on Linux or Windows we can produce web-based versions of the presentation on demand.
+- Working [solutions to each lesson's labs](./labs), following the [Solana Foundation style guide](https://github.com/solana-developers/program-examples/blob/main/CONTRIBUTING.md).
+- The [Agenda](./AGENDA.md) for local and remote training sessions
 
 You can also [contact Mike MacCana](mailto:mike.maccana@solana.org) for help.
 

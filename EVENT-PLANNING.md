@@ -36,6 +36,8 @@ Create the Luma page by following these steps:
 
 ##### Description
 
+Note: if you have ran events previously, use **More** -> **Clone Event** in Luma
+
 From a previous event, update accordingly based on your organization and location!
 
 > ​​[YOUR ORGANIZATION] is inviting developers to a 4-day Solana professional training session.
@@ -51,7 +53,7 @@ From a previous event, update accordingly based on your organization and locatio
 > Requirements:
 >
 > - Proficient in TypeScript
-> - This is a hands on course, so you'll need a laptop. A Mac or Linux laptop, Windows is fine too but you must have WSL2 and Microsoft Terminal installed.
+> - This is a hands on course, so you'll need a laptop. A Mac or Linux laptop is great, Windows is fine too but you must have WSL2 and Microsoft Terminal installed before class starts.
 
 > We're expecting a large demand for this course, so we've added a few questions during registration. Registering does not guarantee acceptance into the training. If you're accepted we'll see you there!
 
@@ -233,7 +235,7 @@ It's also advantageous to use large mouse cursors when presenting (to stop 'losi
 
 #### VSCode settings
 
-Turn off GitHub Copilot - you don't want Copilot suggesting incorrect things while the instructor types and distracting students. 
+Turn off GitHub Copilot - you don't want Copilot suggesting incorrect things while the instructor types and distracting students.
 
 #### Common causes of students having trouble with the labs:
 
