@@ -45,6 +45,7 @@ const additionalMetadata = {
   zherp: "flerpy",
 };
 
+console.log(`⏳ Creating token mint with metadata...`);
 const mintAddress = await makeTokenMint(
   connection,
   mintAuthority,
