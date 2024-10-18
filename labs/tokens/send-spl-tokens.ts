@@ -4,7 +4,11 @@ import {
   getKeypairFromEnvironment,
 } from "@solana-developers/helpers";
 import { Connection, PublicKey, clusterApiUrl } from "@solana/web3.js";
-import { getOrCreateAssociatedTokenAccount, transfer } from "@solana/spl-token";
+import {
+  getOrCreateAssociatedTokenAccount,
+  TOKEN_2022_PROGRAM_ID,
+  transfer,
+} from "@solana/spl-token";
 const connection = new Connection(clusterApiUrl("devnet"));
 
 const sender = getKeypairFromEnvironment("SECRET_KEY");
@@ -46,7 +50,10 @@ const signature = await transfer(
   sourceTokenAccount.address,
   destinationTokenAccount.address,
   sender,
-  1 * MINOR_UNITS_PER_MAJOR_UNITS
+  1 * MINOR_UNITS_PER_MAJOR_UNITS,
+  [],
+  {},
+  TOKEN_2022_PROGRAM_ID
 );
 
 const explorerLink = getExplorerLink("transaction", signature, "devnet");

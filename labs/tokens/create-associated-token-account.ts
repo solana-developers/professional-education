@@ -17,18 +17,16 @@ console.log(
 );
 
 // Subtitute in your token mint account from create-token-mint.ts
-const tokenMintAccount = new PublicKey(
-  "9vrkZjCuukcfC9jZ3UGtf3GjUtWet6ZbkxDJqtf9WyvJ"
-);
+const tokenMintAccount = new PublicKey("YOUR_TOKEN_MINT_HERE");
 
 // Substitute in your classmate's wallet address here
-const recipient = new PublicKey("5JhJhCj5yXhnZxtPRUvAnzGBfQNJhY2js4HoLVXzBTmG");
+const recipient = new PublicKey("YOUR_CLASSMATES_WALLET_ACCOUNT_HERE");
 
 console.log(
   `⏳ Creating associated token account for token ${tokenMintAccount.toBase58()} for wallet ${recipient.toBase58()}...`
 );
 
-const tokenAccount = await getOrCreateAssociatedTokenAccount(
+const associatedTokenAccount = await getOrCreateAssociatedTokenAccount(
   connection,
   user,
   tokenMintAccount,
@@ -39,11 +37,13 @@ const tokenAccount = await getOrCreateAssociatedTokenAccount(
   TOKEN_2022_PROGRAM_ID
 );
 
-console.log(`Token Account: ${tokenAccount.address.toBase58()}`);
+console.log(
+  `Associated token Account: ${associatedTokenAccount.address.toBase58()}`
+);
 
 const link = getExplorerLink(
   "address",
-  tokenAccount.address.toBase58(),
+  associatedTokenAccount.address.toBase58(),
   "devnet"
 );
 
