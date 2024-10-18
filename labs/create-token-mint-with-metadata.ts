@@ -28,8 +28,6 @@ await airdropIfRequired(
 // ANSWER: name from json metadata is used in explorer
 // what happens if we remove it? Unknown token
 // TODO: push to github and see what happens
-const name = "Developer Education";
-const symbol = "EDU";
 const decimals = 9;
 const uri =
   "https://raw.githubusercontent.com/solana-developers/professional-education/main/labs/sample-token-metadata.json";
