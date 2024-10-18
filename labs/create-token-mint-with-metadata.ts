@@ -26,7 +26,7 @@ await airdropIfRequired(
 // TODO: what name and symbol are used in explorer, the one from the mint or the one from the metadata?
 // Remove whatever is not used
 // ANSWER: name from json metadata is used in explorer
-// what happens if we remove it?
+// what happens if we remove it? Unknown token
 // TODO: push to github and see what happens
 const name = "Developer Education";
 const symbol = "EDU";
