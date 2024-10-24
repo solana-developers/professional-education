@@ -26,9 +26,17 @@ Confirm seating arrangements:
 - Projectors or equivalents
   - Multiple 90-inch monitor/TVs (one closer to back) as projector equivalents.
   - Actual projectors are generally preferable to monitors as the text size is larger.
-- Clicker. 
+- Clicker.
 
 Ideal but not essential: the presenter has two laptops - one for Keynote, the other for their own use during class. Eg, while the students code from a display, the instructor can look up documentation in answer to specific student requests.
+
+#### Before you create graphics
+
+You're welcome to create your own graphics, but please note:
+
+> Nothing should be credited to “Solana.” Be specific! Solana refers to the protocol, not the company. Anything coming from a Solana Foundation-run account is coming from Solana Foundation.
+
+If you are using logos, use your own logo and the [Solana Foundation logo](https://solana.org/branding).
 
 #### Luma page up
 
