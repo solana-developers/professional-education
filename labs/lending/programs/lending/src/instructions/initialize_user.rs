@@ -5,12 +5,10 @@ use crate::{User, ANCHOR_DISCRIMINATOR};
 // Was process_init_user in Bri's code
 pub fn initialize_user_handler(context: Context<InitializeUser>, usdc_mint: Pubkey) -> Result<()> {
     let user = &mut context.accounts.user;
-    user.authority = context.accounts.signer.key();
-    user.usdc_mint = usdc_mint;
+    user.wallet = context.accounts.signer.key();
+    user.usdc_token_account = usdc_mint;
     Ok(())
 }
-
-// 2735
 
 // Was InitUser in Bri's code
 #[derive(Accounts)]

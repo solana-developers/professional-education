@@ -30,4 +30,12 @@ pub mod lending {
     pub fn initialize_user(context: Context<InitializeUser>, usdc_mint: Pubkey) -> Result<()> {
         initialize_user::initialize_user_handler(context, usdc_mint)
     }
+
+    pub fn deposit(context: Context<Deposit>, amount: u64) -> Result<()> {
+        deposit::deposit_handler(context, amount)
+    }
+
+    pub fn withdraw(context: Context<Withdraw>, amount: u64) -> Result<()> {
+        withdraw::withdraw_handler(context, amount)
+    }
 }

@@ -20,7 +20,7 @@ pub struct InitializeBank<'info> {
     )]
     pub bank: Account<'info, Bank>,
 
-    // Might want to rename to treasury
+    // TODO: Might want to rename to treasury
     #[account(
         init,
         token::mint = mint,
@@ -47,5 +47,8 @@ pub fn initialize_bank_handler(
     bank.authority = context.accounts.signer.key();
     bank.liquidation_threshold = liquidation_threshhold;
     bank.max_liquidation_to_value = max_liquidation_to_value;
+    // TODO: why is this a u64?
+    // "When you cast a float to an integer type like u64, Rust performs a truncation, meaning it simply chops off the decimal part. So, 0.05 as u64 becomes 0."
+    bank.interest_rate = 0.05 as u64;
     Ok(())
 }
