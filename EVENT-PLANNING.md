@@ -141,7 +141,7 @@ Subject: Action Required: confirm attendance for Solana professional training ne
 
 Body (modify accordingly):
 
-We are pleased to inform you we have accepted you to the Solana professional training event in our offices next week!
+We are pleased to inform you we have accepted you to the [name of event] event in [online or physical location] next week!
 
 Here are the details:
 
