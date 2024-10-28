@@ -78,3 +78,7 @@ Many existing Solana courses are slowed down unnecessarily due to issues that ha
 - If training remotely, you may prefer **Google Classroom** over zoom. It has breakout rooms, which allow individual students to and staff to break out into rooms together.
 
 - Sometimes some students finish before others. In a physical room, give students that complete fast a challenge of helping other students that need it. In a virtual room, you can use Google Classroom. This keeps fast students entertained while helping slower students catch up.
+
+## Ready to plan an event?
+
+Check out the [pick an event to run](./AGENDA.md) and start [planning to run it](./EVENT-PLANNING.md).
