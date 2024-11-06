@@ -19,13 +19,31 @@ You can also [contact Mike MacCana](mailto:mike.maccana@solana.org) for help.
 
 ## Training Offerings
 
-| Timeframe                                                                    | Audience                                    | Outcome                                                                | Content      |
-| ---------------------------------------------------------------------------- | ------------------------------------------- | ---------------------------------------------------------------------- | ------------ |
-| 40 minutes - one hour                                                        | Technical audience                          | Understand operation of Solana smart contracts                         | Contact Mike |
-| One day                                                                      | Prior experience of strictly typed language | Build a solana smart contract from scratch                             | Contact Mike |
-| **Four days **full-time** in-classroom**, or **12 x 2-hour remote lessons**. | Prior experience of strictly typed language | Create and transfer tokens, build a solana smart contract from scratch | This repo    |
+### Main course
 
-**Audience**: anyone proficient in TypeScript who wants to learn blockchain. Prior knowledge of cryptography, blockchain, Rust or Anchor is not required - see [aims of the training](https://github.com/solana-developers/professional-education/blob/main/README.md#aims-of-the-training).
+**Timeframe**: Four days full-time in-classroom, or 12 x 2-hour remote lessons.
+**Audience**: anyone proficient in TypeScript who wants to learn blockchain. Prior knowledge of cryptography, blockchain, Rust or Anchor is not required - see [aims of the training](https**://github.com/solana-developers/professional-education/blob/main/README.md#aims-of-the-training).
+**Outcome**: Create and transfer tokens, build a solana smart contract from scratch
+**Content**: [Solana Professional Educatio presentation](./presentations/Solana Professional Education.key)
+**Prior setup**: Laptop with node.js 22 or newer, Windows machines much have WSL2 and Windows terminal installed.
+
+### One day Smart Contract Intensive
+
+**Timeframe**: One day  
+**Audience**: Prior experience of strictly typed language, and basic understanding of Solana itself
+**Outcome**: Build a solana smart contract from scratch
+**Content**: Main
+**Prior setup**: Laptop with node.js 22 or newer, Windows machines much have WSL2 and Windows terminal installed. Solana CLI and Anchor.
+
+### One hour blockchain / smart contract overview
+
+**Timeframe**: 40 minutes - one hour  
+**Audience**: Technical audience  
+**Outcome**: Understand operation of Solana smart contracts  
+**Content**: see [Build your first DeFi app in 30 minutes keynote presentation](presentations/Build your first DeFi app in 30 minutes.key)
+**Prior setup**: Laptop with node.js 22 or newer, Windows machines much have WSL2 and Windows terminal installed.
+
+## Standard details for all offerings
 
 **Student time** is 10 AM to 4 PM.
 
