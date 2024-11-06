@@ -2,8 +2,10 @@
 
 ## 1.2 (WIP)
 
-- Make unit tests for Lab 7 escrow using new helper.
+- Make unit tests for Lab 7 escrow using new helper
 - Add more animations
+- Move to token extensions for tokens, NFT modules
+- Add example of using Phantom Wallet on devnet
 
 ## 1.1 May 28 2024
 
