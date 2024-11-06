@@ -29,18 +29,27 @@ const MINOR_UNITS_PER_MAJOR_UNITS = Math.pow(10, 2);
 console.log(`💸 Attempting to send 1 token to ${recipient.toBase58()}...`);
 
 // Get or create the source and destination token accounts to store this token
+
 const sourceTokenAccount = await getOrCreateAssociatedTokenAccount(
   connection,
   sender,
   tokenMintAccount,
-  sender.publicKey
+  sender.publicKey,
+  false,
+  "confirmed",
+  {},
+  TOKEN_2022_PROGRAM_ID
 );
 
 const destinationTokenAccount = await getOrCreateAssociatedTokenAccount(
   connection,
   sender,
   tokenMintAccount,
-  recipient
+  recipient,
+  false,
+  "confirmed",
+  {},
+  TOKEN_2022_PROGRAM_ID
 );
 
 // Transfer the tokens
