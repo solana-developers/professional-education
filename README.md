@@ -39,7 +39,7 @@ You can also [contact Mike MacCana](mailto:mike.maccana@solana.org) for help.
 
 **Outcome**: Build a solana smart contract from scratch
 
-**Content**: [Solana Professional Education presentation](presentations/Solana%20Professional%20Education.key), with lessons 1-4 without labs, then stright into Lab 6, Anchor.
+**Content**: [Solana Professional Education presentation](presentations/Solana%20Professional%20Education.key), with lessons 1-4 without labs, then straight into Lab 6, Anchor.
 
 **Prior setup**: Laptop with node.js 22 or newer, Windows machines much have WSL2 and Windows terminal installed. Solana CLI 1.18 and Anchor 0.30.1.
 
@@ -51,7 +51,7 @@ You can also [contact Mike MacCana](mailto:mike.maccana@solana.org) for help.
 
 **Outcome**: Understand operation of Solana smart contracts  
 
-**Content**: see [Build your first DeFi app in 30 minutes keynote presentation](presentations/Build your first DeFi app in 30 minutes.key)
+**Content**: see [Build your first DeFi app in 30 minutes keynote presentation](presentations/Build%20your%20first%20DeFi%20app%20in%2030%20minutes.key)
 
 **Prior setup**: Laptop with node.js 22 or newer, Windows machines much have WSL2 and Windows terminal installed.
 
