@@ -22,9 +22,9 @@ You can also [contact Mike MacCana](mailto:mike.maccana@solana.org) for help.
 ### Main course
 
 **Timeframe**: Four days full-time in-classroom, or 12 x 2-hour remote lessons.
-**Audience**: anyone proficient in TypeScript who wants to learn blockchain. Prior knowledge of cryptography, blockchain, Rust or Anchor is not required - see [aims of the training](https**://github.com/solana-developers/professional-education/blob/main/README.md#aims-of-the-training).
+**Audience**: anyone proficient in TypeScript who wants to learn blockchain. Prior knowledge of cryptography, blockchain, Rust or Anchor is not required - see [aims of the training](https://github.com/solana-developers/professional-education/blob/main/README.md#aims-of-the-training).
 **Outcome**: Create and transfer tokens, build a solana smart contract from scratch
-**Content**: [Solana Professional Educatio presentation](./presentations/Solana Professional Education.key)
+**Content**: [Solana Professional Education presentation](./presentations/Solana Professional Education.key)
 **Prior setup**: Laptop with node.js 22 or newer, Windows machines much have WSL2 and Windows terminal installed.
 
 ### One day Smart Contract Intensive
