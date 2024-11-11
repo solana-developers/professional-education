@@ -22,25 +22,37 @@ You can also [contact Mike MacCana](mailto:mike.maccana@solana.org) for help.
 ### Main course
 
 **Timeframe**: Four days full-time in-classroom, or 12 x 2-hour remote lessons.
+
 **Audience**: anyone proficient in TypeScript who wants to learn blockchain. Prior knowledge of cryptography, blockchain, Rust or Anchor is not required - see [aims of the training](https://github.com/solana-developers/professional-education/blob/main/README.md#aims-of-the-training).
+
 **Outcome**: Create and transfer tokens, build a solana smart contract from scratch
-**Content**: [Solana Professional Education presentation](./presentations/Solana Professional Education.key)
+
+**Content**: [Solana Professional Education presentation](presentations/Solana%20Professional%20Education.key)
+
 **Prior setup**: Laptop with node.js 22 or newer, Windows machines much have WSL2 and Windows terminal installed.
 
 ### One day Smart Contract Intensive
 
 **Timeframe**: One day  
+
 **Audience**: Prior experience of strictly typed language, and basic understanding of Solana itself
+
 **Outcome**: Build a solana smart contract from scratch
-**Content**: Main
-**Prior setup**: Laptop with node.js 22 or newer, Windows machines much have WSL2 and Windows terminal installed. Solana CLI and Anchor.
+
+**Content**: [Solana Professional Education presentation](presentations/Solana%20Professional%20Education.key), with lessons 1-4 without labs, then stright into Lab 6, Anchor.
+
+**Prior setup**: Laptop with node.js 22 or newer, Windows machines much have WSL2 and Windows terminal installed. Solana CLI 1.18 and Anchor 0.30.1.
 
 ### One hour blockchain / smart contract overview
 
 **Timeframe**: 40 minutes - one hour  
+
 **Audience**: Technical audience  
+
 **Outcome**: Understand operation of Solana smart contracts  
+
 **Content**: see [Build your first DeFi app in 30 minutes keynote presentation](presentations/Build your first DeFi app in 30 minutes.key)
+
 **Prior setup**: Laptop with node.js 22 or newer, Windows machines much have WSL2 and Windows terminal installed.
 
 ## Standard details for all offerings
