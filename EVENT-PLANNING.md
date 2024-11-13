@@ -22,13 +22,22 @@ The venue needs to be quiet (ie not in the middle of a loud event like a Hacker 
 
 Confirm seating arrangements:
 
-- Desks and chairs facing the instructor
-- Projectors or equivalents
+- Desks and chairs facing the instructor. Nobody wants to type while looking sideways sideways.
+- Projectors or equivalents:
   - Multiple 90-inch monitor/TVs (one closer to back) as projector equivalents.
+  - You can use an HDMI splitter or have an iPad to show Keynote slides on each additional monitor.
   - Actual projectors are generally preferable to monitors as the text size is larger.
-- Clicker. 
+- Clicker.
 
 Ideal but not essential: the presenter has two laptops - one for Keynote, the other for their own use during class. Eg, while the students code from a display, the instructor can look up documentation in answer to specific student requests.
+
+#### Before you create graphics
+
+You're welcome to create your own graphics, but please note:
+
+> Nothing should be credited to “Solana.” Be specific! Solana refers to a blockchain protocol, not any particular organisation. Anything coming from a Solana Foundation-run account is coming from Solana Foundation.
+
+If you are using logos, use your own logo and the [Solana Foundation logo](https://solana.org/branding). Don't use the Solana logo!
 
 #### Luma page up
 
@@ -36,9 +45,11 @@ Create the Luma page by following these steps:
 
 ##### Description
 
+Note: if you have ran events previously, use **More** -> **Clone Event** in Luma
+
 From a previous event, update accordingly based on your organization and location!
 
-> ​​[YOUR ORGANIZATION] is inviting developers to a 4-day Solana professional training session.
+> ​​[YOUR ORGANIZATION] is inviting developers to a [MODIFY DEPENDING ON OFFERING]
 
 > [MODIFY DEPENDENING ON TRAINING OFFERING]The training covers cryptography fundamentals, blockchain, and Solana from the ground up, with frequent hands-on labs. By the end of the bootcamp, attendees will be able to create and transfer tokens, mint NFTs, and build on-chain applications on Solana, the fastest, cheapest, and most scalable blockchain.
 >
@@ -51,11 +62,11 @@ From a previous event, update accordingly based on your organization and locatio
 > Requirements:
 >
 > - Proficient in TypeScript
-> - This is a hands on course, so you'll need a laptop. A Mac or Linux laptop, Windows is fine too but you must have WSL2 and Microsoft Terminal installed.
+> - This is a hands on course, so you'll need a laptop. A Mac or Linux laptop is great, Windows is fine too but you must have WSL2 and Microsoft Terminal installed before class starts.
 
 > We're expecting a large demand for this course, so we've added a few questions during registration. Registering does not guarantee acceptance into the training. If you're accepted we'll see you there!
 
-See previous events: [May 28, 2024](https://lu.ma/850szocc), [Mar 24, 2023](https://lu.ma/ah0v9gwb), [Sep 6 2024](https://lu.ma/wea0og3i)
+See previous events: [Nov 2 2024](https://lu.ma/zpoafkgh), [Sep 6 2024](https://lu.ma/wea0og3i), [May 28, 2024](https://lu.ma/850szocc), [Mar 24, 2024](https://lu.ma/ah0v9gwb).
 
 #### Options
 
@@ -105,11 +116,15 @@ Confirm room layout, eg:
 2 developers fit on a standard (30x72) table. You can physically fit three, but it won't be comfortable. Use two.
 
 ```plaintext
-Instructor + TV
+            Instructor + TV1
 
-[ table ]   [ table ]
-[ table ]   [ table ]
-[ table ]   [ table ]
+    [ table ][ table ]   [ table ][ table ]
+    [ table ][ table ]   [ table ][ table ]
+TV2 [ table ][ table ]   [ table ][ table ] TV3
+    [ table ][ table ]   [ table ][ table ]
+    [ table ][ table ]   [ table ][ table ]
+    [ table ][ table ]   [ table ][ table ]
+
 ```
 
 ### 2 weeks
@@ -233,7 +248,7 @@ It's also advantageous to use large mouse cursors when presenting (to stop 'losi
 
 #### VSCode settings
 
-Turn off GitHub Copilot - you don't want Copilot suggesting incorrect things while the instructor types and distracting students. 
+Turn off GitHub Copilot - you don't want Copilot suggesting incorrect things while the instructor types and distracting students.
 
 #### Common causes of students having trouble with the labs:
 

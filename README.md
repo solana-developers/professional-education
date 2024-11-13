@@ -1,30 +1,69 @@
 # 🧑🏼‍🎓 Solana Professional Education
 
-The Solana Professional Education repo has everything you need for running a training event and instructing the course.
+The Solana Professional Education repo has everything you need for running Solana training events and instructing the courses.
 
 The training covers cryptography fundamentals, blockchain, and Solana from the ground up, with frequent hands-on labs. By the end of the training, students will be able to create and transfer tokens, mint NFTs, and build DeFi programs using Anchor on Rust.
 
 This repo has everything you need to plan and teach the course:
 
-- The [Instructor presentation](./Solana%20Professional%20Education.key). We use Keynote as there are animations in some slides, and other presentation tools don't have Keynote's 'magic move' or SVG support. There is also a [web version of the instructor presentation](https://www.icloud.com/keynote/001TXNMStPSD91jj5cS33eSbw#Solana_Professional_Education).
-- The files in [`labs`](./labs) are working solutions to each lesson's labs.
-- The [Agenda](./AGENDA.md) for local and remote training sessions
 - The [Event planning playbook](./EVENT-PLANNING.md)
+- The [syllabus] - what is considered base knowledge to be able to build software on Solana.
+- The [Instructor presentations](./presentations). We use Keynote as there are animations in some slides, and other presentation tools don't have Keynote's 'magic move' or SVG support. For those on Linux or Windows we can produce web-based versions of the presentation on demand.
+- Working [solutions to each lesson's labs](./labs), following the [Solana Foundation style guide](https://github.com/solana-developers/program-examples/blob/main/CONTRIBUTING.md).
+- The [Agenda](./AGENDA.md) for local and remote training sessions
 
 You can also [contact Mike MacCana](mailto:mike.maccana@solana.org) for help.
 
 > [!NOTE]  
 > If you want to attend a training event and learn Solana (rather than run a training event yourself), follow [@solana_devs on X](https://x.com/solana_devs), and we'll let you know when the next course is running in a city near you or on Zoom!
 
+## Versions
+
+The training is written and tested with the following software. Students should avoid using older or newer software - the objective of the course is to understand Solana rather than 
+
+ - node.js 22
+ - Solana CLI 1.18.x (whichever the latest 1.18 release is)
+ - Anchor 0.30.1.
+
 ## Training Offerings
 
-| Timeframe                                                                    | Audience                                    | Outcome                                                                | Content      |
-| ---------------------------------------------------------------------------- | ------------------------------------------- | ---------------------------------------------------------------------- | ------------ |
-| 40 minutes - one hour                                                        | Technical audience                          | Understand operation of Solana smart contracts                         | Contact Mike |
-| One day                                                                      | Prior experience of strictly typed language | Build a solana smart contract from scratch                             | Contact Mike |
-| **Four days **full-time** in-classroom**, or **12 x 2-hour remote lessons**. | Prior experience of strictly typed language | Create and transfer tokens, build a solana smart contract from scratch | This repo    |
+### Main course
+
+**Timeframe**: Four days full-time in-classroom, or 12 x 2-hour remote lessons.
 
 **Audience**: anyone proficient in TypeScript who wants to learn blockchain. Prior knowledge of cryptography, blockchain, Rust or Anchor is not required - see [aims of the training](https://github.com/solana-developers/professional-education/blob/main/README.md#aims-of-the-training).
+
+**Outcome**: Create and transfer tokens, build a solana smart contract from scratch
+
+**Content**: [Solana Professional Education presentation](presentations/Solana%20Professional%20Education.key)
+
+**Prior setup**: Laptop with node.js 22 or newer, Windows machines much have WSL2 and Windows terminal installed.
+
+### One day Smart Contract Intensive
+
+**Timeframe**: One day  
+
+**Audience**: Prior experience of strictly typed language, and basic understanding of Solana itself
+
+**Outcome**: Build a solana smart contract from scratch
+
+**Content**: [Solana Professional Education presentation](presentations/Solana%20Professional%20Education.key), with lessons 1-4 without labs, then straight into Lab 6, Anchor.
+
+**Prior setup**: Laptop with node.js 22 or newer, Windows machines much have WSL2 and Windows terminal installed. Solana CLI 1.18 and Anchor 0.30.1.
+
+### One hour blockchain / smart contract overview
+
+**Timeframe**: 40 minutes - one hour  
+
+**Audience**: Technical audience  
+
+**Outcome**: Understand operation of Solana smart contracts  
+
+**Content**: see [Build your first DeFi app in 30 minutes keynote presentation](presentations/Build%20your%20first%20DeFi%20app%20in%2030%20minutes.key)
+
+**Prior setup**: Laptop with node.js 22 or newer, Windows machines much have WSL2 and Windows terminal installed.
+
+## Standard details for all offerings
 
 **Student time** is 10 AM to 4 PM.
 
