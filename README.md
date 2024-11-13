@@ -7,7 +7,6 @@ The training covers cryptography fundamentals, blockchain, and Solana from the g
 This repo has everything you need to plan and teach the course:
 
 - The [Event planning playbook](./EVENT-PLANNING.md)
-- The [syllabus] - what is considered base knowledge to be able to build software on Solana.
 - The [Instructor presentations](./presentations). We use Keynote as there are animations in some slides, and other presentation tools don't have Keynote's 'magic move' or SVG support. For those on Linux or Windows we can produce web-based versions of the presentation on demand.
 - Working [solutions to each lesson's labs](./labs), following the [Solana Foundation style guide](https://github.com/solana-developers/program-examples/blob/main/CONTRIBUTING.md).
 - The [Agenda](./AGENDA.md) for local and remote training sessions
