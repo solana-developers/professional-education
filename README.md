@@ -17,6 +17,14 @@ You can also [contact Mike MacCana](mailto:mike.maccana@solana.org) for help.
 > [!NOTE]  
 > If you want to attend a training event and learn Solana (rather than run a training event yourself), follow [@solana_devs on X](https://x.com/solana_devs), and we'll let you know when the next course is running in a city near you or on Zoom!
 
+## Versions
+
+The training is written and tested with the following software. Students should avoid using older or newer software - the objective of the course is to understand Solana rather than 
+
+ - node.js 22
+ - Solana CLI 1.18.x (whichever the latest 1.18 release is)
+ - Anchor 0.30.1.
+
 ## Training Offerings
 
 ### Main course

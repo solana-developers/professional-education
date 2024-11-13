@@ -1,11 +1,13 @@
 # Changelog
 
-## 1.2 (WIP)
+## 1.2 Nov 13 2024
 
-- Make unit tests for Lab 7 escrow using new helper
-- Add more animations
-- Move to token extensions for tokens, NFT modules
-- Add example of using Phantom Wallet on devnet
+- Move to token extensions for tokens
+- Significantly animations for DeFi examples, clean up dispkay of PDAs for Anchor with tokens
+- Add newer Anchor debugging strategies and remove ones that have been fixed in 0.30.1.
+- Remove the NFT section temporarily - Metaplex tools from 1.1 are deprecated, we will upgrade to using Token Extensions when we move to Agave 2.x (which contains the necessary Token Group extension)
+- Add example of using Phantom Wallet on devnet alongside existing Solflare one, in order to avoid favoring any particular ecosystem technology. 
+- Better documentation
 
 ## 1.1 May 28 2024
 
