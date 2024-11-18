@@ -20,9 +20,9 @@ You can also [contact Mike MacCana](mailto:mike.maccana@solana.org) for help.
 
 The training is written and tested with the following software. **Students should avoid using older or newer software** - the objective of the course is to understand Solana rather than to debug issues the first time using the platform.
 
- - node.js 22
- - Solana CLI 1.18.x (whichever the latest 1.18 release is)
- - Anchor 0.30.1.
+- node.js 22
+- Solana CLI 1.18.x (whichever the latest 1.18 release is)
+- Anchor 0.30.1.
 
 ## Training Offerings
 
@@ -40,7 +40,7 @@ The training is written and tested with the following software. **Students shoul
 
 ### One day Smart Contract Intensive
 
-**Timeframe**: One day  
+**Timeframe**: One day
 
 **Audience**: Prior experience of strictly typed language, and basic understanding of Solana itself
 
@@ -52,11 +52,11 @@ The training is written and tested with the following software. **Students shoul
 
 ### One hour blockchain / smart contract overview
 
-**Timeframe**: 40 minutes - one hour  
+**Timeframe**: 40 minutes - one hour
 
-**Audience**: Technical audience  
+**Audience**: Technical audience
 
-**Outcome**: Understand operation of Solana smart contracts  
+**Outcome**: Understand operation of Solana smart contracts
 
 **Content**: see [Build your first DeFi app in 30 minutes keynote presentation](presentations/Build%20your%20first%20DeFi%20app%20in%2030%20minutes.key)
 
