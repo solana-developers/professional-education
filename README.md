@@ -7,7 +7,6 @@ The training covers cryptography fundamentals, blockchain, and Solana from the g
 This repo has everything you need to plan and teach the course:
 
 - The [Event planning playbook](./EVENT-PLANNING.md)
-- The [syllabus] - what is considered base knowledge to be able to build software on Solana.
 - The [Instructor presentations](./presentations). We use Keynote as there are animations in some slides, and other presentation tools don't have Keynote's 'magic move' or SVG support. For those on Linux or Windows we can produce web-based versions of the presentation on demand.
 - Working [solutions to each lesson's labs](./labs), following the [Solana Foundation style guide](https://github.com/solana-developers/program-examples/blob/main/CONTRIBUTING.md).
 - The [Agenda](./AGENDA.md) for local and remote training sessions
@@ -19,11 +18,11 @@ You can also [contact Mike MacCana](mailto:mike.maccana@solana.org) for help.
 
 ## Versions
 
-The training is written and tested with the following software. Students should avoid using older or newer software - the objective of the course is to understand Solana rather than 
+The training is written and tested with the following software. **Students should avoid using older or newer software** - the objective of the course is to understand Solana rather than to debug issues the first time using the platform.
 
- - node.js 22
- - Solana CLI 1.18.x (whichever the latest 1.18 release is)
- - Anchor 0.30.1.
+- node.js 22
+- Solana CLI 1.18.x (whichever the latest 1.18 release is)
+- Anchor 0.30.1.
 
 ## Training Offerings
 
@@ -41,7 +40,7 @@ The training is written and tested with the following software. Students should 
 
 ### One day Smart Contract Intensive
 
-**Timeframe**: One day  
+**Timeframe**: One day
 
 **Audience**: Prior experience of strictly typed language, and basic understanding of Solana itself
 
@@ -53,11 +52,11 @@ The training is written and tested with the following software. Students should 
 
 ### One hour blockchain / smart contract overview
 
-**Timeframe**: 40 minutes - one hour  
+**Timeframe**: 40 minutes - one hour
 
-**Audience**: Technical audience  
+**Audience**: Technical audience
 
-**Outcome**: Understand operation of Solana smart contracts  
+**Outcome**: Understand operation of Solana smart contracts
 
 **Content**: see [Build your first DeFi app in 30 minutes keynote presentation](presentations/Build%20your%20first%20DeFi%20app%20in%2030%20minutes.key)
 
